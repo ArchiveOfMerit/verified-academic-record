@@ -1,0 +1,118 @@
+{
+  "manifest_version": "1.0.0",
+  "manifest_type": "release_manifest",
+  "repository": "verified-academic-record",
+  "release": {
+    "tag": "v1.8.0",
+    "title": "Verified Academic Record v1.8.0",
+    "release_date": "2026-03-23",
+    "release_status": "public_canonical_release"
+  },tag": true,
+    "source_branch": "main"
+  },
+  "included_artifacts": [
+    {
+      "path": "README.md",
+      "role": "repository_front_matter",
+      "sha256": "REPLACE_WITH_SHA256"
+    },
+    {
+      "path": "data/justin_gamache_verified_academic_record.json",
+      "role": "canonical_machine_readable_record",
+      "sha256": "REPLACE_WITH_SHA256"
+    },
+    {
+      "path": "CITATION.cff",
+      "role": "citation_metadata",
+      "sha256": "REPLACE_WITH_SHA256"
+    },
+    {
+      "path": "provenance-and-integrity.json",
+      "role": "provenance_and_integrity_statement",
+      "sha256": "REPLACE_WITH_SHA256"
+    },
+    {
+      "path": "restricted-source-governance.json",
+      "role": "restricted_source_governance_statement",
+      "sha256": "REPLACE_WITH_SHA256"
+    },
+    {
+      "path": "citations/canonical_record.ris",
+      "role": "citation_export_ris",
+      "sha256": "REPLACE_WITH_SHA256"
+    }
+  ],
+  "integrity_controls": {
+    "published_hashes": true,
+    "artifact_manifest_attached": true,
+    "release_notes_attached": true,
+    "authoritative_copy_rule": "The copy supported by verified repository history, signed release provenance, and matching published integrity hashes is authoritative."
+  },
+  "verification_instructions": [
+    "Confirm that the release tag matches the published release identifier.",
+    "Confirm that the commit hash matches the tagged release source.",
+    "Confirm that each artifact hash matches the published SHA-256 value.",
+    "Treat unsigned, hash-mismatched, truncated, selectively reproduced, or conflicting copies as non-authoritative."
+  ],
+  "notes": [
+    "This manifest template is intended for release packaging and authenticity review.",
+    "Replace placeholder hash values before publication.",
+    "Add or remove artifact entries to reflect the actual release package."
+  ]
+}
+  "source_provenance": {
+    "version_control_system": "git",
+    "commit_hash": "REPLACE_WITH_COMMIT_HASH",
+    "signed_tag": true,
+    "source_branch": "main"
+  },
+  "included_artifacts": [
+    {
+      "path": "README.md",
+      "role": "repository_front_matter",
+      "sha256": "REPLACE_WITH_SHA256"
+    },
+    {
+      "path": "data/justin_gamache_verified_academic_record.json",
+      "role": "canonical_machine_readable_record",
+      "sha256": "REPLACE_WITH_SHA256"
+    },
+    {
+      "path": "CITATION.cff",
+      "role": "citation_metadata",
+      "sha256": "REPLACE_WITH_SHA256"
+    },
+    {
+      "path": "provenance-and-integrity.json",
+      "role": "provenance_and_integrity_statement",
+      "sha256": "REPLACE_WITH_SHA256"
+    },
+    {
+      "path": "restricted-source-governance.json",
+      "role": "restricted_source_governance_statement",
+      "sha256": "REPLACE_WITH_SHA256"
+    },
+    {
+      "path": "citations/canonical_record.ris",
+      "role": "citation_export_ris",
+      "sha256": "REPLACE_WITH_SHA256"
+    }
+  ],
+  "integrity_controls": {
+    "published_hashes": true,
+    "artifact_manifest_attached": true,
+    "release_notes_attached": true,
+    "authoritative_copy_rule": "The copy supported by verified repository history, signed release provenance, and matching published integrity hashes is authoritative."
+  },
+  "verification_instructions": [
+    "Confirm that the release tag matches the published release identifier.",
+    "Confirm that the commit hash matches the tagged release source.",
+    "Confirm that each artifact hash matches the published SHA-256 value.",
+    "Treat unsigned, hash-mismatched, truncated, selectively reproduced, or conflicting copies as non-authoritative."
+  ],
+  "notes": [
+    "This manifest template is intended for release packaging and authenticity review.",
+    "Replace placeholder hash values before publication.",
+    "Add or remove artifact entries to reflect the actual release package."
+  ]
+}
