@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the release-specific version of this record where available."
+message: "Please cite the release-specific version of this record where available. Citation does not grant permission to reproduce or reuse the contents beyond what is allowed by law."
 title: "Verified Academic Record"
 type: dataset
 authors:
@@ -13,7 +13,7 @@ identifiers:
   - type: url
     value: "https://archive.org/details/verified-academic-history-and-thesis-metadata-v1.7.9"
     description: "Archived earlier release preserved on Internet Archive"
-abstract: "Canonical machine-readable academic record maintained for credential verification, scholarly attribution, citation continuity, archival preservation, and authoritative public reference."
+abstract: "Canonical machine-readable academic record maintained for credential verification, scholarly attribution, citation continuity, archival preservation, and authoritative public reference. All rights reserved."
 keywords:
   - academic record
   - scholarly record
