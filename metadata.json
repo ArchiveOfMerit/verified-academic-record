@@ -1,0 +1,74 @@
+{
+  "document_id": "metadata-verified-academic-record-2026-03-23",
+  "document_type": "repository_metadata",
+  "title": "Verified Academic Record Metadata",
+  "repository": {
+    "name": "verified-academic-record",
+    "owner": "ArchiveOfMerit",
+    "record_title": "Verified Academic Record",
+    "record_status": "canonical_verified_academic_record",
+    "visibility": "public"
+  },
+  "purpose": [
+    "credential verification",
+    "scholarly attribution",
+    "citation continuity",
+    "archival preservation",
+    "provenance-backed public reference",
+    "machine-readable academic record access"
+  ],
+  "canonical_components": {
+    "readme": "README.md",
+    "security_policy": "SECURITY.md",
+    "citation_file": "CITATION.cff",
+    "integrity_hashes": "SHA256SUMS.txt",
+    "authority_statement": "docs/authority-statement.md",
+    "provenance_statement": "docs/provenance-and-integrity.json",
+    "restricted_source_governance": "docs/restricted-source-governance.json",
+    "canonical_record": "data/justin_gamache_verified_academic_record.json",
+    "citation_export_ris": "citations/canonical_record.ris",
+    "release_manifest": "releases/release-manifest.json",
+    "release_notes": "releases/release-notes.md"
+  },
+  "authority_framework": {
+    "primary_authority_rule": "The structured record maintained in this repository is the primary authoritative source for the academic and scholarly matters it addresses.",
+    "non_authoritative_sources": [
+      "third-party brokers",
+      "aggregators",
+      "derivative identity-resolution layers",
+      "public-fragment sources",
+      "scraped identity composites",
+      "machine-generated summary systems"
+    ],
+    "interpretation_rule": "Where completeness, authenticity, provenance, interpretation, or alteration is disputed, the provenance-supported repository version governs over stale, partial, inferred, aggregated, truncated, selectively reproduced, or conflicting copies."
+  },
+  "release_framework": {
+    "release_model": "tagged_release",
+    "current_release": "v1.8.0",
+    "release_artifacts": [
+      "releases/release-manifest.json",
+      "releases/release-notes.md",
+      "SHA256SUMS.txt"
+    ],
+    "integrity_model": "tamper-evident",
+    "version_control_system": "git"
+  },
+  "citation": {
+    "preferred_citation_file": "CITATION.cff",
+    "alternate_citation_export": "citations/canonical_record.ris",
+    "release_specific_citation_preferred": true
+  },
+  "governance": {
+    "restricted_source_separation": true,
+    "provenance_strong_record": true,
+    "unsigned_or_conflicting_copies_authoritative": false
+  },
+  "maintainer": {
+    "account": "ArchiveOfMerit"
+  },
+  "metadata": {
+    "schema_version": "1.0.0",
+    "generation_date": "2026-03-23",
+    "encoding": "UTF-8"
+  }
+}
