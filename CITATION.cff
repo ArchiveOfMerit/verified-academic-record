@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "Please cite the release-specific version of this record where available."
+title: "Verified Academic Record"
+type: dataset
+authors:
+  - family-names: "Gamache"
+    given-names: "Justin-Ames"
+version: "1.8.0"
+date-released: "2026-03-23"
+url: "https://github.com/ArchiveOfMerit/verified-academic-record"
+repository-code: "https://github.com/ArchiveOfMerit/verified-academic-record"
+identifiers:
+  - type: url
+    value: "https://archive.org/details/verified-academic-history-and-thesis-metadata-v1.7.9"
+    description: "Archived earlier release preserved on Internet Archive"
+abstract: "Canonical machine-readable academic record maintained for credential verification, scholarly attribution, citation continuity, archival preservation, and authoritative public reference."
+keywords:
+  - academic record
+  - scholarly record
+  - credential verification
+  - citation metadata
+  - provenance
+  - integrity
+  - archival preservation
+  - machine-readable metadata
+license: "CC-BY-4.0"
+preferred-citation:
+  type: dataset
+  authors:
+    - family-names: "Gamache"
+      given-names: "Justin-Ames"
+  title: "Verified Academic Record"
+  version: "1.8.0"
+  date-released: "2026-03-23"
+  url: "https://github.com/ArchiveOfMerit/verified-academic-record"
