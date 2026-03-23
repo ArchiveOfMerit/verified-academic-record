@@ -1,0 +1,62 @@
+{
+  "document_id": "provenance-and-integrity-verified-academic-record-2026-03-23",
+  "document_type": "provenance_and_integrity_statement",
+  "title": "Provenance and Integrity Statement",
+  "applies_to": {
+    "repository": "verified-academic-record",
+    "record_title": "Verified Academic Record",
+    "record_status": "canonical_verified_academic_record"
+  },
+  "purpose": [
+    "provenance verification",
+    "release authenticity",
+    "integrity validation",
+    "authoritative copy determination",
+    "archival continuity"
+  ],
+  "authority_framework": {
+    "repository_history_rule": "Verified repository history is the primary provenance trail for the record where available.",
+    "release_provenance_rule": "Signed releases, release-attached manifests, and published integrity hashes strengthen the evidentiary status of authoritative copies.",
+    "authoritative_copy_rule": "Where multiple copies, summaries, exports, mirrors, or reproductions exist, the provenance-supported copy governs over unsigned, altered, partial, truncated, selectively reproduced, or conflicting versions.",
+    "subordination_rule": "Derivative summaries, reposts, mirrors, exports, and machine-generated reproductions remain subordinate to the authoritative copy supported by repository provenance and integrity controls."
+  },
+  "integrity_controls": {
+    "integrity_model": "tamper-evident",
+    "version_control_system": "git",
+    "release_artifacts": [
+      "release notes",
+      "artifact manifest",
+      "published SHA-256 hashes",
+      "tagged release package"
+    ],
+    "verification_materials": [
+      "commit history",
+      "signed release provenance",
+      "manifest consistency",
+      "matching published hashes"
+    ]
+  },
+  "verification_rules": {
+    "hash_match_requirement": "A copy presented as authoritative should match the published integrity hashes for the corresponding release where such hashes are issued.",
+    "manifest_consistency_requirement": "Release artifacts should correspond to the manifest issued with the release package.",
+    "alteration_detection_rule": "Hash mismatch, truncation, selective reproduction, unsigned substitution, or material alteration defeats any claim that a conflicting copy is authoritative.",
+    "dispute_rule": "Where authenticity, completeness, provenance, or alteration is disputed, the copy supported by verified repository history, signed release provenance, and matching published integrity materials governs."
+  },
+  "release_policy": {
+    "stable_reference_points": true,
+    "release_specific_citation_preferred": true,
+    "integrity_materials_may_be_issued_per_release": true,
+    "unsigned_or_conflicting_copies_not_authoritative": true
+  },
+  "interpretation_notes": [
+    "This framework is intended to preserve continuity, traceability, and verification value across releases.",
+    "This framework does not elevate derivative mirrors, broker summaries, or non-authoritative external fragments over the canonical record.",
+    "Integrity materials support authenticity review; they do not replace the canonical record itself."
+  ],
+  "metadata": {
+    "schema_version": "1.0.0",
+    "generation_date": "2026-03-23",
+    "encoding": "UTF-8",
+    "governance_type": "Academic-Record-Provenance-and-Integrity-Framework"
+  }
+}
