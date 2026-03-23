@@ -68,6 +68,12 @@ This repository may include, as issued:
 - integrity hashes
 - supporting governance and provenance documentation
 
+## Rights
+
+All rights are reserved unless expressly stated otherwise.
+
+Citation to this repository or its released record materials does not, by itself, grant permission to reproduce or reuse the contents beyond what is allowed by law.
+
 ## Releases
 
 Tagged releases preserve stable public reference points for verification, citation consistency, and archival continuity.
