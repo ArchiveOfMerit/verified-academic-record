@@ -1,0 +1,59 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Justin-Ames Gamache",
+    "alternateName": "Justin-Ames Gamache, M.Ed., M.S.",
+    "description": "Justin-Ames Gamache, M.Ed., M.S., is a scholar-practitioner and doctoral candidate in Educational Technology at the University of Phoenix. He holds a Master of Education and a Master of Science in Psychology with distinction. His public academic work focuses on higher education, educational technology, mindfulness, identity, student well-being, and qualitative research.",
+    "honorificSuffix": "M.Ed., M.S.",
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Phoenix"
+      }
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "Master of Education"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "Master of Science in Psychology",
+        "description": "Awarded with distinction"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "Bachelor of Science in Interdisciplinary Studies"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "degree",
+        "name": "Associate degree in Business Administration"
+      }
+    ],
+    "knowsAbout": [
+      "Educational technology",
+      "Higher education",
+      "Psychology",
+      "Mindfulness",
+      "Identity",
+      "Student well-being",
+      "Qualitative research",
+      "Narrative inquiry",
+      "Inclusive learning environments"
+    ],
+    "sameAs": [
+      "https://github.com/ArchiveOfMerit/verified-academic-record",
+      "https://archive.org/details/verified-academic-history-and-thesis-metadata-v1.7.9",
+      "https://www.linkedin.com/",
+      "https://www.researchgate.net/"
+    ]
+  }
+}
+</script>
