@@ -1,0 +1,19 @@
+{
+  "name": "Verified Academic Record",
+  "short_name": "Academic Record",
+  "description": "Canonical machine-readable academic record and public scholarly reference for Justin-Ames Gamache, M.Ed., M.S.",
+  "start_url": "/verified-academic-record/",
+  "scope": "/verified-academic-record/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/verified-academic-record/justin-ames-gamache-doctoral-portrait.png",
+      "sizes": "1400x1050",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
