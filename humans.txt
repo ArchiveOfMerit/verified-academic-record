@@ -1,0 +1,4 @@
+Project: Verified Academic Record
+Maintainer: Justin-Ames Gamache, M.Ed., M.S.
+Repository: https://github.com/ArchiveOfMerit/verified-academic-record
+Purpose: Canonical machine-readable academic record and public scholarly reference.
