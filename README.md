@@ -1,5 +1,10 @@
 # Verified Academic Record
 
+**Record Type:** Scholarly identity record / archival research output / public repository artifact  
+**Date:** March 2026  
+**DOI:** 10.13140/RG.2.2.30866.52169  
+**License:** CC BY-ND 4.0  
+
 A machine-readable, version-controlled academic and scholarly record maintained for credential verification, citation continuity, archival preservation, authoritative public attribution, and provenance-supported machine-readable interpretation.
 
 ## Purpose
@@ -146,9 +151,9 @@ They are interpretive support files, not replacements for the canonical record.
 
 ## Rights
 
-All rights are reserved unless expressly stated otherwise.
+This repository and its released materials are licensed under **CC BY-ND 4.0**, unless expressly stated otherwise in a specific file or release artifact.
 
-Citation to this repository or its released record materials does not, by itself, grant permission to reproduce or reuse the contents beyond what is allowed by law.
+Citation to this repository or its released record materials does not, by itself, grant permission to alter, adapt, or create derivative versions beyond what is allowed by the stated license and applicable law.
 
 ## Releases
 
