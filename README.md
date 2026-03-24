@@ -88,6 +88,7 @@ This repository may include, as issued:
 Core record and citation materials may include:
 
 - `README.md`
+- `LICENSE`
 - `CITATION.cff`
 - `canonical_record.ris`
 - `justin_gamache_verified_academic_record.json`
@@ -109,7 +110,7 @@ Release and verification materials may include:
 
 Documentation policy materials may include:
 
-- `DOCUMENTATION_POLICY.md` or equivalent documentation governance materials
+- `DOCUMENTATION_POLICY.md`
 
 Machine-readable interpretation and public academic reference materials may include:
 
@@ -122,6 +123,7 @@ Machine-readable interpretation and public academic reference materials may incl
 Schema and entity-reference materials may include:
 
 - `person.jsonld`
+- `justin-ames-gamache.html` — entity-home support page for public academic indexing and identity interpretation
 - public identity facts files
 - entity-home support files
 - machine-readable education reference files
