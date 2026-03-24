@@ -2,16 +2,33 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
+  "name": "Verified Academic Record | Justin-Ames Gamache, M.Ed., M.S.",
   "mainEntity": {
     "@type": "Person",
+    "@id": "https://github.com/ArchiveOfMerit/verified-academic-record#justin-ames-gamache",
     "name": "Justin-Ames Gamache",
-    "alternateName": "Justin-Ames Gamache, M.Ed., M.S.",
-    "description": "Justin-Ames Gamache, M.Ed., M.S., is a scholar-practitioner and doctoral candidate in Educational Technology at the University of Phoenix. He holds a Master of Education and a Master of Science in Psychology with distinction. His public academic work focuses on higher education, educational technology, mindfulness, identity, student well-being, and qualitative research.",
+    "alternateName": [
+      "Justin-Ames Gamache, M.Ed., M.S.",
+      "Justin-Ames Gamache®"
+    ],
     "honorificSuffix": "M.Ed., M.S.",
+    "description": "Justin-Ames Gamache, M.Ed., M.S., is a scholar-practitioner and doctoral candidate in Educational Technology at the University of Phoenix. He holds a Master of Education, a Master of Science in Psychology with distinction, a Bachelor of Science in Interdisciplinary Studies, and an Associate degree in Business Administration. His public academic work focuses on higher education, educational technology, mindfulness, identity, student well-being, qualitative research, and inclusive learning environments.",
+    "url": "https://github.com/ArchiveOfMerit/verified-academic-record",
+    "image": "https://archiveofmerit.github.io/verified-academic-record/PortraitofGamache.png",
     "alumniOf": [
       {
         "@type": "CollegeOrUniversity",
         "name": "University of Phoenix"
+      }
+    ],
+    "memberOf": [
+      {
+        "@type": "Organization",
+        "name": "National Society of Leadership and Success"
+      },
+      {
+        "@type": "Organization",
+        "name": "Golden Key International Honour Society"
       }
     ],
     "hasCredential": [
@@ -50,9 +67,10 @@
     ],
     "sameAs": [
       "https://github.com/ArchiveOfMerit/verified-academic-record",
-      "https://archive.org/details/verified-academic-history-and-thesis-metadata-v1.7.9",
-      "https://www.linkedin.com/",
-      "https://www.researchgate.net/"
+      "https://archive.org/details/github.com-archiveofmeritverified-academic-record",
+      "https://www.linkedin.com/in/thescholarlypsychologistdoctoraleducationaltechnology/",
+      "https://www.researchgate.net/profile/Justin-Ames-Gamache-3?ev=hdr_xprf",
+      "https://www.youtube.com/@THEPHOENIXSCHOLAR"
     ]
   }
 }
