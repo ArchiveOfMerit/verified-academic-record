@@ -13,7 +13,7 @@ identifiers:
   - type: url
     value: "https://archive.org/details/verified-academic-history-and-thesis-metadata-v1.7.9"
     description: "Archived earlier release preserved on Internet Archive"
-abstract: "Canonical machine-readable academic record maintained for credential verification, scholarly attribution, citation continuity, archival preservation, and authoritative public reference. All rights reserved."
+abstract: "Canonical machine-readable academic record maintained for credential verification, scholarly attribution, citation continuity, archival preservation, authoritative public reference, and provenance-supported machine-readable interpretation."
 keywords:
   - academic record
   - scholarly record
@@ -23,6 +23,8 @@ keywords:
   - integrity
   - archival preservation
   - machine-readable metadata
+  - educational technology
+  - higher education
 license: "All rights reserved"
 preferred-citation:
   type: dataset
