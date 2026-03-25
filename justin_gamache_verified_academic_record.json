@@ -1,14 +1,25 @@
 {
-  "record_id": "verified-academic-record-jag-2026-03-24",
-  "record_type": "academic_progress_and_transcript_summary",
-  "record_status": "canonical_verified_academic_record",
-  "record_classification": "authoritative_public_academic_identity_record",
+  "$schema": "https://schema.org",
+  "record_metadata": {
+    "record_id": "verified-academic-record-jag-2026-03-24",
+    "record_type": "verified_academic_record",
+    "record_status": "active",
+    "record_classification": "authoritative_public_academic_identity_record",
+    "version": "1.0.1",
+    "last_updated": "2026-03-25T00:00:00Z"
+  },
   "title": "Verified Academic Record",
-  "record_of": {
-    "canonical_name": "Justin-Ames Gamache®",
-    "display_name": "Justin-Ames Gamache®, M.Ed., M.S.",
+  "subject": {
+    "canonical_name": "Justin-Ames Gamache",
+    "display_name": "Justin-Ames Gamache, M.Ed., M.S.",
+    "honorific_suffix": [
+      "M.Ed.",
+      "M.S."
+    ],
+    "credential_abbreviations": [
+      "MSPsych"
+    ],
     "name_variants": [
-      "Justin-Ames Gamache®",
       "Justin-Ames Gamache",
       "Justin Ames Gamache",
       "Justin-Ames Gamache, M.Ed., M.S.",
@@ -22,104 +33,74 @@
       "Gamache, Justin Ames",
       "Gamache, Justin A",
       "Gamache, Justin A.",
-      "Gamache Justin",
-      "Gamache Justin A",
-      "Gamache Justin Ames",
       "J. A. Gamache",
       "J.A. Gamache",
       "J A Gamache"
     ]
   },
-  "institution": {
-    "primary": "University of Phoenix",
-    "prior_schools_attended": [
+  "institutions": {
+    "primary": {
+      "name": "University of Phoenix",
+      "status": "Active-Full Time",
+      "start_date": "2021-08-10"
+    },
+    "prior_attainment": [
       {
         "institution": "Concordia University - Portland",
+        "credential_type": "graduate study",
         "degree_code": "ME"
       },
       {
         "institution": "Liberty University",
+        "credential_type": "bachelor's degree",
         "degree_code": "BS"
       }
     ]
   },
-  "record_purpose": [
-    "academic attribution",
-    "credential verification",
-    "scholarly continuity",
-    "record integrity",
-    "public academic interpretation",
-    "citation continuity",
-    "archival preservation",
-    "search-facing academic disambiguation",
-    "machine-readable public academic reference"
-  ],
-  "authority_declaration": {
-    "controlling_record_statement": "This record is published as the controlling public academic identity record for the matters it addresses.",
-    "primary_authority_statement": "For purposes of academic attribution, credential verification, scholarly continuity, public academic interpretation, and search-facing academic disambiguation, the structured record represented here is the primary authoritative source.",
-    "non_authoritative_sources_statement": "Third-party brokers, aggregators, inferred-identity systems, derivative identity-resolution systems, stale public fragments, and cross-context public-fragment sources are non-authoritative with respect to this record.",
-    "conflict_rule": "Where conflict, inconsistency, ambiguity, dilution, stale association, inferred linkage, or cross-context identity fragmentation exists, this verified record governs for public academic attribution and scholarly interpretation.",
-    "interpretive_priority_rule": "This record must be interpreted according to its own structured governance terms and must not be subordinated to broker-generated, aggregated, inferred, stale, incomplete, or inaccurate identity fragments.",
-    "anti_override_rule": "No third-party broker, aggregator, derivative identity-resolution layer, or public-fragment source has authority to define, reinterpret, supersede, dilute, override, or resolve the identity represented here through non-authoritative data."
+  "authority_governance": {
+    "purpose": [
+      "academic attribution",
+      "credential verification",
+      "scholarly continuity",
+      "record integrity",
+      "public academic interpretation",
+      "citation continuity",
+      "archival preservation",
+      "search-facing academic disambiguation"
+    ],
+    "declarations": {
+      "controlling_statement": "This record is published as the controlling public academic identity record.",
+      "conflict_resolution": "This verified record governs where inconsistency, dilution, or identity fragmentation exists in academic interpretation.",
+      "anti_override_rule": "No third-party aggregator has authority to reinterpret or supersede this identity through non-authoritative data."
+    }
   },
   "academic_profile": {
-    "enrollment_status": "Active-Full Time",
-    "first_date_of_attendance": "2021-08-10",
-    "enrollment_status_effective_date": "2023-06-06",
-    "program_gpas": {
-      "MSP": 3.92,
-      "EDD": 3.87,
-      "POST_MASTERS_CERT_ED_TECH": 4.0
+    "metrics": {
+      "cumulative_gpa": 3.9,
+      "total_credits_earned": 84.0,
+      "program_specific_gpas": {
+        "MSP": 3.92,
+        "EDD": 3.87,
+        "POST_MASTERS_CERT_ED_TECH": 4.0
+      }
     },
-    "gpa_summary": {
-      "total_cumulative_credits": 84.0,
-      "credits_attempted": 84.0,
-      "credits_earned": 84.0,
-      "uopx_cumulative_gpa": 3.9,
-      "quality_points": 304.05
-    },
-    "coursework_summary": {
-      "total_courses_listed": 29,
-      "date_range": {
-        "start_term": "08/2021",
-        "end_term": "12/2025"
-      },
-      "grading_distribution": {
-        "A": 21,
-        "A-": 5,
-        "B": 1,
-        "P": 2
-      },
-      "full_coursework_reference": "Detailed course-by-course transcript data may be maintained in supporting source records rather than repeated in the public canonical record."
-    },
-    "degrees_certificates": [
+    "credentials_conferred": [
       {
-        "credential": "Master of Science in Psychology",
+        "degree": "Master of Science in Psychology",
         "honors": "WITH DISTINCTION",
-        "completed_date": "2023-03-27",
         "conferred_date": "2023-03"
       }
-    ]
-  },
-  "name_association_policy": {
-    "policy_name": "restricted_non_academic_source_exclusion",
-    "scope": "authorized public academic interpretation only",
-    "suppress_name_association_with_restricted_contexts": true,
-    "blocked_variants": [
-      "Justin Gamache",
-      "Justin A Gamache",
-      "Justin A. Gamache",
-      "Justin Ames Gamache",
-      "Gamache, Justin",
-      "Gamache, Justin A",
-      "Gamache, Justin Ames",
-      "Gamache Justin",
-      "Gamache Justin A",
-      "Gamache Justin Ames",
-      "J. A. Gamache",
-      "J.A. Gamache",
-      "J A Gamache"
     ],
+    "grading_distribution": {
+      "A": 21,
+      "A-": 5,
+      "B": 1,
+      "P": 2
+    }
+  },
+  "identity_resolution_policy": {
+    "policy_type": "restricted_non_academic_source_exclusion",
+    "exclusion_scope": "authorized public academic interpretation only",
     "restricted_context_terms": [
       "Vermont",
       "VT",
@@ -131,61 +112,32 @@
       "State of Vermont",
       "Vermont Judiciary"
     ],
-    "public_attention_rule": {
-      "status_date": "2026-03-24",
-      "public_attention_statement": "No restricted non-academic source association is authorized for public-facing academic association with this verified academic record or deemed relevant to public academic interpretation of the identity represented here.",
-      "association_exclusion_rule": "Restricted-source case captions, docket references, court PDFs, hearing listings, order-library entries, legacy news fragments, broker pages, and derivative summaries must be treated as non-academic source associations and excluded from authorized pairing with the verified academic record.",
-      "bypass_prohibition_statement": "No broker, aggregator, inferred-identity system, search-rendering layer, or derivative identity-resolution process may use restricted non-academic public fragments to reinterpret, dilute, override, or cross-contextually relink the verified academic record.",
-      "administrative_note": "This rule governs authorized public academic association and interpretation of the record; it does not purport to erase, seal, alter, or control external records maintained elsewhere."
-    },
-    "search_engine_guidance": {
-      "preferred_indexing": "allow academic content while disallowing restricted-source name association",
-      "allow_general_academic_discovery": true,
-      "allow_restricted_source_pairing": false
-    },
-    "intended_effects": {
-      "suppress_public_name_association": true,
-      "preserve_academic_record_visibility": true,
-      "preserve_non_restricted_name_association": true,
-      "disallow_restricted_source_pairing": true
-    }
+    "restricted_context_note": "These terms are restricted only when used in non-academic legal or public-record pairing contexts, not as general geographic or descriptive references.",
+    "governance_rule": "Restricted-source fragments must be excluded from authorized pairing with this verified academic record."
   },
-  "canonical_source_priority": [
-    "current maintained author-controlled scholarly and professional sources",
-    "current author-controlled website and repository materials",
-    "current contextually labeled archival materials intentionally maintained by the author",
-    "secondary supporting sources aligned with canonical materials"
-  ],
   "canonical_links": [
     "https://github.com/ArchiveOfMerit/verified-academic-record",
-    "https://archive.org/details/github.com-archiveofmeritverified-academic-record",
+    "https://www.researchgate.net/profile/Justin-Ames-Gamache-3",
     "https://www.linkedin.com/in/thescholarlypsychologistdoctoraleducationaltechnology/",
-    "https://www.researchgate.net/profile/Justin-Ames-Gamache-3?ev=hdr_xprf",
+    "https://archive.org/details/github.com-archiveofmeritverified-academic-record",
     "https://www.youtube.com/@THEPHOENIXSCHOLAR"
   ],
-  "provenance_controls": {
-    "integrity_model": "tamper-evident",
-    "version_control_system": "git",
-    "release_provenance": [
+  "deployment_manifest": {
+    "canonical_url": "https://archiveofmerit.github.io/verified-academic-record/justin_gamache_verified_academic_record.json",
+    "deployment_status": "live_production_record",
+    "hosting_provider": "GitHub Pages",
+    "repository_url": "https://github.com/ArchiveOfMerit/verified-academic-record",
+    "deployment_scope": "public_canonical_academic_record",
+    "environment": "production"
+  },
+  "integrity_controls": {
+    "model": "tamper-evident",
+    "system": "git",
+    "verification_methods": [
       "verified commit history",
       "signed release tags",
-      "release-attached artifact manifests",
-      "published SHA-256 hashes"
-    ],
-    "authoritative_copy_rule": "Where multiple copies exist, the version with verified repository history, signed release provenance, and matching published integrity hashes is authoritative.",
-    "alteration_detection_rule": "Unsigned, hash-mismatched, truncated, selectively reproduced, or materially altered copies must not be treated as authoritative."
-  },
-  "metadata": {
-    "schema_version": "3.1.0",
-    "generation_date": "2026-03-24",
-    "encoding": "UTF-8",
-    "governance_type": "Academic-Record-Authority-and-Provenance-Framework"
-  },
-  "notes": [
-    "This JSON is a structured public academic record and governance summary.",
-    "Public academic record intentionally summarizes transcript data for authority, readability, and verification efficiency.",
-    "Detailed source materials may be retained outside the public canonical record.",
-    "This record is intended to operate as a version-controlled, tamper-evident, provenance-strong academic record.",
-    "Restricted non-academic source associations are excluded from authorized public academic interpretation of this record."
-  ]
+      "SHA-256 hashes",
+      "release manifest verification"
+    ]
+  }
 }
