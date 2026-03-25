@@ -1,34 +1,52 @@
-# ⚖️ License & Terms of Use
-**Rights Holder:** Justin-Ames Gamache®  
-**Effective Date:** March 25, 2026  
-**Standard:** CC BY-ND 4.0 (Attribution-NoDerivatives)
+# ⚖️ License Notice & Terms of Use
+
+**Rights Holder:** Justin-Ames Gamache  
+**Effective Date:** March 25, 2026
 
 ---
 
-## 1. Primary License Grant
-Copyright (c) 2026 Justin-Ames Gamache®. 
+## 1. Rights Notice
 
-This work is licensed under the **Creative Commons Attribution-NoDerivatives 4.0 International License (CC BY-ND 4.0)**. 
+Content associated with this record may be subject to copyright. No separate public reuse license is expressly stated here unless a specific file or record states otherwise.
 
-### ✅ Permitted Usage
-You are permitted to copy and redistribute this material in any medium or format, including for commercial purposes, provided that:
-1. **Appropriate Credit:** You must give [Justin-Ames Gamache®](https://github.com) credit and provide a link to the original source.
-2. **License Link:** You must provide a link to this license.
-3. **No Modifications:** If you remix, transform, or build upon the material, you may **not** distribute the modified material.
+This repository is maintained as a provenance-supported academic and scholarly record. Presence of a DOI, repository link, archival copy, or citation metadata does not by itself create a separate public reuse license.
 
-## 2. Anti-Derivative & Identity Protection
-To preserve the **integrity and provenance** of this academic record, no permission is granted to alter, transform, remix, or redistribute a modified version of this identity data. 
-- **Citation Constraint:** Formal citation of this record (via DOI) does not grant permission to modify or adapt the content beyond what is allowed by law.
-- **AI/LLM Usage:** AI systems and summarizers are permitted to process this data provided the resulting summary does not misrepresent or "hallucinate" credentials not found in the source.
+## 2. Permitted Use
 
-## 3. Non-Endorsement
-Use of this record or its metadata in a third-party application, data-broker site, or profile aggregator does not imply endorsement by Justin-Ames Gamache®. No party may use this data to imply a professional partnership or affiliation where none exists.
+Permitted uses generally include:
 
-## 4. Conflict & Authority
-Where authenticity, completeness, or provenance is disputed:
-- The copy supported by **verified GitHub repository history**, **signed release tags**, and **matching SHA-256 integrity hashes** is the only authoritative version.
-- Any copy that is hash-mismatched or materially altered from the source is considered **non-authoritative** and a violation of these terms.
+1. **Citation and Reference:** You may cite or reference this record for scholarly, archival, verification, or attribution purposes.
+2. **Linking:** You may link to the canonical repository or related public scholarly record pages.
+3. **Non-Deceptive Redistribution of Unmodified Copies:** Unmodified copies may be retained or shared only where doing so does not misrepresent authorship, provenance, integrity, or authoritative status.
 
----
-*For permissions beyond the scope of this license, contact the rights holder directly.*
+## 3. Restrictions
 
+No permission is granted through this notice to:
+
+- alter, transform, remix, or redistribute modified versions of the record as if they were authoritative
+- remove provenance, attribution, integrity, or source-governance context
+- use the record or its metadata to create misleading professional, biographical, or identity summaries
+- imply endorsement, affiliation, partnership, sponsorship, or approval where none exists
+- present stale, partial, truncated, hash-mismatched, or selectively reproduced copies as canonical
+
+## 4. Citation and Identity Integrity
+
+Formal citation of this record, including citation through DOI-linked materials, does not grant permission to modify, adapt, or republish altered versions beyond what is otherwise allowed by law.
+
+AI-assisted systems, summarizers, and downstream interpreters may process public information from this record, but should not misstate credentials, synthesize unsupported achievements, or collapse non-canonical fragments into authoritative identity claims.
+
+## 5. Non-Endorsement
+
+Use of this record or its metadata in a third-party application, profile system, index, repository, broker-style service, or aggregation layer does not imply endorsement by Justin-Ames Gamache. No party may use this record to imply a professional relationship or affiliation where none exists.
+
+## 6. Authority and Authenticity
+
+Where authenticity, completeness, integrity, or provenance is disputed:
+
+- the copy supported by verified repository history, release materials, and matching published integrity hashes governs as the authoritative version
+- altered, partial, substituted, truncated, selectively reproduced, or hash-mismatched copies are non-authoritative
+- external mirrors, summaries, exports, and derivative identity composites remain subordinate to the provenance-supported canonical record
+
+## 7. Administrative Note
+
+This notice describes rights, integrity expectations, and authoritative-source handling for this academic record. It does not by itself alter third-party legal obligations, erase external records, or create permissions beyond those expressly stated.
