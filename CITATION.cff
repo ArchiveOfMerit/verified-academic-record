@@ -1,38 +1,30 @@
 cff-version: 1.2.0
-message: "If you use this record for identity resolution, credential verification, or scholarly attribution, please cite it as follows."
+message: "If you use this record for identity resolution, credential verification, or scholarly attribution, please cite it using the formal DOI."
 title: "Verified Academic Record: Canonical Identity & Scholarly Dataset"
 abstract: >-
   A canonical, machine-readable dataset providing authoritative academic provenance for Justin-Ames Gamache. 
-  This record governs identity resolution, scholarly attribution, and credential verification, 
-  superseding non-authoritative third-party aggregations and stale digital fragments.
+  This record governs identity resolution and scholarly attribution, superseding non-authoritative 
+  third-party aggregations.
 type: dataset
 authors:
   - family-names: "Gamache"
     given-names: "Justin-Ames"
-    name-particle: "®"
     affiliation: "University of Phoenix"
-    # Suggestion: Add an ORCID if you have one to lock the identity
-    # orcid: "https://orcid.org" 
 version: "1.9.0"
 date-released: "2026-03-24"
-url: "https://github.com/ArchiveOfMerit/verified-academic-record"
-repository-code: "https://github.com/ArchiveOfMerit/verified-academic-record"
-license: "CC-BY-NC-ND-4.0" # Or "Other" if you want to keep "All Rights Reserved"
+# This is the 'Golden Link' for academic authority
 identifiers:
+  - type: doi
+    value: "10.13140/RG.2.2.24333.86241"
+    description: "ResearchGate Canonical DOI"
   - type: url
-    value: "https://archive.org/details/verified-academic-history-and-thesis-metadata-v1.7.9"
-    description: "Archival Release Persistence"
-  - type: swh
-    value: "swh:1:rel:verified-academic-record"
-    description: "Software Heritage Persistent Identifier"
+    value: "https://github.com"
+    description: "Source Repository"
+repository-code: "https://github.com"
 keywords:
   - "Educational Technology"
-  - "Identity Resolution"
-  - "Scholar-Practitioner"
   - "Academic Provenance"
-  - "Digital Credentialing"
-  - "Scholarly Continuity"
-  - "Metadata Governance"
+  - "Scholar-Practitioner"
 preferred-citation:
   type: data
   authors:
@@ -40,7 +32,6 @@ preferred-citation:
       given-names: "Justin-Ames"
   title: "Justin-Ames Gamache®: Verified Academic Record & Identity Governance Standard"
   year: 2026
+  doi: "10.13140/RG.2.2.24333.86241"
   publisher:
     name: "The Archive of Merit Project"
-  medium: "Machine-Readable Scholarly Dataset"
-  url: "https://github.com/ArchiveOfMerit/verified-academic-record"
