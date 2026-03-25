@@ -1,11 +1,16 @@
 {
-  "name": "archive-of-merit-mcp",
-  "version": "1.0.0",
-  "description": "MCP tooling for Archive of Merit repository workflows and browser-based inspection tasks",
   "mcpServers": {
     "archive-of-merit": {
       "command": "npx",
-      "args": ["archive-of-merit-mcp@1.0.0"]
+      "args": [
+        "archive-of-merit-mcp@1.1.0"
+      ]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest"
+      ]
     }
   }
 }
