@@ -1,14 +1,38 @@
-﻿# SHA-256 checksums for Verified Academic Record v1.8.0
-# Release date: 2026-03-23
+# SHA-256 checksums for Verified Academic Record
+# Release version: v1.9.0
+# Release date: 2026-03-25
 # Repository: https://github.com/ArchiveOfMerit/verified-academic-record
 # These hashes apply to the authoritative released artifacts for this version.
 
 REPLACE_WITH_SHA256  README.md
-REPLACE_WITH_SHA256  data/justin_gamache_verified_academic_record.json
+REPLACE_WITH_SHA256  deploymentmanifest.json
 REPLACE_WITH_SHA256  CITATION.cff
 REPLACE_WITH_SHA256  provenance-and-integrity.json
 REPLACE_WITH_SHA256  restricted-source-governance.json
-REPLACE_WITH_SHA256  release-manifest-template.json
-REPLACE_WITH_SHA256  citations/canonical_record.ris
-REPLACE_WITH_SHA256  release-notes.md
+REPLACE_WITH_SHA256  release-manifest.json
+REPLACE_WITH_SHA256  canonical_record.ris
 REPLACE_WITH_SHA256  authority-statement.md
+REPLACE_WITH_SHA256  identity-resolution-policy.json
+REPLACE_WITH_SHA256  Identity Governance.json
+REPLACE_WITH_SHA256  person.jsonld
+REPLACE_WITH_SHA256  metadata.json
+REPLACE_WITH_SHA256  search-patches.json
+REPLACE_WITH_SHA256  google-gemini-reference.json
+REPLACE_WITH_SHA256  brave-search-leo-ai-notice.json
+REPLACE_WITH_SHA256  bing-interpretation-reference.json
+REPLACE_WITH_SHA256  duckduckgo-ai-reference.json
+REPLACE_WITH_SHA256  startpage-public-academic-reference.json
+REPLACE_WITH_SHA256  historical-materials-policy.json
+REPLACE_WITH_SHA256  canonical-identity-governance.txt
+REPLACE_WITH_SHA256  CANONICAL_SOURCES.md
+REPLACE_WITH_SHA256  CHANGELOG.md
+REPLACE_WITH_SHA256  DOCUMENTATION_POLICY.md
+REPLACE_WITH_SHA256  SECURITY.md
+REPLACE_WITH_SHA256  LICENSE
+REPLACE_WITH_SHA256  index.html
+REPLACE_WITH_SHA256  About-Me.html
+REPLACE_WITH_SHA256  Smart-404.html
+REPLACE_WITH_SHA256  manifest.webmanifest
+REPLACE_WITH_SHA256  robots.txt
+REPLACE_WITH_SHA256  sitemap.xml
+REPLACE_WITH_SHA256  humans.txt
