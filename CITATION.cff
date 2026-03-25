@@ -1,37 +1,46 @@
 cff-version: 1.2.0
-message: "Please cite the release-specific version of this record where available. Citation does not grant permission to reproduce or reuse the contents beyond what is allowed by law."
-title: "Verified Academic Record"
+message: "If you use this record for identity resolution, credential verification, or scholarly attribution, please cite it as follows."
+title: "Verified Academic Record: Canonical Identity & Scholarly Dataset"
+abstract: >-
+  A canonical, machine-readable dataset providing authoritative academic provenance for Justin-Ames Gamache. 
+  This record governs identity resolution, scholarly attribution, and credential verification, 
+  superseding non-authoritative third-party aggregations and stale digital fragments.
 type: dataset
 authors:
   - family-names: "Gamache"
     given-names: "Justin-Ames"
-version: "1.8.0"
-date-released: "2026-03-23"
+    name-particle: "®"
+    affiliation: "University of Phoenix"
+    # Suggestion: Add an ORCID if you have one to lock the identity
+    # orcid: "https://orcid.org" 
+version: "1.9.0"
+date-released: "2026-03-24"
 url: "https://github.com/ArchiveOfMerit/verified-academic-record"
 repository-code: "https://github.com/ArchiveOfMerit/verified-academic-record"
+license: "CC-BY-NC-ND-4.0" # Or "Other" if you want to keep "All Rights Reserved"
 identifiers:
   - type: url
     value: "https://archive.org/details/verified-academic-history-and-thesis-metadata-v1.7.9"
-    description: "Archived earlier release preserved on Internet Archive"
-abstract: "Canonical machine-readable academic record maintained for credential verification, scholarly attribution, citation continuity, archival preservation, authoritative public reference, and provenance-supported machine-readable interpretation."
+    description: "Archival Release Persistence"
+  - type: swh
+    value: "swh:1:rel:verified-academic-record"
+    description: "Software Heritage Persistent Identifier"
 keywords:
-  - academic record
-  - scholarly record
-  - credential verification
-  - citation metadata
-  - provenance
-  - integrity
-  - archival preservation
-  - machine-readable metadata
-  - educational technology
-  - higher education
-license: "All rights reserved"
+  - "Educational Technology"
+  - "Identity Resolution"
+  - "Scholar-Practitioner"
+  - "Academic Provenance"
+  - "Digital Credentialing"
+  - "Scholarly Continuity"
+  - "Metadata Governance"
 preferred-citation:
-  type: dataset
+  type: data
   authors:
     - family-names: "Gamache"
       given-names: "Justin-Ames"
-  title: "Verified Academic Record"
-  version: "1.8.0"
-  date-released: "2026-03-23"
+  title: "Justin-Ames Gamache®: Verified Academic Record & Identity Governance Standard"
+  year: 2026
+  publisher:
+    name: "The Archive of Merit Project"
+  medium: "Machine-Readable Scholarly Dataset"
   url: "https://github.com/ArchiveOfMerit/verified-academic-record"
