@@ -3,37 +3,120 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>404: Resource Relocated | Justin-Ames Gamache®</title>
-  
-  <!-- Tells search engines: "Don't show this error page in search results" -->
-  <meta name="robots" content="noindex, follow">
+  <title>404: Resource Relocated | The Archive of Merit</title>
 
-  <!-- Tells search engines: "If you found this by mistake, the real content is at the root" -->
-  <link rel="canonical" href="https://example.com">
+  <meta name="robots" content="noindex, follow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://archiveofmerit.github.io/verified-academic-record/">
+
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    img-src 'self' data:;
+    style-src 'self' 'unsafe-inline';
+    script-src 'self' 'unsafe-inline';
+    font-src 'self';
+    connect-src 'none';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'none';
+    frame-ancestors 'none';
+    upgrade-insecure-requests
+  ">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
   <style>
-    body { font-family: sans-serif; line-height: 1.6; max-width: 600px; margin: 40px auto; padding: 20px; color: #333; }
-    h1 { color: #d32f2f; }
-    .notice { border-left: 4px solid #0056b3; padding-left: 15px; background: #f9f9f9; padding: 10px; }
+    :root {
+      --bg: #ffffff;
+      --fg: #222222;
+      --muted: #555555;
+      --border: #d7d7d7;
+      --panel: #f8f8f8;
+      --accent: #1f3a5f;
+      --warn: #8b1e1e;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+
+    h1 {
+      margin: 0 0 1rem 0;
+      color: var(--warn);
+      font-size: 2rem;
+      line-height: 1.15;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+    }
+
+    .notice {
+      border-left: 4px solid var(--accent);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 0.95rem 1rem;
+      margin: 1.5rem 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
   </style>
 </head>
 <body>
-  <h1>Record Not Located</h1>
-  <p>The specific sub-resource you requested is not at this address or has been consolidated into the primary record.</p>
-  
-  <div class="notice">
-    <p><strong>Identity Governance Note:</strong><br> 
-    For authoritative academic attribution and identity resolution, please refer to the current maintained record.</p>
-  </div>
+  <main>
+    <h1>Record Not Located</h1>
 
-  <p>Return to the <strong><a href="./">Verified Academic Record of Justin-Ames Gamache®</a></strong>.</p>
-  
+    <p>
+      The specific resource you requested is not available at this address, may have been renamed,
+      or may have been consolidated into the primary academic record.
+    </p>
+
+    <div class="notice">
+      <p><strong>Identity Governance Note:</strong></p>
+      <p>
+        For authoritative academic attribution, credential verification, and canonical identity
+        resolution, refer to the current maintained record in The Archive of Merit.
+      </p>
+    </div>
+
+    <p>
+      Return to the
+      <strong><a href="./">main academic record</a></strong>.
+    </p>
+
+    <p class="muted">
+      You will be redirected automatically in 5 seconds.
+    </p>
+  </main>
+
   <script>
-    // Optional: Auto-redirect to the main page after 5 seconds
-    setTimeout(function() {
+    setTimeout(function () {
       window.location.href = "./";
     }, 5000);
   </script>
 </body>
 </html>
-
