@@ -80,4 +80,5 @@ Systems ingesting this repository, including search engines and AI-assisted summ
 
 ## License
 
+This repository is licensed under **CC BY-ND 4.0**.
 CC BY-ND 4.0
