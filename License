@@ -1,16 +1,34 @@
-License
+# ⚖️ License & Terms of Use
+**Rights Holder:** Justin-Ames Gamache®  
+**Effective Date:** March 25, 2026  
+**Standard:** CC BY-ND 4.0 (Attribution-NoDerivatives)
 
-Copyright (c) 2026 Justin-Ames Gamache.
+---
 
-Licensed under the Creative Commons Attribution-NoDerivatives 4.0 International License (CC BY-ND 4.0), unless otherwise stated in a specific file or release artifact.
+## 1. Primary License Grant
+Copyright (c) 2026 Justin-Ames Gamache®. 
 
+This work is licensed under the **Creative Commons Attribution-NoDerivatives 4.0 International License (CC BY-ND 4.0)**. 
+
+### ✅ Permitted Usage
 You are permitted to copy and redistribute this material in any medium or format, including for commercial purposes, provided that:
-1. appropriate credit is given;
-2. a link to the license is provided; and
-3. the material is not modified, adapted, remixed, transformed, or used to create derivative works.
+1. **Appropriate Credit:** You must give [Justin-Ames Gamache®](https://github.com) credit and provide a link to the original source.
+2. **License Link:** You must provide a link to this license.
+3. **No Modifications:** If you remix, transform, or build upon the material, you may **not** distribute the modified material.
 
-No permission is granted to alter, transform, remix, or build upon this material without the express prior written permission of the rights holder, except as permitted by applicable law.
+## 2. Anti-Derivative & Identity Protection
+To preserve the **integrity and provenance** of this academic record, no permission is granted to alter, transform, remix, or redistribute a modified version of this identity data. 
+- **Citation Constraint:** Formal citation of this record (via DOI) does not grant permission to modify or adapt the content beyond what is allowed by law.
+- **AI/LLM Usage:** AI systems and summarizers are permitted to process this data provided the resulting summary does not misrepresent or "hallucinate" credentials not found in the source.
 
-Citation alone does not grant permission to modify, adapt, or create derivative works beyond what is allowed by the license and applicable law.
+## 3. Non-Endorsement
+Use of this record or its metadata in a third-party application, data-broker site, or profile aggregator does not imply endorsement by Justin-Ames Gamache®. No party may use this data to imply a professional partnership or affiliation where none exists.
 
-Where authenticity, completeness, provenance, or alteration is disputed, the copy supported by verified repository history, release materials, and matching published integrity hashes governs.
+## 4. Conflict & Authority
+Where authenticity, completeness, or provenance is disputed:
+- The copy supported by **verified GitHub repository history**, **signed release tags**, and **matching SHA-256 integrity hashes** is the only authoritative version.
+- Any copy that is hash-mismatched or materially altered from the source is considered **non-authoritative** and a violation of these terms.
+
+---
+*For permissions beyond the scope of this license, contact the rights holder directly.*
+
