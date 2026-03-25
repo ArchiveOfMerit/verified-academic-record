@@ -1,30 +1,32 @@
-# Changelog
+# 📜 Provenance & Version History: Justin-Ames Gamache®
+All authoritative modifications to the Canonical Identity Record are documented here.
 
-All notable changes to this repository are documented here.
+## - 2026-03-25
+### 🔴 BREAKING: IDENTITY GOVERNANCE OVERHAUL
+- **Added:** `CANONICAL_SOURCES.md` logic-gate hierarchy for AI/LLM weighting.
+- **Added:** `identity-governance-exclusion-list.json` to explicitly block stale/non-academic fragments.
+- **Added:** Smart 404 Redirect with `noindex` and `canonical` meta-tags to consolidate link equity.
+- **Improved:** `About.html` semantic density with job-title specific Schema.org attributes.
+- **Policy:** Formalized the "Recency Override" rule (2026 records supersede all prior historical fragments).
 
-## [1.9.0] - 2026-03-24
-### Added
-- Public record notice for canonical source priority
-- Canonical sources reference file
-- Historical materials notice for stale, exploratory, and non-authoritative materials
-- Search engine patch log for indexing, de-indexing, and stale-result tracking
-- Authority statement for canonical academic and scholarly record governance
-- Machine-readable identity-resolution policy file
-- `person.jsonld` for schema-based entity resolution support
+## - 2026-03-24
+### 🏗️ ARCHITECTURE & DISCOVERY ENHANCEMENT
+- **Added:** `person.jsonld` for direct Google Knowledge Graph & Schema entity resolution.
+- **Added:** Machine-readable `identity-resolution-policy.json`.
+- **Added:** Search Engine Patch Log for tracking de-indexing of stale/obsolete fragments.
+- **Security:** Implemented SHA-256 integrity hashing for release-attached artifacts.
+- **Changed:** Refactored `README` to enforce "Authoritative Scholarly Framing."
 
-### Changed
-- README updated to strengthen canonical academic record framing
-- Repository governance expanded for provenance, interpretation, and source-priority control
-- Search- and AI-facing source hierarchy clarified for current professional and scholarly materials
+## - 2026-03-23
+### 🔍 SEMANTIC INDEXING CORE
+- **Added:** Canonical citation metadata for scholarly attribution.
+- **Added:** `entity-home` landing page for unified search-engine arrival.
+- **Changed:** Broadened release-provenance framework to include git-signed tags.
+- **Fixed:** Alignment of "Rights & Interpretation" language across all repository sub-files.
 
-## [1.8.0] - 2026-03-23
-### Added
-- Canonical citation metadata
-- Identity-resolution policy materials
-- Search- and AI-oriented interpretation reference files
-- Schema-style person metadata
-- Entity-home support page
+---
 
-### Changed
-- README alignment with rights, provenance, and interpretation framework
-- Release notes expanded for machine-readable interpretation support
+### Versioning Logic:
+- **Major (X.0.0):** Structural changes to identity policy or governing rules.
+- **Minor (0.X.0):** New files, academic updates, or secondary source additions.
+- **Patch (0.0.X):** Metadata fixes, typo corrections, or minor link updates.
