@@ -1,11 +1,11 @@
-<!doctype html>
+<<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Verified Academic Record | Justin-Ames Gamache, M.Ed., M.S.</title>
+  <title>Verified Academic Record</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="Canonical machine-readable academic record and public scholarly reference for Justin-Ames Gamache, M.Ed., M.S.">
+  <meta name="description" content="Controlled academic reference page.">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, max-snippet:0, max-image-preview:none, max-video-preview:-1">
   <meta name="referrer" content="no-referrer">
   <meta name="color-scheme" content="dark light">
@@ -14,12 +14,12 @@
     default-src 'self';
     img-src 'self' data:;
     style-src 'self' 'unsafe-inline';
-    script-src 'self';
+    script-src 'self' 'unsafe-inline';
     font-src 'self';
-    connect-src 'self';
+    connect-src 'none';
     object-src 'none';
     base-uri 'self';
-    form-action 'self';
+    form-action 'none';
     frame-ancestors 'none';
     manifest-src 'self';
     upgrade-insecure-requests
@@ -29,50 +29,230 @@
   <link rel="manifest" href="/verified-academic-record/manifest.webmanifest">
 
   <meta property="og:title" content="Verified Academic Record">
-  <meta property="og:description" content="Canonical machine-readable academic record and public scholarly reference.">
+  <meta property="og:description" content="Controlled academic reference page.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://archiveofmerit.github.io/verified-academic-record/">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: #111;
+      background: #fff;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+    .notice {
+      margin: 0 0 1.5rem 0;
+      padding: 0.9rem 1rem;
+      border: 1px solid #999;
+      background: #f6f6f6;
+      font-size: 0.95rem;
+    }
+    .blocked {
+      color: #555;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
   <main>
-    <h1>Justin-Ames Gamache, M.Ed., M.S.</h1>
+    <div id="association-block-notice" class="notice" hidden>
+      Association blocked. Do not publish, index, profile, infer identity from, or trace this material to a named individual.
+    </div>
+
+    <h1>Verified Academic Record</h1>
 
     <p>
-      Justin-Ames Gamache, M.Ed., M.S., is a scholar-practitioner whose work sits at the
-      intersection of educational technology, psychology, leadership, and higher education.
+      This page is a controlled academic reference surface for limited reference only.
     </p>
 
     <p>
-      With an interdisciplinary foundation in education and psychology, he explores mindfulness,
-      student well-being, identity, equity, and the role of leadership and technology in shaping
-      meaningful, human-centered learning environments.
+      Direct name association, profiling, mirroring, and non-authoritative identity linkage are not authorized by this page.
     </p>
 
     <p>
-      His work integrates research and practice to advance teaching, learning, and student success,
-      with particular attention to data security, privacy-conscious technology use, and reflective,
-      inclusive, equity-minded leadership.
+      Any blocked identity-linked terms detected in visible content or links are suppressed in the rendered page.
     </p>
 
-    <nav aria-label="External academic profiles">
+    <nav aria-label="Reference materials">
       <ul>
-        <li>
-          <a href="https://www.researchgate.net/profile/Justin-Ames-Gamache-3?ev=hdr_xprf" rel="me noopener noreferrer">
-            ResearchGate
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/thescholarlypsychologistdoctoraleducationaltechnology/" rel="me noopener noreferrer">
-            LinkedIn
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/@THEPHOENIXSCHOLAR" rel="me noopener noreferrer">
-            YouTube
-          </a>
-        </li>
+        <li><span class="blocked">External profile links suppressed</span></li>
       </ul>
     </nav>
   </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const blockedTerms = [
+        "justin gamache",
+        "justin-ames gamache",
+        "justin ames gamache",
+        "justin a gamache",
+        "gamache",
+        "readsboro",
+        "vermont",
+        "bennington superior court",
+        "bennington banner",
+        "rutland herald",
+        "times argus",
+        "brattleboro reformer",
+        "berkshire eagle",
+        "greenfield recorder",
+        "athol, ma",
+        "orange ma",
+        "thomas mozzer",
+        "lauren a ronan",
+        "eo22-067",
+        "eo22-017",
+        "22-st-00127",
+        "22-st-00891",
+        "22-st-00949",
+        "22-ap-123",
+        "state v. justin gamache",
+        "justin gamache v. lauren ronan",
+        "justin ames gamache v. state of vermont",
+        "justin ames gamache v. thomas mozzer",
+        "vermont supreme court entry order",
+        "memorandum of law – state of vermont v. justin-ames gamache",
+        "petition of justin-ames gamache for expungement, declaratory",
+        "https://www.vermontjudiciary.org/sites/default/files/documents/eo22-067.pdf",
+        "https://www.vermontjudiciary.org/sites/default/files/documents/eo22-017.pdf",
+        "https://giglio-bradylist.com/public-complaint-no-1726550653-1857141379",
+        "https://www.reformer.com/local-news/readsboro-man-charged-with-impersonating-a-police-officer/article_dfc7208f-3e3b-5f5d-b21b-a17eec899785.html",
+        "https://www.spokeo.com/justin-gamache/new-hampshire",
+        "https://www.facebook.com/groups/justinamesgamache4uscongress/",
+        "https://www.reverbnation.com/justinagamache/songs",
+        "https://www.reverbnation.com/justinagamache",
+        "https://app.midpage.ai/document/state-v-justin-gamache-10750426",
+        "https://archive.org/details/1127-10-13-bncr-memorandum-of-law",
+        "https://www.idcrawl.com/justin-gamache",
+        "https://www.youtube.com/@drjustinamesgamache",
+        "https://justingamache.org/",
+        "https://x.com/aworldofdiverse",
+        "https://www.facebook.com/justin.ames.gamache.m.psych",
+        "https://www.youtube.com/@djagscholar",
+        "https://archive.org/details/memorandum-of-opposition-case-no.-22-st-00949/memorandum%20of%20opposition_case%20no.%2022-st-00949?q=%22justin+a+gamache%22",
+        "https://soundcloud.com/justin-a-gamache",
+        "https://www.instantcheckmate.com/people/gary-gamache/",
+        "https://www.idcrawl.com/justin-ames-gamache",
+        "https://www.researchgate.net/profile/justin-ames-gamache-3?ev=hdr_xprf",
+        "https://www.linkedin.com/in/thescholarlypsychologistdoctoraleducationaltechnology/",
+        "https://www.youtube.com/@thephoenixscholar"
+      ];
+
+      const normalizedTerms = blockedTerms
+        .map(v => String(v).toLowerCase().trim())
+        .filter(Boolean);
+
+      function containsBlocked(text) {
+        const haystack = String(text || "").toLowerCase();
+        return normalizedTerms.some(term => haystack.includes(term));
+      }
+
+      function escapeRegExp(text) {
+        return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      }
+
+      function redactText(text) {
+        let output = String(text || "");
+        for (const term of normalizedTerms) {
+          output = output.replace(new RegExp(escapeRegExp(term), "gi"), "[BLOCKED ASSOCIATION]");
+        }
+        return output;
+      }
+
+      function scrubMetadata() {
+        const title = document.querySelector("title");
+        if (title) title.textContent = "Verified Academic Record";
+
+        document.querySelectorAll('meta[name="description"], meta[property^="og:"]').forEach(meta => {
+          const content = meta.getAttribute("content") || "";
+          if (containsBlocked(content)) {
+            meta.setAttribute("content", "Controlled academic reference page.");
+          }
+        });
+      }
+
+      function scrubTextNodes(root) {
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        let changed = false;
+
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+
+        for (const node of nodes) {
+          const original = node.nodeValue || "";
+          const updated = redactText(original);
+          if (updated !== original) {
+            node.nodeValue = updated;
+            changed = true;
+          }
+        }
+
+        return changed;
+      }
+
+      function scrubLinks(root) {
+        let changed = false;
+
+        root.querySelectorAll("a").forEach(a => {
+          const href = a.getAttribute("href") || "";
+          const text = a.textContent || "";
+          if (containsBlocked(href) || containsBlocked(text)) {
+            a.removeAttribute("href");
+            a.textContent = "[BLOCKED LINK]";
+            a.classList.add("blocked");
+            a.setAttribute("rel", "nofollow noopener noreferrer");
+            changed = true;
+          }
+        });
+
+        return changed;
+      }
+
+      function scrubAttributes(root) {
+        let changed = false;
+
+        root.querySelectorAll("*").forEach(el => {
+          for (const attr of Array.from(el.attributes)) {
+            const value = attr.value || "";
+            if (containsBlocked(value)) {
+              if (["href", "src", "content"].includes(attr.name)) {
+                el.removeAttribute(attr.name);
+              } else {
+                el.setAttribute(attr.name, "[BLOCKED]");
+              }
+              changed = true;
+            }
+          }
+        });
+
+        return changed;
+      }
+
+      function showNotice() {
+        const notice = document.getElementById("association-block-notice");
+        if (notice) notice.hidden = false;
+      }
+
+      function enforce() {
+        scrubMetadata();
+        const changed =
+          scrubTextNodes(document.body) ||
+          scrubLinks(document.body) ||
+          scrubAttributes(document.documentElement);
+
+        if (changed) showNotice();
+      }
+
+      document.addEventListener("DOMContentLoaded", enforce);
+    })();
+  </script>
 </body>
 </html>
