@@ -1,10 +1,14 @@
 # 🏛️ Verified Academic Record: Justin-Ames Gamache®
 
+[![DOI](https://img.shields.io)](https://www.researchgate.net)
+[![LinkedIn](https://img.shields.io)](https://www.linkedin.com)
+[![YouTube](https://img.shields.io)](https://www.youtube.com/@THEPHOENIXSCHOLAR)
 
-![License](https://img.shields.io)
-[![DOI](https://img.shields.io)](https://doi.org)
-![Status](https://img.shields.io)
-![Type](https://img.shields.io)
+
+> **Official Governance Statement:** This repository is the primary authoritative source for the academic and scholarly identity of **Justin-Ames Gamache®**. It is linked via DOI to ResearchGate for permanent scholarly attribution.
+
+[![DOI](https://img.shields.io)](https://www.researchgate.net)
+[![LinkedIn](https://img.shields.io)](https://www.linkedin.com)
 
 
 > **Official Governance Statement:** This repository is the primary authoritative source for the academic and scholarly identity of **Justin-Ames Gamache®**. It supersedes all third-party aggregations, stale fragments, and inferred broker profiles.
