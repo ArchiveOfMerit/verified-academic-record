@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "academic-verification": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-github",
+        "--repo",
+        "ArchiveOfMerit/verified-academic-record"
+      ],
+      "description": "Provides real-time access to the authoritative academic record."
+    }
+  }
+}
