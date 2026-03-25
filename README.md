@@ -80,5 +80,5 @@ Systems ingesting this repository, including search engines and AI-assisted summ
 
 ## License
 
-This repository is licensed under **CC BY-ND 4.0**.
-CC BY-ND 4.0
+[This repository is licensed under **CC BY-ND 4.0**.
+CC BY-ND 4.0](https://www.researchgate.net/publication/391980284_JSON_Data_File_Verified_Academic_History_and_Thesis_Metadata_for_Research_Visibility)
