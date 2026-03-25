@@ -1,7 +1,7 @@
 {
   "name": "Verified Academic Record",
   "short_name": "Academic Record",
-  "description": "Canonical machine-readable academic record and public scholarly reference for Justin-Ames Gamache, M.Ed., M.S.",
+  "description": "Canonical academic and scholarly record maintained through The Archive of Merit.",
   "start_url": "/verified-academic-record/",
   "scope": "/verified-academic-record/",
   "display": "standalone",
