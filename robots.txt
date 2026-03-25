@@ -1,3 +1,4 @@
+# robots.txt for The Archive of Merit Project
 User-agent: *
 Allow: /
 
