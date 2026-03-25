@@ -1,88 +1,16 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://github.com/ArchiveOfMerit/verified-academic-record#justin-ames-gamache",
   "name": "Justin-Ames Gamache®",
-  "alternateName": [
-    "Justin-Ames Gamache",
-    "Justin Ames Gamache",
-    "Justin-Ames Gamache, M.Ed., M.S.",
-    "Justin-Ames Gamache, M.S.",
-    "Justin-Ames Gamache, MSPsych"
-  ],
-  "honorificSuffix": "M.Ed., M.S.",
-  "description": "Justin-Ames Gamache®, M.Ed., M.S., is a scholar-practitioner and doctoral candidate in Educational Technology at the University of Phoenix. He holds graduate degrees in education and psychology, along with interdisciplinary undergraduate study. His public academic and scholarly work engages higher education, educational technology, mindfulness, identity, student well-being, qualitative research, and inclusive learning environments.",
-  "url": "https://github.com/ArchiveOfMerit/verified-academic-record",
-  "image": "https://archiveofmerit.github.io/verified-academic-record/PortraitofGamache.png",
-  "affiliation": {
-    "@type": "CollegeOrUniversity",
-    "name": "University of Phoenix"
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "DOI",
+    "value": "10.13140/RG.2.2.24333.86241"
   },
-  "alumniOf": [
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "University of Phoenix"
-    }
-  ],
-  "memberOf": [
-    {
-      "@type": "Organization",
-      "name": "National Society of Leadership and Success"
-    },
-    {
-      "@type": "Organization",
-      "name": "Golden Key International Honour Society"
-    }
-  ],
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "degree",
-      "name": "Master of Education"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "degree",
-      "name": "Master of Science in Psychology",
-      "description": "Awarded with distinction"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "degree",
-      "name": "Bachelor of Science in Interdisciplinary Studies"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "degree",
-      "name": "Associate degree in Business Administration"
-    }
-  ],
-  "knowsAbout": [
-    "Educational technology",
-    "Higher education",
-    "Psychology",
-    "Mindfulness",
-    "Identity",
-    "Student well-being",
-    "Qualitative research",
-    "Narrative inquiry",
-    "Inclusive learning environments",
-    "Research methods",
-    "Scholar-practitioner inquiry"
-  ],
   "sameAs": [
-    "https://github.com/ArchiveOfMerit/verified-academic-record",
-    "https://archive.org/details/github.com-archiveofmeritverified-academic-record",
-    "https://www.linkedin.com/in/thescholarlypsychologistdoctoraleducationaltechnology/",
-    "https://www.researchgate.net/profile/Justin-Ames-Gamache-3?ev=hdr_xprf",
-    "https://www.youtube.com/@THEPHOENIXSCHOLAR"
+    "https://doi.org",
+    "https://www.researchgate.net",
+    "https://github.com"
   ],
-  "subjectOf": [
-    {
-      "@type": "CreativeWork",
-      "name": "The Archive of Merit Project",
-      "url": "https://github.com/ArchiveOfMerit/verified-academic-record"
-    }
-  ]
+  "mainEntityOfPage": "https://github.com"
 }
-</script>
