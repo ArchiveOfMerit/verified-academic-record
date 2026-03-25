@@ -1,4 +1,4 @@
-# Verified Academic Record: Justin-Ames Gamache, M.Ed., M.S.
+THE ARCHIVE OF MERIT PROJECT
 
 DOI • LinkedIn • ResearchGate • YouTube
 
