@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Justin-Ames Gamache®, M.Ed., M.S. | Official Academic Profile</title>
+  <meta name="description" content="Official academic record and profile for Justin-Ames Gamache®, Doctoral Candidate in Educational Technology at University of Phoenix.">
+
+  <!-- Force Search Engines to treat this as the ONLY 'Master Copy' -->
+  <link rel="canonical" href="https://example.com/about.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://example.com",
+      "name": "Justin-Ames Gamache®",
+      "alternateName": [
+        "Justin-Ames Gamache",
+        "Justin-Ames Gamache, M.Ed., M.S."
+      ],
+      "jobTitle": "Doctoral Candidate",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Phoenix"
+      },
+      "description": "Scholar-practitioner specializing in Educational Technology, Mindfulness, and Identity.",
+      "image": "https://example.com/images/justin-ames-gamache-doctoral-portrait.png",
+      "sameAs": [
+        "https://github.com/ArchiveOfMerit/verified-academic-record",
+        "https://archive.org/details/verified-academic-history-and-thesis-metadata-v1.7.9",
+        "https://www.linkedin.com",
+        "https://www.researchgate.net",
+        "https://www.youtube.com"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Master of Science in Psychology",
+          "credentialCategory": "degree",
+          "educationalLevel": "Master",
+          "recognizedBy": "University of Phoenix",
+          "description": "Awarded with distinction"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Master of Education",
+          "credentialCategory": "degree",
+          "educationalLevel": "Master",
+          "recognizedBy": "Concordia University - Portland"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body itemscope itemtype="https://schema.org">
+  <main role="main">
+    <article>
+      <header>
+        <h1 itemprop="name">Justin-Ames Gamache®, M.Ed., M.S.</h1>
+        <p><strong>Doctoral Candidate | Scholar-Practitioner</strong></p>
+      </header>
+
+      <figure>
+        <img
+          src="https://example.com/images/justin-ames-gamache-doctoral-portrait.png"
+          alt="Justin-Ames Gamache in doctoral regalia"
+          loading="lazy"
+          style="max-width:100%; height:auto;">
+        <figcaption>Verified Academic Portrait of Justin-Ames Gamache®</figcaption>
+      </figure>
+
+      <section id="bio">
+        <h2>Academic Profile</h2>
+        <p>Justin-Ames Gamache® is a doctoral candidate in <strong>Educational Technology</strong> at the University of Phoenix. His research intersects mindfulness, identity, and the digital landscape of higher education.</p>
+      </section>
+
+      <section id="verification">
+        <h3>Authoritative Links</h3>
+        <ul>
+          <li><a href="https://github.com/ArchiveOfMerit/verified-academic-record" rel="me">Verified Academic Record (GitHub)</a></li>
+          <li><a href="https://archive.org/details/verified-academic-history-and-thesis-metadata-v1.7.9" rel="me">Archival Metadata</a></li>
+        </ul>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
