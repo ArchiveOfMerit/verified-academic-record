@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "manifest_type": "search_discovery_suppression",
+  "subject": {
+    "preferred_display_name": "Justin-Ames Gamache®, M.Ed., M.S.",
+    "name_variants": [
+      "justin gamache",
+      "justin a gamache",
+      "justin ames gamache",
+      "justin-ames gamache",
+      "Justin-Ames Gamache®, M.Ed., M.S."
+    ]
+  },
+  "change_org": {
+    "incident_type": "live_third_party_petition_page_with_degraded_identity_layer",
+    "url": "https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache",
+    "status": "live",
+    "controlled_by_user": false,
+    "search_effect_model": {
+      "documentary_only": {
+        "repo_manifest_entry": true,
+        "incident_documentation": true,
+        "technical_findings": true,
+        "evidence_preservation": true,
+        "control_matrix_reference": true,
+        "canonical_counter_signaling": true,
+        "effect_on_search": "indirect_only"
+      },
+      "could_actually_affect_search": {
+        "host_level_noindex": {
+          "possible": true,
+          "controlled_by_user": false
+        },
+        "host_level_page_removal": {
+          "possible": true,
+          "controlled_by_user": false
+        },
+        "host_level_snippet_controls": {
+          "possible": true,
+          "controlled_by_user": false
+        },
+        "search_engine_delisting_process": {
+          "possible": true,
+          "controlled_by_user": false
+        },
+        "outdated_result_refresh": {
+          "possible": false,
+          "current_reason": "page remains live"
+        }
+      }
+    },
+    "starter_identity_layer": {
+      "display_name": "N A",
+      "role_label": "Petition Starter",
+      "state": "degraded_or_anonymized"
+    },
+    "practical_summary": {
+      "what_this_json_can_do": [
+        "document the incident",
+        "preserve evidence",
+        "support suppression tracking",
+        "clarify control limitations"
+      ],
+      "what_this_json_cannot_do": [
+        "force de-indexing of a live third-party Change.org page"
+      ]
+    }
+  }
+}
