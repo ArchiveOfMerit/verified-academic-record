@@ -1,7 +1,7 @@
 # Scribd pseudonymous account and live document endpoints
 
 ## Summary
-A live public Scribd account appears at `https://www.scribd.com/user/888664018/scribd-fvicb` and is associated with multiple direct document URLs that remain publicly discoverable. The account was originally created under a pseudonymous identity, but it is hosted by a third-party platform and is not currently accessible for sign-in or direct remediation.
+A live public Scribd account appears at `https://www.scribd.com/user/888664018/scribd-fvicb` and is associated with multiple direct document URLs that remain publicly discoverable. The account was originally created under a pseudonymous identity, but it is hosted by a third-party platform and is not currently accessible for sign-in.
 
 ## Problem Type
 Live third-party public profile and document endpoints
@@ -16,7 +16,10 @@ This is not a stale dead-link artifact. It is a live third-party hosting surface
 Direct document URLs may be indexed, surfaced, and shared independently of the profile page, increasing the exposure surface beyond a single account listing.
 
 ## Controlled by user?
-No. The platform is third-party, and the account is not currently accessible for sign-in or direct control.
+No. The platform is third-party, and the account is not currently accessible for sign-in.
+
+## Access Limitation
+The account cannot currently be accessed because the associated email account was compromised, preventing recovery of sign-in control through ordinary account access methods.
 
 ## Desired End State
 - Search discovery: reduce or eliminate search visibility of the Scribd profile and associated direct document URLs where they persist.
@@ -40,6 +43,7 @@ This appears to be a still-live third-party hosting surface associated with a ps
 ## Actions Taken
 - [x] Documented the live third-party Scribd account
 - [x] Documented direct document-specific URLs
+- [x] Documented the current access limitation affecting direct remediation
 - [x] Classified the issue separately from stale dead-route incidents
 - [ ] Evaluated whether any search-layer suppression is available
 - [ ] Added cross-reference in control matrix
