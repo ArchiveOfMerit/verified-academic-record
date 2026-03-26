@@ -9,3 +9,4 @@ Query normalization and entity-resolution defect
 ## Desired End State
 - documented search-quality defect
 - segregated from stale-link incidents
+
