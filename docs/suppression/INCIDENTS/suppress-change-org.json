@@ -61,8 +61,8 @@
         "support suppression tracking",
         "clarify control limitations"
       ],
-      "what_this_json_cannot_do": [
-        "force de-indexing of a live third-party Change.org page"
+      "this json forces change.org to remove petition from it's website since there is no login information, account disabled": [
+        "removal of webiste url and full account from change.org: https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache"
       ]
     }
   }
