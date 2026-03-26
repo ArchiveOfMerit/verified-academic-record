@@ -13,3 +13,4 @@
 | Live third-party petition page | Change.org petition page with degraded starter identity block | No | document as a live page with degraded identity presentation; distinguish from dead routes and fully intact third-party profile pages |
 | Technical record | incident files, screenshots, HTML captures, repo notes | Yes | preserve evidence, maintain incident classification, and cross-reference findings across the suppression framework |
 | Canonical counter-signal | source-of-truth pages, stale-index notices, canonical-source documentation | Yes | publish clearer public-reference signals to distinguish authoritative sources from stale, broken, or third-party discovery artifacts |
+| Disputed or unverified record | search result, PDF, listing, or AI summary tied to disputed court/arrest/jail claims | No | classify as disputed/unverified unless independently authenticated; do not treat as verified fact |
