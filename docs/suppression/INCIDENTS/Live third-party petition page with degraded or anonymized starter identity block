@@ -1,0 +1,31 @@
+# Change.org live petition page with degraded starter identity block
+
+## Summary
+A live public Change.org petition remains publicly discoverable at `https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache`. The page itself is live, but the petition-starter identity block appears degraded or anonymized, displaying `N A` rather than a normal identifiable starter profile.
+
+## Problem Type
+Live third-party petition page with degraded profile/identity presentation
+
+## Why this matters
+This is not a stale dead-link artifact. It is a live third-party public page that remains publicly discoverable, while part of the starter-account presentation appears broken, reduced, or anonymized. That combination should be tracked separately from both dead routes and fully intact live profile pages.
+
+## Desired End State
+- Search discovery: reduce or eliminate search visibility of the live petition page where it persists.
+- Technical record: preserve documentation that the petition page remains live while the starter identity block appears degraded.
+- Classification: distinguish this item from stale dead-route incidents and from fully intact live third-party profile pages.
+
+## Evidence
+- Petition URL: `https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache`
+- Petition page: live and publicly accessible
+- Starter block shown in captured page state: `N A`
+- Starter role label shown: `Petition Starter`
+
+## Root Cause
+Exact cause is unconfirmed. The current page state suggests the petition page remains live while the starter-account identity layer may have been anonymized, detached, partially removed, or degraded at the presentation level.
+
+## Actions Taken
+- [x] Documented that the petition page remains live
+- [x] Documented degraded/anonymized starter identity presentation
+- [x] Classified the issue separately from stale dead-route incidents
+- [ ] Evaluated whether any search-layer suppression is available
+- [ ] Added cross-reference in control matrix
