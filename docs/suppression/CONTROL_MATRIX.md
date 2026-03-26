@@ -8,3 +8,4 @@
 | Third-party aggregator | AnyLaw | No | record stale dead-route evidence |
 | Brave Search result | stale result | No | preserve evidence and platform-specific reporting if desired |
 | Google live retrieval | judiciary/caption-text match | No | distinguish from stale dead-link artifacts |
+| Live third-party judiciary listing | Vermont Judiciary unpublished entry orders | No | document separately from stale dead-link incidents |
