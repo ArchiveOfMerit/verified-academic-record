@@ -10,3 +10,4 @@
 | Google live retrieval | judiciary/caption-text match | No | distinguish from stale dead-link artifacts |
 | Live third-party judiciary listing | Vermont Judiciary unpublished entry orders | No | document separately from stale dead-link incidents |
 | Live third-party judiciary listings | Vermont Judiciary unpublished entry orders | No | document separately from stale dead-link incidents and removed-site artifacts |
+| Live third-party document host | Scribd profile and direct document endpoints | No | document separately from stale dead-link incidents and removed personal-site artifacts |
