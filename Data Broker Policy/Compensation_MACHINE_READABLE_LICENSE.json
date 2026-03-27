@@ -103,8 +103,8 @@
     "BROKER_USE_POLICY.md",
     "NOTICE_OF_NONCONSENT_FOR_BROKER_PROFILING.md",
     "COMMERCIAL_REUSE_LICENSE.md",
-    "ENFORCEMENT_CONTACT.md"
+    "ENFORCEMENT_CONTACT.md",
+    "Compensation_MACHINE_READABLE_LICENSE.json"
   ],
   "final_notice": "This repository is public for review, not for commercial capture. Any commercial, broker, profiling, enrichment, or derivative identity-linked use involving Justin-Ames Gamache requires prior written authorization and compensation."
-}
 }
