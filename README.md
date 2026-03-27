@@ -88,6 +88,6 @@ This repository is intended to function as a structured academic-reference envir
 
 ## License
 
-This repository is licensed under **CC BY-ND 4.0**.
+This repository is licensed under **[CC BY-ND 4.0*](https://www.researchgate.net/publication/403137712_verified-academic-record-THE-ARCHIVE-OF-MERIT-PROJECTzip?channel=doi&linkId=69c431653c618943066c01b8&showFulltext=true)*.
 
 See the linked reference material associated with the DOI-linked academic metadata record for licensing context and public scholarly attribution support.
