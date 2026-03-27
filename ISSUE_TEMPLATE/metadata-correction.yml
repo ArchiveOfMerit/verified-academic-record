@@ -1,0 +1,43 @@
+name: Metadata or formatting correction
+description: Report a problem involving formatting, filenames, labels, dates, paths, or organizational metadata.
+title: "[Metadata]: "
+labels: ["metadata"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for metadata, formatting, labeling, organizational, or structural corrections.
+
+  - type: input
+    id: location
+    attributes:
+      label: Affected file or path
+      placeholder: README.md or archive/records/item-04.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What needs correction?
+      placeholder: The filename, tag, heading, date label, or formatting structure appears incorrect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_fix
+    attributes:
+      label: Proposed fix
+      placeholder: Rename, relabel, reformat, or move the affected item as follows...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: This report is limited to a specific metadata or formatting concern.
+          required: true
+        - label: I am not using this form to make unrelated accusations or arguments.
+          required: true
