@@ -1,0 +1,44 @@
+name: General repository issue
+description: Raise a focused repository concern not covered by the other forms.
+title: "[General]: "
+labels: ["general"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form only if the issue does not fit the other categories.
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: Issue description
+      description: Describe the repository-related issue clearly and specifically.
+      placeholder: State the issue, where it appears, and why it matters.
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Relevant file, path, branch, or section
+      placeholder: Optional but helpful
+    validations:
+      required: false
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why this matters
+      placeholder: Explain why this issue should be reviewed.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: This submission is relevant to the repository and made in good faith.
+          required: true
+        - label: I understand off-topic, abusive, or bad-faith issues may be closed without action.
+          required: true
