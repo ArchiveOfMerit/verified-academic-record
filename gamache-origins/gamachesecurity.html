@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security and Integrity | Gamache Origins</title>
+  <meta name="description" content="Security, integrity, provenance, and canonical-record notice for the Gamache Origins branch.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#0a0f1a">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    img-src 'self' data:;
+    style-src 'self' 'unsafe-inline';
+    base-uri 'self';
+    form-action 'none';
+    frame-ancestors 'none';
+    object-src 'none';
+    connect-src 'none';
+    font-src 'self' data:;
+    media-src 'none';
+    upgrade-insecure-requests;
+    block-all-mixed-content;
+  ">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #121a2b;
+      --panel-2: #182235;
+      --text: #e8eefc;
+      --muted: #aab7d1;
+      --line: #2b3a57;
+      --accent: #8fb3ff;
+      --accent-2: #c7d8ff;
+      --good: #8fe0a2;
+      --warn: #ffd27a;
+      --max: 1080px;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b1220 0%, #0e1728 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(11, 18, 32, 0.88);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    main {
+      padding: 3rem 0 4rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      padding: 0.3rem 0.65rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(143, 179, 255, 0.08);
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 0.85rem;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      margin-bottom: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.65rem;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--text);
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 800px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-top: 1rem;
+    }
+
+    .status-good {
+      border-left: 4px solid var(--good);
+      padding-left: 1rem;
+    }
+
+    .status-warn {
+      border-left: 4px solid var(--warn);
+      padding-left: 1rem;
+    }
+
+    ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.6rem;
+      color: var(--muted);
+    }
+
+    code {
+      background: rgba(255,255,255,0.06);
+      padding: 0.1rem 0.35rem;
+      border-radius: 6px;
+      font-family: Consolas, Monaco, monospace;
+      color: var(--text);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(143, 179, 255, 0.08);
+      color: var(--accent-2);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">Gamache Origins</div>
+      <nav aria-label="Primary">
+        <a href="indexGamacheancestry.html">Home</a>
+        <a href="places.html">Places</a>
+        <a href="historical-records.html">Historical Records</a>
+        <a href="sources.html">Sources</a>
+        <a href="gamachesecurity.html">Security</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <div class="eyebrow">Integrity and Canonical Record Notice</div>
+      <h1>Security and Integrity</h1>
+      <p class="lead">
+        This page defines the security posture, provenance posture, and canonical-record expectations
+        for the <strong>Gamache Origins</strong> branch materials. This is an integrity page, not a magic shield.
+        Public static files can be copied, mirrored, or altered elsewhere; the point here is to identify
+        what is official, what is non-canonical, and how integrity should be evaluated.
+      </p>
+    </section>
+
+    <section>
+      <h2>Security Posture</h2>
+      <article class="card">
+        <p class="status-good">
+          This branch is intentionally built as a lightweight static record surface with no JavaScript dependency,
+          no form processing, no inline user input handling, and a restrictive content security posture.
+        </p>
+        <ul>
+          <li>No client-side script is required for normal operation.</li>
+          <li>No user-account access, authentication, or form submission is performed on these pages.</li>
+          <li>No data collection workflow is built into the ancestry pages themselves.</li>
+          <li>All internal page navigation is static and file-based.</li>
+          <li>Content is intended to be human-readable, reference-oriented, and provenance-conscious.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Canonical Branch Identity</h2>
+      <article class="card">
+        <h3>Official Branch and Folder</h3>
+        <p>
+          The official ancestry surface described by this page is the branch identified as:
+        </p>
+        <p><code>gamache-origins</code></p>
+        <p>
+          Branch-specific materials are maintained under the folder:
+        </p>
+        <p><code>gamache-origins/</code></p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Canonical File Set</h2>
+      <article class="card">
+        <h3>Official Files</h3>
+        <p>
+          The current canonical file set for this branch includes the following branch-specific materials:
+        </p>
+        <ul>
+          <li><code>gamache-origins/indexGamacheancestry.html</code></li>
+          <li><code>gamache-origins/places.html</code></li>
+          <li><code>gamache-origins/historical-records.html</code></li>
+          <li><code>gamache-origins/sources.html</code></li>
+          <li><code>gamache-origins/READMEGAMACHEANCESTRY.md</code></li>
+          <li><code>gamache-origins/gamache-coat-of-arms.jpg</code></li>
+          <li><code>gamache-origins/gamachesecurity.html</code></li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Tamper-Evident Principle</h2>
+      <article class="card">
+        <p class="status-warn">
+          This branch is not “tamper-proof” in the literal sense. Public web files can be copied, altered,
+          republished, quoted out of context, or mirrored elsewhere by third parties. The correct security concept
+          here is <strong>tamper-evident integrity</strong>, not fantasy invulnerability.
+        </p>
+        <ul>
+          <li>Only the canonical repository branch and canonical folder path should be treated as authoritative.</li>
+          <li>Copies, screenshots, mirrors, forks, reposts, or extracted fragments should not automatically be treated as official.</li>
+          <li>Where content conflicts arise, the maintained canonical branch version should control.</li>
+          <li>Future hash manifests may be used to strengthen integrity verification.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Integrity Controls Already in Use</h2>
+      <article class="card">
+        <h3>Current Hardening Features</h3>
+        <ul>
+          <li>Static HTML architecture with no required JavaScript runtime.</li>
+          <li>Restrictive Content Security Policy delivered through the page itself.</li>
+          <li><code>form-action 'none'</code> to prevent form submission behavior.</li>
+          <li><code>frame-ancestors 'none'</code> to reduce unauthorized framing.</li>
+          <li><code>connect-src 'none'</code> to prevent network callouts from the page.</li>
+          <li><code>object-src 'none'</code> and <code>media-src 'none'</code> to narrow the attack surface.</li>
+          <li>No dependence on external stylesheets, fonts, or third-party scripts.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Recommended Next Integrity Step</h2>
+      <article class="card">
+        <h3>Hash Manifest</h3>
+        <p>
+          The next serious step for integrity is to publish a hash manifest for the canonical files. That would let
+          readers compare file hashes and detect whether files were altered after publication.
+        </p>
+        <p>
+          A later file such as <code>SHA256SUMS.txt</code> or a branch-specific integrity manifest would strengthen
+          the project materially. That is real integrity practice, unlike pretending an HTML filename alone is armor.
+        </p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Connected Public Context</h2>
+      <article class="card">
+        <h3>Repository Context</h3>
+        <p>
+          This ancestry branch exists alongside other repository materials, but it remains intentionally separate
+          from academic, archival, and suppression-specific surfaces maintained elsewhere in the repository.
+        </p>
+        <div class="button-row">
+          <a class="button" href="indexGamacheancestry.html">Return to Home</a>
+          <a class="button" href="sources.html">Open Sources</a>
+          <a class="button" href="READMEGAMACHEANCESTRY.md">Open Branch README</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Gamache Origins — security, integrity, and canonical record notice.</p>
+    </div>
+  </footer>
+</body>
+</html>
