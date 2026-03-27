@@ -27,7 +27,7 @@
       --line: #2b3a57;
       --accent: #8fb3ff;
       --accent-2: #c7d8ff;
-      --max: 980px;
+      --max: 1080px;
       --radius: 16px;
     }
 
@@ -100,6 +100,10 @@
     }
 
     .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+      gap: 2rem;
+      align-items: center;
       padding: 1rem 0 2rem;
     }
 
@@ -140,6 +144,31 @@
       font-size: 1.08rem;
       color: var(--muted);
       max-width: 760px;
+    }
+
+    .crest-card {
+      background: linear-gradient(180deg, rgba(18, 26, 43, 0.95) 0%, rgba(24, 34, 53, 0.95) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+
+    .crest-card img {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 12px;
+      background: #f2ede2;
+    }
+
+    .crest-caption {
+      margin-top: 0.85rem;
+      font-size: 0.95rem;
+      color: var(--muted);
     }
 
     .grid {
@@ -195,6 +224,17 @@
       font-size: 0.95rem;
     }
 
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .crest-card {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+    }
+
     @media (max-width: 760px) {
       .topbar {
         align-items: flex-start;
@@ -213,8 +253,8 @@
       <div class="brand">Gamache Origins</div>
       <nav aria-label="Primary">
         <a href="#overview">Overview</a>
-        <a href="#places">Places</a>
-        <a href="#records">Historical Records</a>
+        <a href="places.html">Places</a>
+        <a href="historical-records.html">Historical Records</a>
         <a href="#links">Connected Public Records</a>
         <a href="sources.html">Sources</a>
       </nav>
@@ -223,17 +263,26 @@
 
   <main class="wrap">
     <section class="hero" id="overview">
-      <div class="eyebrow">Surname Origins and Place Research</div>
-      <h1>Gamache Origins</h1>
-      <p class="lead">
-        This page serves as a public-facing research surface for surname-origin context,
-        French place references, historical records, and related public materials associated
-        with the Gamache name.
-      </p>
-      <p class="lead">
-        This page presents geographic and historical reference points for research purposes.
-        It does not claim to establish a complete or definitive personal lineage.
-      </p>
+      <div>
+        <div class="eyebrow">Surname Origins and Place Research</div>
+        <h1>Gamache Origins</h1>
+        <p class="lead">
+          This page serves as a public-facing research surface for surname-origin context,
+          French place references, historical records, and related public materials associated
+          with the Gamache name.
+        </p>
+        <p class="lead">
+          This page presents geographic and historical reference points for research purposes.
+          It does not claim to establish a complete or definitive personal lineage.
+        </p>
+      </div>
+
+      <aside class="crest-card" aria-label="Gamache coat of arms">
+        <img src="gamache-coat-of-arms.png" alt="Gamache coat of arms">
+        <p class="crest-caption">
+          Gamache coat of arms included as a visual heritage element on this branch.
+        </p>
+      </aside>
     </section>
 
     <section class="grid" aria-label="Summary panels">
