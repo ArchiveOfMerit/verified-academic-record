@@ -1,0 +1,110 @@
+{
+  "repository": "verified-academic-record",
+  "branch": "broker-access-and-compensation-policy",
+  "policy_folder": "Data Broker Policy",
+  "policy_name": "Machine Readable License",
+  "subject_identity": {
+    "name": "Justin-Ames Gamache",
+    "record_type": "verified academic, authorship-linked, and identity-linked public record archive",
+    "identity_linked": true,
+    "authorship_linked": true,
+    "record_integrity_protected": true
+  },
+  "public_access": {
+    "human_viewing_allowed": true,
+    "noncommercial_reference_allowed": true,
+    "academic_reference_allowed": true,
+    "public_access_is_not_consent": true,
+    "public_access_is_not_a_commercial_license": true,
+    "machine_readability_is_not_permission": true
+  },
+  "commercial_use": {
+    "default_status": "prohibited unless expressly authorized in writing",
+    "written_permission_required": true,
+    "compensation_required": true,
+    "case_by_case_only": true,
+    "implied_license_disclaimed": true
+  },
+  "prohibited_uses": [
+    "data broker ingestion",
+    "people-search indexing",
+    "profile enrichment",
+    "identity resolution for commercial profiling",
+    "dossier creation",
+    "commercial republication",
+    "derivative database creation",
+    "resale",
+    "sublicensing",
+    "lead generation",
+    "marketing intelligence use",
+    "ranking or scoring",
+    "risk scoring",
+    "trust scoring",
+    "reputation scoring",
+    "background-style aggregation",
+    "identity stitching",
+    "inferential identity products",
+    "commercial AI synthesis for person-based monetization",
+    "commercial validation or expansion of profiles associated with Justin-Ames Gamache"
+  ],
+  "restricted_actions": {
+    "scraping": "not authorized for commercial purposes",
+    "harvesting": "not authorized for commercial purposes",
+    "indexing": "not authorized for broker or people-search purposes",
+    "ingestion": "not authorized for commercial systems",
+    "correlation": "not authorized where used to build, expand, validate, or monetize identity-linked records",
+    "redistribution": "not authorized unless expressly licensed",
+    "derivative_use": "not authorized unless expressly licensed",
+    "automated_processing": "not authorized for commercial profiling, ranking, scoring, or identity monetization"
+  },
+  "identity_protection": {
+    "nonconsent_to_identity_profiling": true,
+    "nonconsent_to_identity_enrichment": true,
+    "nonconsent_to_derivative_identity_products": true,
+    "nonconsent_to_broker_republication": true,
+    "nonconsent_to_subject_based_monetization": true,
+    "named_subject": "Justin-Ames Gamache"
+  },
+  "license_request_requirements": [
+    "full legal identity of requesting party",
+    "business name",
+    "contact information",
+    "description of intended use",
+    "specific materials requested",
+    "disclosure of scraping, ingestion, enrichment, republication, scoring, or derivative use",
+    "disclosure of downstream recipients, affiliates, clients, or resellers",
+    "disclosure of any identity-linked use involving Justin-Ames Gamache",
+    "written authorization",
+    "negotiated compensation agreement"
+  ],
+  "enforcement": {
+    "unauthorized_use_may_be_documented": true,
+    "cessation_expected_after_notice": true,
+    "rights_reserved": true,
+    "silence_is_not_consent": true,
+    "delay_is_not_permission": true,
+    "failure_to_object_individually_is_not_waiver": true
+  },
+  "contact": {
+    "designated_contact": "Justin-Ames Gamache",
+    "contact_file": "ENFORCEMENT_CONTACT.md",
+    "request_types": [
+      "Commercial Reuse Request",
+      "Broker Access Request",
+      "Licensing Inquiry",
+      "Notice of Unauthorized Use",
+      "Request for Correction",
+      "Request for Removal",
+      "Enforcement Response"
+    ]
+  },
+  "related_files": [
+    "CompensationREADME.md",
+    "BROKER_USE_POLICY.md",
+    "NOTICE_OF_NONCONSENT_FOR_BROKER_PROFILING.md",
+    "COMMERCIAL_REUSE_LICENSE.md",
+    "ENFORCEMENT_CONTACT.md",
+    "Compensation_MACHINE_READABLE_LICENSE.json"
+  ],
+  "final_notice": "This repository is public for review, not for commercial capture. Any commercial, broker, profiling, enrichment, or derivative identity-linked use involving Justin-Ames Gamache requires prior written authorization and compensation."
+}
