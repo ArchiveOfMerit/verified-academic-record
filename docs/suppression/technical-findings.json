@@ -1,0 +1,78 @@
+{
+  "record_type": "technical_findings",
+  "title": "Technical Findings",
+  "prepared_by": "Magical Lobster",
+  "status": "active",
+  "findings": [
+    {
+      "finding_id": "TF-001",
+      "title": "AnyLaw stale dead-route artifact",
+      "source_type": "third_party_aggregator_dead_route",
+      "observed_condition": {
+        "domain": "anylaw.com",
+        "http_status": "404 Not Found",
+        "error_code": "NoSuchKey"
+      },
+      "assessment": "The underlying object is no longer present while the route artifact itself remains externally discoverable.",
+      "classification": "stale_dead_route_condition",
+      "risk_implication": "The discovery pathway may persist even though the destination object has failed.",
+      "notes": "This should be treated as a dead-route artifact rather than a live source page."
+    },
+    {
+      "finding_id": "TF-002",
+      "title": "Brave stale personal-site result",
+      "source_type": "search_engine_stale_result",
+      "observed_condition": {
+        "engine": "Brave Search",
+        "target_url": "https://justingamache.org/",
+        "page_state": "intentionally removed",
+        "result_behavior": "older title or snippet surfaced in search results"
+      },
+      "assessment": "This reflects stale search-surface persistence tied to a removed personal-site asset rather than current live-page availability.",
+      "classification": "stale_removed_site_residue",
+      "risk_implication": "Search users may continue encountering legacy identity-linked result fragments after site removal.",
+      "notes": "This is distinct from live-source retrieval behavior."
+    },
+    {
+      "finding_id": "TF-003",
+      "title": "Ask Brave wrapper is not the indexing issue",
+      "source_type": "ai_share_wrapper_page",
+      "observed_condition": {
+        "engine": "Ask Brave",
+        "robots_directive": "noindex"
+      },
+      "assessment": "The AI-share wrapper page itself is not intended for search indexing.",
+      "classification": "non_indexing_wrapper_surface",
+      "risk_implication": "The relevant discovery issue lies in the underlying search or retrieval behavior rather than in the wrapper page itself.",
+      "notes": "The wrapper should not be treated as the primary indexing problem."
+    },
+    {
+      "finding_id": "TF-004",
+      "title": "Brave News query distortion",
+      "source_type": "search_engine_query_behavior",
+      "observed_condition": {
+        "engine": "Brave News",
+        "behavior": "exact query normalized into an altered form",
+        "result_pattern": "unrelated entity results returned"
+      },
+      "assessment": "This reflects loose query normalization, entity conflation, or both.",
+      "classification": "query_distortion_and_entity_conflation",
+      "risk_implication": "Search behavior may produce irrelevant or misleading identity-adjacent results rather than true exact-match retrieval.",
+      "notes": "This should be tracked as a query-handling issue."
+    },
+    {
+      "finding_id": "TF-005",
+      "title": "Google behavior differs from Brave stale-result behavior",
+      "source_type": "search_engine_live_retrieval",
+      "observed_condition": {
+        "engine": "Google",
+        "behavior": "query-based retrieval of live public pages matching caption text or related source content"
+      },
+      "assessment": "The Google evidence reflects live-source retrieval behavior rather than the stale persistence pattern shown in Brave for a removed personal-site result.",
+      "classification": "live_source_retrieval_distinct_from_stale_residue",
+      "risk_implication": "Google and Brave should not be treated as exhibiting the same discovery failure mode.",
+      "notes": "The distinction between stale removed-page residue and live public-source retrieval is material."
+    }
+  ],
+  "summary": "The current technical record reflects multiple distinct discovery conditions, including a stale dead-route artifact, stale removed-site residue in Brave Search, a non-indexing Ask Brave wrapper surface, Brave query distortion, and a separate Google live-source retrieval pattern. These conditions should be classified separately rather than collapsed into a single search-discovery problem."
+}

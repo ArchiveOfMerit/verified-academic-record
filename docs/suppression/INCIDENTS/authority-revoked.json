@@ -1,0 +1,98 @@
+{
+  "incident_id": "INC-2026-VTJ-MULTIPLE-LIVE-THIRD-PARTY-LISTINGS",
+  "title": "Vermont Judiciary multiple live third-party listings remain exposed through a public listing surface",
+  "prepared_by": "Magical Lobster",
+  "date": "2026-03-27",
+  "status": "open",
+  "severity": "high",
+  "incident_classification": "live judiciary listing and identity-association risk",
+  "domain": "vermontjudiciary.org",
+  "source_type": "live_third_party_public_judiciary_listing_surface",
+  "page_type": "canonical_public_judiciary_listing_surface",
+  "risk_class": "multi_listing_judiciary_source_level_identity_association",
+  "controlled_by_user": false,
+  "source_page": "https://www.vermontjudiciary.org/supreme-court/unpublished-entry-orders",
+  "known_facts": [
+    "The identified Vermont Judiciary page functions as a live public listing surface for unpublished entry orders.",
+    "The source page contains multiple listings associated with the name strings Justin Ames Gamache and Justin Gamache.",
+    "The listings appear on a judiciary-hosted public page outside user control.",
+    "The exposure pattern is not limited to a single listing event but reflects multiple matter titles on one source surface.",
+    "The source page should be treated as a source-level discovery surface rather than as a single isolated document.",
+    "These listings are live public judiciary listings rather than stale dead-link artifacts, broken routes, or removed-site remnants."
+  ],
+  "listed_matters": [
+    {
+      "caption": "Justin Ames Gamache v. State of Vermont",
+      "docket": "22-AP-017",
+      "date": "2022-05-13",
+      "judges_listed": [
+        "Cortland Corsones",
+        "Brian J. Grearson"
+      ]
+    },
+    {
+      "caption": "State v. Justin Gamache",
+      "docket": "22-AP-123",
+      "date": "2022-09-16",
+      "judges_listed": [
+        "Cortland Corsones"
+      ]
+    },
+    {
+      "caption": "Justin Ames Gamache v. Alexander Burke",
+      "docket": "22-AP-083",
+      "date": "2022-08-12",
+      "judges_listed": [
+        "John W. Valente"
+      ]
+    },
+    {
+      "caption": "Justin Ames Gamache v. Thomas Mozzer",
+      "docket": "22-AP-067",
+      "date": "2022-07-14",
+      "judges_listed": [
+        "John W. Valente"
+      ]
+    }
+  ],
+  "what_is_not_established": [
+    "This incident record does not by itself establish the search-index status of every subordinate listing or linked entry-order page.",
+    "This incident record does not by itself establish whether each listed matter is independently surfaced by external search engines.",
+    "This incident record does not by itself establish broader technical attribution beyond the public judiciary source surface directly identified.",
+    "This incident record does not convert the judiciary-hosted source page into a user-controlled surface."
+  ],
+  "impact_assessment": {
+    "search_discovery_risk": "high",
+    "identity_association_risk": "high",
+    "source_authority_risk": "high",
+    "persistence_risk": "high",
+    "summary": "The continued availability of multiple judiciary-hosted listings on a single public source page creates a cumulative discovery condition that can reinforce title-level identity association, source-authority exposure, and persistent public routing through an authoritative third-party listing surface."
+  },
+  "desired_end_state": [
+    "Reduce unnecessary amplification of these listings where possible through broader canonical and suppression strategy.",
+    "Preserve technical documentation that these are live third-party public judiciary listings rather than stale dead routes.",
+    "Maintain classification separating these listings from stale-result incidents involving dead URLs or removed personal sites."
+  ],
+  "root_cause_assessment": "These listings appear to be active public judiciary listings maintained by a third-party source outside user control. The relevant issue is ongoing public discoverability of live records through an authoritative source page rather than stale indexing of removed or broken pages.",
+  "recommended_governance_action": "restricted_non_academic_association",
+  "governance_rationale": "Because the identified source page functions as a live judiciary-hosted public listing surface containing multiple matter listings associated with the target name strings, it should be treated as an active non-academic association source requiring restrictive governance treatment rather than as a stale-result or dead-route incident.",
+  "recommended_governance_treatment": [
+    "Treat this as a live judiciary listing-surface incident.",
+    "Track the source page as a multi-listing public discovery surface.",
+    "Distinguish this incident from dead-route, stale-result, and removed-site incident classes.",
+    "Preserve separate notation for each listed matter while maintaining one source-level incident family."
+  ],
+  "actions_taken": [
+    "Documented the live third-party listings.",
+    "Classified the listings separately from stale dead-route incidents."
+  ],
+  "pending_actions": [
+    "Evaluate whether any search-layer suppression is available.",
+    "Add cross-reference in control matrix."
+  ],
+  "evidence": {
+    "source_page": "https://www.vermontjudiciary.org/supreme-court/unpublished-entry-orders",
+    "listing_type": "live public judiciary entry-order listings",
+    "listing_structure": "multiple matter titles associated with Justin Ames Gamache or Justin Gamache"
+  }
+}

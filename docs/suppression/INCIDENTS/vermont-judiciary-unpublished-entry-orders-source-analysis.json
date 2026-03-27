@@ -1,0 +1,103 @@
+{
+  "incident_id": "INC-2026-VTJ-UNPUBLISHED-ENTRY-ORDERS-SOURCE",
+  "title": "Vermont Judiciary unpublished entry orders source page exposes an indexable canonical listing surface",
+  "prepared_by": "Magical Lobster",
+  "date": "2026-03-27",
+  "status": "open",
+  "severity": "high",
+  "incident_classification": "public listing and identity-association risk",
+  "domain": "vermontjudiciary.org",
+  "target_url": "https://www.vermontjudiciary.org/supreme-court/unpublished-entry-orders",
+  "source_type": "public_listing_surface",
+  "page_type": "canonical_public_index_page",
+  "risk_class": "listing_level_identity_pairing",
+  "summary": "Source review of the Vermont Judiciary page for Supreme Court Unpublished Entry Orders indicates that the page is published as a normal canonical content page with a canonical link, alternate hreflang link, shortlink, public title, analytics script, and public stylesheet loading. In the reviewed source excerpt, no noindex or similar exclusion directive was identified in the page head. This creates a public listing surface capable of associating names and dockets through the entry-order index page itself, separate from individual PDF documents.",
+  "source_artifacts_reviewed": [
+    "view-source_https___www.vermontjudiciary.org_supreme-court_unpublished-entry-orders.html",
+    "Supreme Court Unpublished Entry Orders _ Vermont Judiciary.pdf"
+  ],
+  "known_facts": [
+    "The reviewed source excerpt shows alternate hreflang, canonical, and shortlink publication signals.",
+    "The reviewed source excerpt includes a public HTML title for the page.",
+    "The reviewed head excerpt includes normal front-end assets and analytics loading.",
+    "No noindex directive was identified in the reviewed head excerpt.",
+    "The accompanying captured page output reflects listing rows containing case captions and docket numbers.",
+    "The listing page itself functions as a consolidated public discovery surface independent of individual PDF documents."
+  ],
+  "findings": [
+    {
+      "finding_id": "VTJ-001",
+      "title": "Canonical publication signals are present",
+      "details": [
+        "alternate hreflang link to the published page URL",
+        "canonical link to the same published page URL",
+        "shortlink",
+        "public HTML title: Supreme Court Unpublished Entry Orders | Vermont Judiciary"
+      ],
+      "assessment": "These are standard publication and discovery signals for a crawlable public page."
+    },
+    {
+      "finding_id": "VTJ-002",
+      "title": "No noindex directive was observed in the reviewed head excerpt",
+      "details": [
+        "charset",
+        "generator",
+        "viewport",
+        "icon",
+        "alternate link",
+        "canonical link",
+        "shortlink",
+        "title",
+        "stylesheet links",
+        "Google Analytics"
+      ],
+      "assessment": "Based on the reviewed source excerpt, the page is not presented as an excluded index surface."
+    },
+    {
+      "finding_id": "VTJ-003",
+      "title": "The listing page itself contains name-and-docket pairings",
+      "details": [
+        "State v. Justin Gamache (22-AP-123)",
+        "Justin Ames Gamache v. State of Vermont (22-AP-017)"
+      ],
+      "assessment": "The exposure is not limited to isolated PDF documents. The listing page itself operates as a consolidated discovery surface."
+    },
+    {
+      "finding_id": "VTJ-004",
+      "title": "Analytics and normal front-end assets are loaded",
+      "details": [
+        "Google Analytics present",
+        "normal stylesheet loading present"
+      ],
+      "assessment": "The page appears deployed as a standard public content page rather than a restricted archival stub."
+    }
+  ],
+  "what_is_not_established": [
+    "This record does not by itself establish that all subordinate PDF documents are independently indexed.",
+    "This record does not by itself establish the search-engine status of every linked item associated with the page.",
+    "This record does not by itself establish broader technical attribution beyond the public judiciary listing surface directly reviewed."
+  ],
+  "impact_assessment": {
+    "search_discovery_risk": "high",
+    "identity_association_risk": "high",
+    "source_authority_risk": "high",
+    "summary": "Because the page presents canonical publication signals and directly lists case captions with docket numbers, it can reinforce search pairing and identity association independently of the underlying PDF files."
+  },
+  "risk_implications": [
+    "stale legal-fragment discovery through the listing page itself",
+    "query-to-name pairing through a public index page",
+    "downstream reuse by crawlers, summarizers, and aggregators",
+    "persistence of non-canonical identity association through listing-level discovery rather than only document-level access"
+  ],
+  "evidence_statement": "This incident is supported by the uploaded source-code capture and page capture. The source shows canonical publication signals, and the captured page output shows case-caption listings containing relevant name and docket combinations.",
+  "recommended_branch_2_action": [
+    "Record this page as a listing-surface incident, not merely a document incident.",
+    "Add the page URL itself to suppression and governance tracking.",
+    "Distinguish between listing page exposure and individual PDF exposure.",
+    "Note in governance materials that the page creates a consolidated public index for restricted-source associations.",
+    "Track whether search results surface the page title, snippets, or case-caption fragments from the listing page rather than the PDFs."
+  ],
+  "recommended_governance_action": "restricted_non_academic_association",
+  "governance_rationale": "Because the identified page functions as a judiciary-hosted public listing surface with canonical publication signals and case-caption name pairings in page content, it should be treated as an active non-academic association source rather than as a stale, dead, or purely document-level issue.",
+  "notes": "This incident does not depend on proving that the PDFs alone are discoverable. The listing page is itself the relevant issue because it carries canonical publication signals and includes case-caption name pairings in the page content."
+}

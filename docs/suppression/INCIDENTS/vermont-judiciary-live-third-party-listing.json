@@ -1,0 +1,66 @@
+{
+  "incident_id": "INC-2026-VTJ-LIVE-THIRD-PARTY-LISTING-22-AP-017",
+  "title": "Vermont Judiciary live third-party listing remains publicly exposed for 22-AP-017",
+  "prepared_by": "Magical Lobster",
+  "date": "2026-03-27",
+  "status": "open",
+  "severity": "high",
+  "incident_classification": "live judiciary listing and identity-association risk",
+  "source_type": "live_third_party_public_listing",
+  "page_type": "canonical_public_judiciary_listing_surface",
+  "risk_class": "listing_level_identity_pairing",
+  "controlled_by_user": false,
+  "summary": "A Vermont Judiciary public page continues to list a case entry associated with the name string Justin Ames Gamache v. State of Vermont, docket 22-AP-017, dated 2022-05-13.",
+  "sources": [
+    {
+      "source_name": "Vermont Judiciary unpublished entry orders page",
+      "source_type": "public_judiciary_listing_surface"
+    },
+    {
+      "source_name": "Vermont Judiciary opinions/decisions library",
+      "source_type": "related_public_judiciary_library_surface"
+    }
+  ],
+  "known_facts": [
+    "A Vermont Judiciary public source continues to display the case caption Justin Ames Gamache v. State of Vermont.",
+    "The associated docket is 22-AP-017.",
+    "The listing shows the date 2022-05-13.",
+    "The listing appears on a judiciary-hosted public source outside user control.",
+    "The condition reflects live public listing exposure rather than a broken, removed, or dead-route artifact."
+  ],
+  "evidence": {
+    "case_caption": "Justin Ames Gamache v. State of Vermont",
+    "docket": "22-AP-017",
+    "date_shown": "2022-05-13",
+    "listing_source": "Vermont Judiciary unpublished entry orders",
+    "related_library_source": "Vermont Judiciary opinions/decisions library"
+  },
+  "why_this_matters": "This is not a stale dead-link artifact. It is a live third-party public listing and should be treated separately from broken or removed-page search residue.",
+  "what_is_not_established": [
+    "This record does not by itself establish the search-index status of every related subordinate page or document.",
+    "This record does not by itself establish whether all related library surfaces are independently surfaced by external search engines.",
+    "This record does not convert the judiciary-hosted listing into a user-controlled surface."
+  ],
+  "desired_end_state": [
+    "Reduce unnecessary amplification of the listing where possible through broader canonical and suppression strategy.",
+    "Preserve technical documentation that this is a live third-party source rather than a broken or removed route.",
+    "Maintain classification distinguishing this item from stale-result incidents involving dead URLs or removed personal sites."
+  ],
+  "root_cause_assessment": "This appears to be an active public judiciary listing maintained by a third-party source outside user control. The relevant issue is public discoverability of a live record rather than stale indexing of a removed or broken page.",
+  "impact_assessment": {
+    "search_discovery_risk": "high",
+    "identity_association_risk": "high",
+    "source_authority_risk": "high",
+    "summary": "The continued availability of a judiciary-hosted live public listing creates an authoritative discovery surface capable of reinforcing identity association through public listing and title-level routing."
+  },
+  "recommended_governance_action": "restricted_non_academic_association",
+  "governance_rationale": "Because the identified listing remains live on a judiciary-hosted public surface outside user control, it should be treated as an active non-academic association source rather than as stale-result or dead-route residue.",
+  "actions_taken": [
+    "Documented the live third-party listing.",
+    "Classified the listing separately from stale dead-route incidents."
+  ],
+  "pending_actions": [
+    "Evaluate whether any search-layer suppression is available.",
+    "Add cross-reference in control matrix."
+  ]
+}

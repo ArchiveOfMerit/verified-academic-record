@@ -1,31 +1,104 @@
-# Change.org live petition page with degraded starter identity block
+# Incident: Change.org live petition page with degraded starter identity block
+
+## Incident ID
+INC-2026-CHANGEORG-LIVE-PETITION-DEGRADED-STARTER-BLOCK
+
+## Date
+2026-03-27
+
+## Status
+Open
+
+## Severity
+Medium-High
+
+## Prepared By
+Magical Lobster
 
 ## Summary
-A live public Change.org petition remains publicly discoverable at `https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache`. The page itself is live, but the petition-starter identity block appears degraded or anonymized, displaying `N A` rather than a normal identifiable starter profile.
 
-## Problem Type
-Live third-party petition page with degraded profile/identity presentation
+A live public Change.org petition remains publicly discoverable at `https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache`. The petition page itself appears live and publicly accessible. However, the petition-starter identity block appears degraded, anonymized, or otherwise reduced at the presentation layer, displaying `N A` rather than a normal identifiable starter profile.
 
-## Why this matters
-This is not a stale dead-link artifact. It is a live third-party public page that remains publicly discoverable, while part of the starter-account presentation appears broken, reduced, or anonymized. That combination should be tracked separately from both dead routes and fully intact live profile pages.
+This incident should be tracked as a distinct live third-party petition-surface issue. It is not a stale dead-link artifact, and it should not be treated as equivalent to a fully intact live third-party profile page.
+
+## Source Type
+Live third-party petition page
+
+## Page Type
+Canonical public petition surface
+
+## Risk Class
+Live third-party identity-association surface with degraded starter-profile presentation
+
+## Findings
+
+### 1. The petition page remains live
+
+The petition URL remains a publicly discoverable live page rather than a dead route, removed artifact, or broken shell.
+
+### 2. The starter identity block appears degraded
+
+The captured page state reflects a starter identity presentation of `N A` rather than a standard identifiable starter display. The role label `Petition Starter` remains visible, but the associated starter identity layer appears reduced, anonymized, detached, or otherwise degraded.
+
+### 3. The page remains a third-party public surface despite the degraded starter block
+
+The degraded starter identity block does not eliminate the page’s status as a live public third-party petition surface. The page should therefore continue to be treated as an active discovery surface, even if the profile-associated presentation has been partially diminished.
+
+### 4. Exact root cause remains unconfirmed
+
+The currently observed state is consistent with presentation-layer anonymization, profile detachment, partial account removal, or similar display degradation. The available evidence supports documenting the degraded state, but not overclaiming the exact underlying cause.
+
+## Why This Matters
+
+This incident matters because it reflects a mixed condition:
+
+- the petition page remains publicly live and discoverable;
+- the associated starter identity block appears degraded rather than fully intact;
+- the surface therefore sits between a fully intact third-party profile-linked page and a dead or stale route.
+
+That mixed condition should be tracked separately so the record accurately reflects both persistence and degradation.
+
+## Impact
+
+This page may continue to support:
+
+- public petition-surface discovery;
+- title-level or URL-level search visibility;
+- persistence of third-party public association;
+- partial identity ambiguity caused by degraded starter presentation.
+
+Because the page remains live, it should not be misclassified as resolved merely because one visible identity component appears degraded.
 
 ## Desired End State
-- Search discovery: reduce or eliminate search visibility of the live petition page where it persists.
-- Technical record: preserve documentation that the petition page remains live while the starter identity block appears degraded.
-- Classification: distinguish this item from stale dead-route incidents and from fully intact live third-party profile pages.
+
+- Reduce or eliminate search visibility of the live petition page where it persists.
+- Preserve technical documentation that the petition surface remains live while the starter identity block appears degraded.
+- Maintain separate classification from:
+  - stale dead-route incidents; and
+  - fully intact live third-party profile pages.
 
 ## Evidence
-- Petition URL: `https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache`
-- Petition page: live and publicly accessible
-- Starter block shown in captured page state: `N A`
-- Starter role label shown: `Petition Starter`
 
-## Root Cause
-Exact cause is unconfirmed. The current page state suggests the petition page remains live while the starter-account identity layer may have been anonymized, detached, partially removed, or degraded at the presentation level.
+- Petition URL: `https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache`
+- Petition page status: live and publicly accessible
+- Captured starter identity block: `N A`
+- Starter role label: `Petition Starter`
+
+## Root Cause Assessment
+
+Exact cause is unconfirmed. The current page state suggests that the petition page remains live while the starter-account identity layer may have been anonymized, detached, partially removed, or degraded at the presentation level.
+
+## Recommended Governance Treatment
+
+- Treat the page as a live third-party petition incident.
+- Track the degraded starter identity block as a distinct presentation-layer condition.
+- Do not classify the incident as resolved solely because the starter profile appears degraded.
+- Distinguish this incident from both dead-link incidents and fully intact live profile incidents.
 
 ## Actions Taken
+
 - [x] Documented that the petition page remains live
-- [x] Documented degraded/anonymized starter identity presentation
+- [x] Documented degraded or anonymized starter identity presentation
 - [x] Classified the issue separately from stale dead-route incidents
 - [ ] Evaluated whether any search-layer suppression is available
 - [ ] Added cross-reference in control matrix

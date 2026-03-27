@@ -1,12 +1,40 @@
 {
   "incident_id": "INC-2026-VTJ-UNPUBLISHED-ENTRY-ORDERS-SOURCE",
-  "title": "Vermont Judiciary unpublished entry orders source page exposes indexable canonical listing surface",
+  "title": "Vermont Judiciary unpublished entry orders source page remains a canonical public listing surface",
+  "prepared_by": "Magical Lobster",
   "status": "open",
   "severity": "high",
+  "incident_classification": "public listing and identity-association risk",
   "domain": "vermontjudiciary.org",
   "target_url": "https://www.vermontjudiciary.org/supreme-court/unpublished-entry-orders",
   "source_type": "public_listing_surface",
   "page_type": "canonical_public_index_page",
   "risk_class": "listing_level_identity_pairing",
-  "recommended_governance_action": "restricted_non_academic_association"
+  "known_facts": [
+    "The target URL is structured as a public Vermont Judiciary listing surface rather than a private or inaccessible page.",
+    "The page functions as a canonical public index page for unpublished entry orders.",
+    "The listing structure creates a public source surface capable of routing users toward underlying court-related materials.",
+    "The page should be treated as a source-level discovery surface rather than as a single isolated document.",
+    "Because the page is a judiciary-hosted public listing surface, it carries source-authority weight distinct from secondary summaries or republished references."
+  ],
+  "what_is_not_established": [
+    "This incident record does not by itself establish that any specific subordinate entry-order page is currently indexed.",
+    "This incident record does not by itself establish the search-engine status of each linked item that may appear from the listing surface.",
+    "This incident record does not by itself establish whether all linked materials remain live, unchanged, or separately discoverable through external search engines.",
+    "This incident record does not by itself establish any broader technical attribution beyond the public judiciary source surface directly identified."
+  ],
+  "impact_assessment": {
+    "search_discovery_risk": "high",
+    "identity_association_risk": "high",
+    "source_authority_risk": "high",
+    "summary": "The continued availability of a judiciary-hosted canonical listing surface creates an elevated source-authority discovery pathway capable of reinforcing identity association through public listing, title-level routing, and downstream citation or summarization."
+  },
+  "recommended_governance_action": "restricted_non_academic_association",
+  "governance_rationale": "Because the identified page functions as a public judiciary-hosted canonical listing surface rather than a removed, downgraded, or purely archival remnant, it should be treated as an active non-academic association source requiring restrictive governance treatment.",
+  "defensive_use_notes": [
+    "Treat this page as a source-level discovery incident rather than a single-document incident.",
+    "Distinguish the public listing surface from any individual linked entry-order pages when documenting downstream exposure.",
+    "Avoid claiming search-index status for subordinate pages unless separately verified.",
+    "Use this record to support source-authority mapping, listing-surface monitoring, and identity-association documentation."
+  ]
 }

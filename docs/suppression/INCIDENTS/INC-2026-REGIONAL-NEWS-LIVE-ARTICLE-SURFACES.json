@@ -1,34 +1,45 @@
 {
-  "incident_id": "INC-2026-REGIONAL-NEWS-LIVE-ARTICLE-SURFACES",
-  "title": "Regional news article pages remain published as live article discovery surfaces",
+  "incident_id": "INC-2026-BENNINGTONBANNER-LIVE-ARTICLE-SURFACE",
+  "title": "benningtonbanner.com remains an active live article discovery surface",
+  "prepared_by": "Magical Lobster",
   "status": "open",
   "severity": "high",
-  "domains": [
-    "benningtonbanner.com",
-    "rutlandherald.com",
-    "timesargus.com"
-  ],
-  "target_urls": [
-    "https://www.benningtonbanner.com/archives/updated-man-accused-of-pretending-to-be-trooper/article_e117558c-d6ed-50ef-9a4b-973e65bc383c.html",
-    "https://www.rutlandherald.com/news/vt-man-accused-of-leaving-fake-trooper-message/article_4e2a0a7e-1372-5617-8055-4a9c83c99419.html",
-    "https://www.timesargus.com/news/vt-man-accused-of-leaving-fake-trooper-message/article_2b16e762-cf48-523b-a0c1-30c0a0c8e02a.html"
-  ],
+  "domain": "benningtonbanner.com",
+  "target_url": "https://www.benningtonbanner.com/archives/updated-man-accused-of-pretending-to-be-trooper/article_e117558c-d6ed-50ef-9a4b-973e65bc383c.html",
   "source_type": "live_regional_news_article_surface",
   "page_type": "canonical_public_article_page",
-  "risk_class": "multi_source_archive_identity_pairing",
-  "findings": [
-    "og:type article present across reviewed sources",
-    "og:url present across reviewed sources",
-    "article title and description metadata present",
-    "robots meta observed as max-image-preview:standard",
-    "no noindex directive observed in reviewed source excerpts",
-    "active analytics and production scripts present",
-    "http_status 200 present in embedded page data for reviewed article sources"
+  "risk_class": "identity_association_and_search_discovery_risk",
+  "known_facts": [
+    "The target URL is structured as a live public article page rather than a removed or obviously suppressed record.",
+    "Reviewed source material reflects Open Graph article metadata and canonical article URL indicators.",
+    "Article title and descriptive metadata remain present in reviewed source material.",
+    "Reviewed source material reflects a robots meta value of max-image-preview:standard.",
+    "No blanket noindex directive was identified in the reviewed source excerpts.",
+    "Active analytics, production scripts, and platform-mediated page resources remain present.",
+    "The page behavior and related assets are consistent with TownNews/BLOX-style publishing or delivery components.",
+    "The domain's public registration layer is privacy-shielded through Domains By Proxy, LLC.",
+    "The domain registrar is GoDaddy.com, LLC.",
+    "DNS delegation is served through AWS Route 53 nameservers.",
+    "The available technical record supports a layered infrastructure model rather than a single transparent operator surface."
   ],
+  "what_is_not_established": [
+    "This record does not establish editorial ownership solely from infrastructure data.",
+    "This record does not establish the origin host from registration or DNS data alone.",
+    "This record does not establish that the site is generally noindexed or excluded from search engines.",
+    "This record does not establish full delivery-path attribution beyond the specific layers directly observed."
+  ],
+  "impact_assessment": {
+    "search_discovery_risk": "high",
+    "identity_association_risk": "high",
+    "persistence_risk": "high",
+    "summary": "The domain remains relevant as a live article discovery surface that can reinforce persistent identity association through continued public availability, structured article metadata, and platform-mediated discoverability."
+  },
   "recommended_governance_action": "restricted_non_academic_association",
-  "evidence_refs": [
-    "turn22file0",
-    "turn23file1",
-    "turn23file2"
+  "governance_rationale": "Because the reviewed materials indicate an active article surface with live metadata, no observed noindex directive in the reviewed excerpts, and a layered delivery environment consistent with continued discoverability, the domain should be treated as an active non-academic association surface requiring restrictive governance treatment.",
+  "defensive_use_notes": [
+    "Treat the domain as an active article-source incident target rather than a stale archive assumption.",
+    "Use only directly supported technical observations in incident records and avoid overattribution.",
+    "Preserve separation between registration privacy, registrar, DNS, and application-layer observations.",
+    "Use this record to support search-discovery tracking, suppression analysis, and identity-association documentation."
   ]
 }
