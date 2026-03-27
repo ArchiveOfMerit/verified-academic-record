@@ -1,0 +1,34 @@
+{
+  "incident_id": "INC-2026-REGIONAL-NEWS-LIVE-ARTICLE-SURFACES",
+  "title": "Regional news article pages remain published as live article discovery surfaces",
+  "status": "open",
+  "severity": "high",
+  "domains": [
+    "benningtonbanner.com",
+    "rutlandherald.com",
+    "timesargus.com"
+  ],
+  "target_urls": [
+    "https://www.benningtonbanner.com/archives/updated-man-accused-of-pretending-to-be-trooper/article_e117558c-d6ed-50ef-9a4b-973e65bc383c.html",
+    "https://www.rutlandherald.com/news/vt-man-accused-of-leaving-fake-trooper-message/article_4e2a0a7e-1372-5617-8055-4a9c83c99419.html",
+    "https://www.timesargus.com/news/vt-man-accused-of-leaving-fake-trooper-message/article_2b16e762-cf48-523b-a0c1-30c0a0c8e02a.html"
+  ],
+  "source_type": "live_regional_news_article_surface",
+  "page_type": "canonical_public_article_page",
+  "risk_class": "multi_source_archive_identity_pairing",
+  "findings": [
+    "og:type article present across reviewed sources",
+    "og:url present across reviewed sources",
+    "article title and description metadata present",
+    "robots meta observed as max-image-preview:standard",
+    "no noindex directive observed in reviewed source excerpts",
+    "active analytics and production scripts present",
+    "http_status 200 present in embedded page data for reviewed article sources"
+  ],
+  "recommended_governance_action": "restricted_non_academic_association",
+  "evidence_refs": [
+    "turn22file0",
+    "turn23file1",
+    "turn23file2"
+  ]
+}
