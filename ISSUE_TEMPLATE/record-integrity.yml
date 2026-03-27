@@ -1,0 +1,57 @@
+name: Record integrity concern
+description: Report a problem involving accuracy, provenance, dates, authorship markers, or archival integrity.
+title: "[Record Integrity]: "
+labels: ["record-integrity"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to report issues involving factual accuracy, provenance, metadata integrity, or structural archival concerns.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary of concern
+      description: Describe the issue clearly and directly.
+      placeholder: A date, attribution marker, source trail, or archival detail appears inaccurate or inconsistent.
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Affected file, path, branch, or section
+      description: Identify where the issue appears.
+      placeholder: suppression/entry-01.md on suppression branch
+    validations:
+      required: true
+
+  - type: textarea
+    id: basis
+    attributes:
+      label: Basis for the concern
+      description: Explain what source, evidence, or comparison suggests there is a problem.
+      placeholder: Cite the relevant source, document trail, commit, screenshot, or record conflict.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+      description: State the correction if known. If uncertain, say so explicitly.
+      placeholder: The date should likely be..., or the provenance note should be revised to...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I am reporting this in good faith.
+          required: true
+        - label: I have not knowingly included false or misleading information.
+          required: true
+        - label: I understand this repository is archival in purpose and not a general debate forum.
+          required: true
