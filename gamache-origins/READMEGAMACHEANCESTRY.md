@@ -25,13 +25,23 @@ The materials in this branch currently include:
 - a dedicated places page for French geographic references
 - a historical records page for public biographical and migration-context materials
 - a sources page listing public-facing source anchors and connected public materials
+- a branch-specific README describing the structure and purpose of this ancestry surface
+- a visual heraldic element associated with the Gamache name
 
-## Current Files
+## Current Folder and Files
 
-- `index.html`
-- `places.html`
-- `historical-records.html`
-- `sources.html`
+All branch-specific materials are currently organized under:
+
+- `gamache-origins/`
+
+Current files in that folder include:
+
+- `gamache-origins/indexGamacheancestry.html`
+- `gamache-origins/places.html`
+- `gamache-origins/historical-records.html`
+- `gamache-origins/sources.html`
+- `gamache-origins/READMEGAMACHEANCESTRY.md`
+- `gamache-origins/gamache-coat-of-arms.jpg`
 
 ## Research Posture
 
@@ -63,6 +73,14 @@ This branch also includes historical reference material associated with **Louis 
 
 These materials are useful because they provide named historical reference points, migration context, and source-based narrative anchors for further ancestry research.
 
+## Visual Element
+
+This branch includes a visual heraldic image file:
+
+- `gamache-coat-of-arms.jpg`
+
+It is used as a visual heritage element on the ancestry homepage and is presented as part of the branch’s public-facing design surface.
+
 ## Separation from Other Repository Purposes
 
 This branch is intentionally distinct from:
@@ -70,8 +88,9 @@ This branch is intentionally distinct from:
 - the primary verified academic record surface
 - scholarly and professional identity materials
 - academic metadata, provenance, and archival governance records maintained elsewhere in the repository
+- suppression-related repository materials stored separately
 
-That separation is deliberate. It keeps ancestry-related work organized without collapsing it into unrelated academic or public record surfaces.
+That separation is deliberate. It keeps ancestry-related work organized without collapsing it into unrelated academic, archival, or suppression-specific surfaces.
 
 ## Connected Public Materials
 
@@ -93,8 +112,21 @@ This branch currently uses plain static HTML with:
 - controlled styling
 - lightweight navigation
 - a restricted content security posture
+- a branch-specific homepage filename and internal page linking structure
 
 The goal is stability, readability, and clean public presentation.
+
+## Naming Notes
+
+The current homepage file is:
+
+- `indexGamacheancestry.html`
+
+The current branch README file is:
+
+- `READMEGAMACHEANCESTRY.md`
+
+These custom filenames are intentional within the current branch structure, even though they differ from more conventional default filenames such as `index.html` or `README.md`.
 
 ## Future Additions
 
