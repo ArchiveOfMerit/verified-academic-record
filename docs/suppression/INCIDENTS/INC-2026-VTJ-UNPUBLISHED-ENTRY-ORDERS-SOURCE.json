@@ -1,0 +1,12 @@
+{
+  "incident_id": "INC-2026-VTJ-UNPUBLISHED-ENTRY-ORDERS-SOURCE",
+  "title": "Vermont Judiciary unpublished entry orders source page exposes indexable canonical listing surface",
+  "status": "open",
+  "severity": "high",
+  "domain": "vermontjudiciary.org",
+  "target_url": "https://www.vermontjudiciary.org/supreme-court/unpublished-entry-orders",
+  "source_type": "public_listing_surface",
+  "page_type": "canonical_public_index_page",
+  "risk_class": "listing_level_identity_pairing",
+  "recommended_governance_action": "restricted_non_academic_association"
+}
