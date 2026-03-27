@@ -17,7 +17,7 @@ Magical Lobster
 
 ## Summary
 
-Review of multiple regional news article pages indicates that these pages remain published as standard live article surfaces rather than excluded archival stubs or suppressed remnants. Reviewed sources from Bennington Banner, Rutland Herald, and Times Argus expose public article metadata, Open Graph article metadata, live article URLs, robots directives that do not apply a noindex instruction, and active production-page infrastructure. Taken together, these pages form a multi-source archive and news discovery pattern capable of reinforcing name, geography, and article-caption association through ordinary search-discovery pathways.
+Review of multiple regional news article pages indicates that these pages remain published as standard live article surfaces rather than excluded archival stubs or suppressed remnants. Reviewed sources from Bennington Banner, Rutland Herald, and Times Argus expose public article metadata, Open Graph article metadata, live article URLs, robots directives that do not apply a `noindex` instruction, and active production-page infrastructure. Taken together, these pages form a multi-source archive and news-discovery pattern capable of reinforcing name, geography, and article-caption association through ordinary search-discovery pathways.
 
 ## Target URLs
 
@@ -40,7 +40,7 @@ The reviewed sources include standard article-page signals, including:
 
 These are not inert dead fragments. They remain normal article surfaces.
 
-### 2. No noindex directive was identified in the reviewed source excerpts
+### 2. No `noindex` directive was identified in the reviewed source excerpts
 
 Across the reviewed source excerpts, the robots tag appears as:
 
@@ -75,11 +75,11 @@ These pages create a multi-domain news-surface pattern capable of reinforcing:
 
 ## Evidence Statement
 
-This incident is supported by source captures from Bennington Banner, Rutland Herald, and Times Argus reflecting live article metadata, active page instrumentation, non-noindex robots behavior, and production article-page structure.
+This incident is supported by source captures from Bennington Banner, Rutland Herald, and Times Argus reflecting live article metadata, active page instrumentation, non-`noindex` robots behavior, and production article-page structure.
 
 ## Recommended Branch-2 Action
 
-1. Reclassify this as a **regional multi-source live article incident**.
+1. Reclassify this as a regional multi-source live article incident.
 2. Track all three URLs under one incident family.
 3. Note that the exposure pattern is cross-domain rather than isolated to a single paper.
 4. Distinguish this incident class from:
