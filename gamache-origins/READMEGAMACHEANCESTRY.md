@@ -42,6 +42,7 @@ Current files in that folder include:
 - `gamache-origins/sources.html`
 - `gamache-origins/READMEGAMACHEANCESTRY.md`
 - `gamache-origins/gamache-coat-of-arms.jpg`
+- 'gamache-origins/gamachesecurity.html` 
 
 ## Research Posture
 
