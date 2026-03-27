@@ -2,7 +2,7 @@
 
 | Layer | Example | Controlled? | Action |
 |---|---|---:|---|
-| Owned domain or site | `justingamache.org` | No | document legacy-domain exposure; if control is later regained, apply `410 Gone`, `noindex`, `nosnippet`, and `noarchive` |
+| Legacy domain or site not currently controlled| `justingamache.org` | No | document legacy-domain exposure; if control is later regained, apply `410 Gone`, `noindex`, `nosnippet`, and `noarchive` |
 | Repo-controlled public pages | `README`, `About-Me.html`, public notices | Yes | strengthen canonical signals, publish source-of-truth notices, and distinguish canonical sources from stale or third-party artifacts |
 | Third-party PDF | court-hosted PDF | No | document discovery issue only; treat as third-party file exposure rather than a controllable metadata problem |
 | Third-party aggregator dead route | AnyLaw case URL | No | record stale dead-route evidence and classify separately from live third-party pages |
