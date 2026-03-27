@@ -1,0 +1,80 @@
+{
+  "incident_metadata": {
+    "record_type": "incident memorandum",
+    "record_title": "Infrastructure Attribution and Defensive Posture Assessment for benningtonbanner.com",
+    "subject_domain": "benningtonbanner.com",
+    "repository_context": "enforcement/search-discovery-suppression",
+    "document_path": "docs/suppression/INCIDENTS/incidentmemorandum.json",
+    "prepared_for": "suppression, discovery, and incident-record documentation",
+    "prepared_by": "Magical lobster",
+    "status": "active incident record",
+    "classification": "technical infrastructure assessment",
+    "assessment_scope": [
+      "registration layer",
+      "privacy-shield layer",
+      "DNS layer",
+      "application and delivery indicators",
+      "robots assessment",
+      "defensive-use implications"
+    ],
+    "method_note": "This record reflects documented observations derived from registration, RDAP, DNS, and source-review materials. It is intended to support technical incident documentation and defensive analysis. It should not be construed as a definitive attribution of editorial ownership, origin hosting, or ultimate operational control absent additional corroborating evidence."
+  },
+  "infrastructure_summary": {
+    "domain": "benningtonbanner.com",
+    "registrar": {
+      "name": "GoDaddy.com, LLC",
+      "iana_id": "146",
+      "abuse_contact_email": "abuse@godaddy.com",
+      "abuse_contact_phone": "+1.480-624-2505"
+    },
+    "privacy_shield": {
+      "enabled": true,
+      "provider": "Domains By Proxy, LLC",
+      "public_registrant_name": "Registration Private",
+      "public_technical_contact_name": "Registration Private",
+      "mailing_address": "DomainsByProxy.com 100 S. Mill Ave, Suite 1600, Tempe, Arizona, 85281",
+      "contact_relay": "https://www.godaddy.com/whois/results.aspx?domain=benningtonbanner.com&action=contactDomainOwner"
+    },
+    "dns": {
+      "provider": "AWS Route 53",
+      "dnssec_signed": false,
+      "nameservers": [
+        "ns-1155.awsdns-16.org",
+        "ns-1834.awsdns-37.co.uk",
+        "ns-190.awsdns-23.com",
+        "ns-534.awsdns-02.net"
+      ]
+    },
+    "domain_status": [
+      "client delete prohibited",
+      "client renew prohibited",
+      "client transfer prohibited",
+      "client update prohibited"
+    ],
+    "application_and_delivery_indicators": {
+      "observed_platform": "TownNews / BLOX",
+      "observed_asset_host": "bloximages.newyork1.vip.townnews.com",
+      "observed_behavior": [
+        "platform-mediated content delivery",
+        "client-side or application-layer access controls",
+        "gated or controlled content presentation"
+      ]
+    },
+    "robots_assessment": {
+      "general_noindex_detected": false,
+      "observed_meta_robots": "max-image-preview:standard",
+      "assessment": "Review of the available source materials did not identify evidence of a blanket noindex directive or a general robots exclusion posture."
+    },
+    "operator_visibility_assessment": {
+      "public_registration_identity_visible": false,
+      "assessment": "Public registrant and technical contact information are privacy-redacted. The available records support a layered infrastructure model in which the registration, DNS, and application environments should be analyzed as separate operational components rather than attributed to a single actor without further evidence."
+    },
+    "defensive_use_notes": [
+      "This information should be used to distinguish among the registrar, privacy-shield provider, DNS provider, and publishing or application platform when documenting technical observations or preparing communications.",
+      "The identified infrastructure details support more precise local blocking, filtering, or logging decisions with respect to the subject domain and associated asset hosts.",
+      "These observations should be treated as infrastructure-mapping evidence only and should not be presented as proof of editorial ownership, origin hosting, or ultimate operational control absent additional corroborating evidence.",
+      "Any escalation, inquiry, or incident notation should identify the specific layer implicated by the observed conduct or technical behavior."
+    ],
+    "summary": "Available registration, RDAP, DNS, and source-review materials indicate that the domain presents a layered infrastructure profile consisting of GoDaddy registrar services, Domains By Proxy privacy shielding, AWS Route 53 DNS delegation, and apparent TownNews/BLOX-related application or delivery components. This supports a formal incident-record conclusion that public registration identity is shielded, delivery appears platform-mediated, and technical attribution should remain limited to the specific infrastructure layers directly evidenced by the record."
+  }
+}
