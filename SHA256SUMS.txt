@@ -45,3 +45,7 @@ REPLACE_WITH_SHA256  humans.txt
 REPLACE_WITH_SHA256  evidence/facebook-group-everything-greenfield-ma-source-capture.html
 REPLACE_WITH_SHA256  evidence/facebook-group-everything-greenfield-ma-metadata.json
 REPLACE_WITH_SHA256  evidence/SOURCE_NOTE_EVERYTHING_GREENFIELD_MA.md
+
+REPLACE_WITH_SHA256  evidence/facebook-group-everything-greenfield-ma-cleaned.html
+
+REPLACE_WITH_SHA256  evidence/SOURCE_NOTE_EVERYTHING_GREENFIELD_MA.md
