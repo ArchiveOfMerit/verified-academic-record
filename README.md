@@ -1,6 +1,9 @@
-# 🏛️ THE ARCHIVE OF MERIT 🏛️
+<div align="center">
 
+# ✹🎓 The Archive of Merit 🎓✹  
 **DOI • LinkedIn • ResearchGate • YouTube**
+
+</div>
 
 ## Official Governance Statement
 
