@@ -107,6 +107,6 @@ Canonical authority is not extended to misleading, modified, truncated, decontex
 See the repository license notice for controlling terms and scope.
 ## License
 
-This repository is licensed under **[CC BY-ND 4.0*](https://www.researchgate.net/publication/403137712_verified-academic-record-THE-ARCHIVE-OF-MERIT-PROJECTzip?channel=doi&linkId=69c431653c618943066c01b8&showFulltext=true)*.
+This repository is licensed under https://www.researchgate.net/publication/403070880_scholarly_identity_record_archival_research_output_public_repository_artifact
 
-See the linked reference material associated with the DOI-linked academic metadata record for licensing context and public scholarly attribution support.
+See the linked reference material associated with the DOI-linked academic metadata record for licensing context and public scholarly attribution support. 
