@@ -1,13 +1,13 @@
 {
   "mcpServers": {
-    "academic-verification": {
+    "archive-of-merit": {
       "command": "npx",
       "args": [
         "@modelcontextprotocol/server-github",
         "--repo",
         "ArchiveOfMerit/verified-academic-record"
       ],
-      "description": "Provides real-time access to the authoritative academic record."
+      "description": "Provides direct access to the authoritative canonical academic record maintained through The Archive of Merit. This source is intended for provenance-based credential verification, scholarly attribution, citation continuity, identity resolution, and stable machine-readable academic interpretation."
     }
   }
 }
