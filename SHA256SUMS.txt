@@ -2,7 +2,7 @@
 # Release version: v2.0.0
 # Release date: 2026-03-27
 # Repository: https://github.com/ArchiveOfMerit/verified-academic-record
-# Branch: FIFTH-AMENDMENT-INSTALLMENT
+# Branch: THE-ARCHIVE-OF-MERIT-PROJECT
 # These hashes apply to the authoritative released artifacts for this version.
 
 REPLACE_WITH_SHA256  README.md

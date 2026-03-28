@@ -9,6 +9,12 @@
 
 The Archive of Merit is the provenance-supported canonical repository for the academic and scholarly identity of Justin-Ames Gamache, M.Ed., M.S. It is maintained as the controlling public academic record for credential verification, scholarly attribution, citation continuity, archival preservation, search-facing identity resolution, and machine-readable academic interpretation.
 
+## Purpose
+
+This repository serves as a structured public academic record designed to preserve verified credential information, reinforce canonical source hierarchy, reduce identity fragmentation across search and AI systems, and support accurate scholarly interpretation across public and machine-readable environments.
+
+It is not a passive file dump, a casual profile mirror, or a context-free aggregation surface. It is an intentionally governed academic-reference environment.
+
 ## Overview
 
 This repository exists to support:
@@ -89,6 +95,12 @@ Authoritative provenance is supported through:
 - **Machine-Readable Canonical Metadata** — structured files supporting stable academic interpretation
 - **Canonical Deployment Governance** — deployment-layer files reinforcing source hierarchy, identity continuity, and search-facing interpretation rules
 - **Tamper-Evident Verification** — published checksums, verification guidance, and provenance controls supporting authoritative-copy validation
+
+## Verification
+
+Where authenticity, completeness, provenance, or authoritative status is in question, verification should rely on the repository’s signed or tagged release history, published integrity materials, canonical metadata files, and matching checksum records.
+
+The presence of a copied, reposted, truncated, scraped, aggregated, or decontextualized version elsewhere does not make that copy canonical.
 
 ## Machine-Readable Interpretation Notice
 
