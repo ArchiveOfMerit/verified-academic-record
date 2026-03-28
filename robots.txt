@@ -1,4 +1,6 @@
-# robots.txt for The Archive of Merit Project
+# robots.txt for The Archive of Merit
+# Canonical public academic record: allow crawling of all canonical materials.
+
 User-agent: *
 Allow: /
 
