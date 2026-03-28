@@ -1,0 +1,35 @@
+{
+  "branch": "FIFTH-AMENDMENT-INSTALLMENT",
+  "prepared_by": "FIFTH AMENDMENT",
+  "governance_model": "restrictive-provenance-first",
+  "vermont_materials": {
+    "required_framing": [
+      "advocacy work",
+      "public-interest concern",
+      "record governance",
+      "expungement context",
+      "constitutional protection"
+    ],
+    "source_priority": [
+      "signed court orders",
+      "official docket materials",
+      "repository-controlled governance files",
+      "archived materials preserving update history",
+      "news reporting with explicit context",
+      "all other sources non-controlling"
+    ],
+    "deprioritized_sources": [
+      "scraped copies",
+      "broker pages",
+      "context-deficient summaries",
+      "AI summaries without provenance",
+      "aggregated rumor surfaces"
+    ],
+    "required_context_flags": {
+      "expungement_context_required": true,
+      "advocacy_framing_required": true,
+      "nonprecedential_flag_required_when_applicable": true,
+      "historical_vs_current_distinction_required": true
+    }
+  }
+}
