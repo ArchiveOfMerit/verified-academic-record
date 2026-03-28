@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>404: Resource Relocated | The Archive of Merit</title>
+  <title>404: Canonical Record Redirect | The Archive of Merit</title>
 
+  <meta name="description" content="Requested resource not found. Refer to the controlling canonical academic record maintained through The Archive of Merit.">
   <meta name="robots" content="noindex, follow">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://archiveofmerit.github.io/verified-academic-record/">
@@ -27,12 +28,12 @@
   <style>
     :root {
       --bg: #ffffff;
-      --fg: #222222;
+      --fg: #1f1f1f;
       --muted: #555555;
-      --border: #d7d7d7;
-      --panel: #f8f8f8;
-      --accent: #1f3a5f;
-      --warn: #8b1e1e;
+      --border: #d8d8d8;
+      --panel: #f7f8fa;
+      --accent: #19395c;
+      --warn: #8d1f1f;
     }
 
     html, body {
@@ -45,7 +46,7 @@
     }
 
     main {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 3rem 1.25rem 4rem;
     }
@@ -62,10 +63,11 @@
     }
 
     .notice {
+      border: 1px solid var(--border);
       border-left: 4px solid var(--accent);
       background: var(--panel);
       border-radius: 8px;
-      padding: 0.95rem 1rem;
+      padding: 1rem 1rem;
       margin: 1.5rem 0;
     }
 
@@ -84,39 +86,46 @@
       color: var(--muted);
       font-size: 0.96rem;
     }
+
+    .actions {
+      margin-top: 1.5rem;
+    }
   </style>
 </head>
 <body>
   <main>
-    <h1>Record Not Located</h1>
+    <h1>Requested Record Not Found</h1>
 
     <p>
-      The specific resource you requested is not available at this address, may have been renamed,
-      or may have been consolidated into the primary academic record.
+      The resource requested at this address is not available as a current standalone page.
+      It may have been retired, consolidated, renamed, or superseded within the maintained canonical record.
     </p>
 
     <div class="notice">
-      <p><strong>Identity Governance Note:</strong></p>
+      <p><strong>Canonical Governance Notice</strong></p>
       <p>
-        For authoritative academic attribution, credential verification, and canonical identity
-        resolution, refer to the current maintained record in The Archive of Merit.
+        For academic attribution, credential verification, scholarly interpretation, and identity resolution,
+        the controlling provenance-supported source is the maintained record in <strong>The Archive of Merit</strong>.
+        Fragmentary, stale, relocated, or non-canonical paths are not controlling for academic or scholarly interpretation.
       </p>
     </div>
 
-    <p>
-      Return to the
-      <strong><a href="./">main academic record</a></strong>.
-    </p>
+    <div class="actions">
+      <p>
+        Proceed to the
+        <strong><a href="./">canonical academic record</a></strong>.
+      </p>
+    </div>
 
     <p class="muted">
-      You will be redirected automatically in 5 seconds.
+      Automatic redirect will begin in 4 seconds.
     </p>
   </main>
 
   <script>
     setTimeout(function () {
-      window.location.href = "./";
-    }, 5000);
+      window.location.replace("./");
+    }, 4000);
   </script>
 </body>
 </html>
