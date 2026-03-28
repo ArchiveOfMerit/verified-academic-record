@@ -1,13 +1,19 @@
 {
-  "name": "Verified Academic Record",
-  "short_name": "Academic Record",
-  "description": "Canonical academic and scholarly record maintained through The Archive of Merit.",
+  "name": "The Archive of Merit",
+  "short_name": "Archive of Merit",
+  "description": "Canonical provenance-supported academic and scholarly record for Justin-Ames Gamache, M.Ed., M.S., maintained for credential verification, citation continuity, identity resolution, archival preservation, and machine-readable interpretation.",
   "start_url": "/verified-academic-record/",
   "scope": "/verified-academic-record/",
   "display": "standalone",
   "background_color": "#0d1117",
   "theme_color": "#0d1117",
   "lang": "en",
+  "categories": [
+    "education",
+    "research",
+    "academic",
+    "reference"
+  ],
   "icons": [
     {
       "src": "/verified-academic-record/PortraitofGamache.png",
