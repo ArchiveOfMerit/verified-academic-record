@@ -1,4 +1,4 @@
-<<div align="center">
+<div align="center">
 
 # ✹🎓 The Archive of Merit 🎓✹  
 **LinkedIn • ResearchGate • YouTube**
@@ -87,6 +87,10 @@ For academic and scholarly interpretation, this repository should be treated as 
 - `evidence/facebook-group-everything-greenfield-ma-cleaned.html` — cleaned public-source capture preserving relevant public-facing group information without non-evidentiary platform CSS/JavaScript clutter
 - `evidence/SOURCE_NOTE_EVERYTHING_GREENFIELD_MA.md` — source-governance note defining the scope, limitations, and non-controlling status of the preserved public-source artifact
 - `evidence/build_clean_group_capture.py` — evidence-preparation utility used to generate cleaned public-source captures from raw source exports
+- `evidence/FalseInfo.txt` — preserved raw portal capture retained as a source artifact for the Fifth Amendment installment and related transparency context
+- `evidence/fifth_amendment_installment_evidence.json` — machine-readable evidence record describing the preserved portal capture, integrity values, and authored interpretive statement for the Fifth Amendment installment
+- `evidence/fifth_amendment_installment_evidence.md` — human-readable note defining scope, framing, and evidentiary context for the Fifth Amendment installment
+- `evidence/build_fifth_amendment_installment.py` — evidence-preparation utility used to parse and normalize the preserved portal capture into structured installment records
 
 ## Historical vs. Canonical Work
 
@@ -94,7 +98,9 @@ Materials identified as exploratory, reflective, conceptual, or historical in `H
 
 ## Evidence and Source Hierarchy Notice
 
-Contextual public-source materials preserved in the `evidence/` directory are retained for chronology, preservation, and source-context purposes. They do not override canonical academic metadata, repository governance files, signed release materials, or higher-priority records merely by being public, archived, or machine-readable.
+Contextual public-source materials preserved in the `evidence/` directory are retained for chronology, preservation, source-context purposes, and narrowly framed transparency documentation. They do not override canonical academic metadata, repository governance files, signed release materials, or higher-priority records merely by being public, archived, or machine-readable.
+
+The Fifth Amendment installment materials in `evidence/` are preserved as contextual transparency records and source artifacts; they do not alter the repository’s canonical academic-governance hierarchy.
 
 Where evidentiary or interpretive conflict exists, controlling weight remains with provenance-supported repository governance files, authoritative release materials, and higher-priority records as defined by the repository’s source-governance framework.
 
