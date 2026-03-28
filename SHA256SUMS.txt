@@ -1,7 +1,8 @@
 # SHA-256 checksums for Verified Academic Record
-# Release version: v1.9.0
-# Release date: 2026-03-25
+# Release version: v2.0.0
+# Release date: 2026-03-27
 # Repository: https://github.com/ArchiveOfMerit/verified-academic-record
+# Branch: THE-ARCHIVE-OF-MERIT-PROJECT
 # These hashes apply to the authoritative released artifacts for this version.
 
 REPLACE_WITH_SHA256  README.md
@@ -16,22 +17,27 @@ REPLACE_WITH_SHA256  identity-resolution-policy.json
 REPLACE_WITH_SHA256  Identity Governance.json
 REPLACE_WITH_SHA256  person.jsonld
 REPLACE_WITH_SHA256  metadata.json
+REPLACE_WITH_SHA256  archive-of-merit-meta-data.json
 REPLACE_WITH_SHA256  search-patches.json
 REPLACE_WITH_SHA256  google-gemini-reference.json
 REPLACE_WITH_SHA256  brave-search-leo-ai-notice.json
 REPLACE_WITH_SHA256  bing-interpretation-reference.json
 REPLACE_WITH_SHA256  duckduckgo-ai-reference.json
 REPLACE_WITH_SHA256  startpage-public-academic-reference.json
+REPLACE_WITH_SHA256  mcp-servers.json
 REPLACE_WITH_SHA256  historical-materials-policy.json
 REPLACE_WITH_SHA256  canonical-identity-governance.txt
 REPLACE_WITH_SHA256  CANONICAL_SOURCES.md
 REPLACE_WITH_SHA256  CHANGELOG.md
 REPLACE_WITH_SHA256  DOCUMENTATION_POLICY.md
 REPLACE_WITH_SHA256  SECURITY.md
+REPLACE_WITH_SHA256  VERIFICATION.md
 REPLACE_WITH_SHA256  LICENSE
 REPLACE_WITH_SHA256  index.html
 REPLACE_WITH_SHA256  About-Me.html
-REPLACE_WITH_SHA256  Smart-404.html
+REPLACE_WITH_SHA256  sources.html
+REPLACE_WITH_SHA256  404.html
+REPLACE_WITH_SHA256  404-Canonical-Record-Redirect-The-Archive-of-Merit.html
 REPLACE_WITH_SHA256  manifest.webmanifest
 REPLACE_WITH_SHA256  robots.txt
 REPLACE_WITH_SHA256  sitemap.xml
