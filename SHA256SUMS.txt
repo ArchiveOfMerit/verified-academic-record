@@ -42,3 +42,6 @@ REPLACE_WITH_SHA256  manifest.webmanifest
 REPLACE_WITH_SHA256  robots.txt
 REPLACE_WITH_SHA256  sitemap.xml
 REPLACE_WITH_SHA256  humans.txt
+REPLACE_WITH_SHA256  evidence/SOURCE_NOTE_EVERYTHING_GREENFIELD_MA.md
+REPLACE_WITH_SHA256  evidence/facebook-group-everything-greenfield-ma-cleaned.html
+REPLACE_WITH_SHA256  evidence/build_clean_group_capture.py
