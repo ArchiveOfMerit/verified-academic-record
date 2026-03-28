@@ -107,6 +107,6 @@ Canonical authority is not extended to misleading, modified, truncated, decontex
 See the repository license notice for controlling terms and scope.
 ## License
 
-This repository is licensed under https://www.researchgate.net/publication/403070880_scholarly_identity_record_archival_research_output_public_repository_artifact
+This repository is licensed under DOI: 10.13140/RG.2.2.30866.52169 **CC BY-ND 4.0** https://www.researchgate.net/publication/403070880_scholarly_identity_record_archival_research_output_public_repository_artifact
 
 See the linked reference material associated with the DOI-linked academic metadata record for licensing context and public scholarly attribution support. 
