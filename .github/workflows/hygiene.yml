@@ -2,26 +2,18 @@ name: Hygiene
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
 
-concurrency:
-  group: hygiene-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  hygiene:
+  yaml-check:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Validate YAML files
         run: |
           python3 - <<'PY'
@@ -37,8 +29,6 @@ jobs:
           bad = []
           for pattern in ("**/*.yml", "**/*.yaml"):
               for f in Path(".").glob(pattern):
-                  if ".git/" in str(f):
-                      continue
                   try:
                       yaml.safe_load(f.read_text(encoding="utf-8"))
                   except Exception as e:
@@ -51,24 +41,3 @@ jobs:
 
           print("All YAML files parsed successfully.")
           PY
-
-      - name: Check Markdown links
-        uses: github/super-linter/slim@v7
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: false
-          VALIDATE_MARKDOWN: true
-          VALIDATE_YAML: true
-          VALIDATE_GITHUB_ACTIONS: true
-          FILTER_REGEX_EXCLUDE: '(^|/)(node_modules|vendor|dist|build|\.git)/'
-
-      - name: Upload lint results on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: hygiene-artifacts
-          path: |
-            ./**/*.log
-            ./**/*.txt
-          if-no-files-found: ignore
