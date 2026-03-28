@@ -1,0 +1,27 @@
+{
+  "generated_utc": "2026-03-28T15:29:50.418986+00:00",
+  "repository_target": "ArchiveOfMerit/verified-academic-record",
+  "branch_target": "FIFTH-AMENDMENT-INSTALLMENT",
+  "attachment": {
+    "filename": "FalseInfo.txt",
+    "bytes": 142463,
+    "sha256": "1a09e3afbe6fc1a3d30d53a794e56514fe4019b1e4571e7e4202dc0a64ab812e",
+    "md5": "118f7c3e179c5fba4c906f08060e064e",
+    "detected_type": "saved HTML portal page",
+    "title": "Vermont Judiciary Public Portal",
+    "indicators_found": [
+      "Vermont Judiciary Public Portal",
+      "Welcome, Justin Ames",
+      "Smart Search",
+      "Search Results",
+      "Details",
+      "Gamache, Justin Ames"
+    ]
+  },
+  "statement": "No loss is a loss and I did what 98% of people are afraid to do. Litigate and fight for myself and now I am being transparent on the issues that they hide from. I was within my constitutional rights the entire time and never gave them full details of my life. No warrant can force the contents of what is in your mind.",
+  "interpretive_notes": [
+    "The attachment is a raw saved portal page, not a finalized court order or narrative affidavit.",
+    "The capture contains portal/interface text and apparent account-session text.",
+    "For repository use, the cleanest approach is to preserve the raw file hash and add a separate normalized statement file."
+  ]
+}
