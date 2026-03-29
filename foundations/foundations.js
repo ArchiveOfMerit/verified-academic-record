@@ -1,46 +1,10 @@
-const foundationData = {
-  project: "The Archive of Merit Project",
-  branch: "foundation/archive-of-merit-project",
-  title: "Foundations About Me",
-  name: "Justin-Ames Gamache, M.Ed., M.S.",
-  roles: [
-    "Scholar-Practitioner",
-    "Doctoral Researcher",
-    "Educational Technology Leadership",
-    "Psychology and Education"
-  ],
-  summary:
-    "Justin-Ames Gamache, M.Ed., M.S., is a scholar-practitioner whose work reflects a sustained commitment to education, psychology, leadership, and human-centered learning. His academic background includes graduate study in education and psychology, with doctoral work in educational technology leadership that further extends his interdisciplinary foundation.",
-  purpose:
-    "This foundation record preserves and presents a coherent public-facing account of academic and professional development. It organizes profile-based evidence into a durable and readable archival format.",
-  interests: [
-    "Educational Technology",
-    "Psychology",
-    "Leadership",
-    "Higher Education",
-    "Mindfulness",
-    "Student Well-Being",
-    "Identity",
-    "Equity",
-    "Human-Centered Learning"
-  ],
-  profiles: [
-    {
-      label: "ResearchGate",
-      url: "https://www.researchgate.net/profile/Justin-Ames-Gamache-3"
-    },
-    {
-      label: "LinkedIn",
-      url: "https://www.linkedin.com/in/thescholarlypsychologistdoctoraleducationaltechnology/"
-    }
-  ],
-  records: [
-    "Justin-Ames Gamache®, M.Ed., M.S. _ LinkedIn.pdf",
-    "Justin-Ames GAMACHE _ Student _ Master of Education, Master of Science in Psychology and Doctor of Education (in progress) _ University of Phoenix, Phoenix _ College of Education _ Research profile.pdf",
-    "researchgate-linkedin-profile-record.html",
-    "foundations-about-me.md"
-  ]
-};
+async function loadFoundationData() {
+  const response = await fetch("foundations-links.json");
+  if (!response.ok) {
+    throw new Error("Failed to load foundations-links.json");
+  }
+  return response.json();
+}
 
 function escapeHtml(value) {
   return String(value)
@@ -58,12 +22,24 @@ function renderList(items, className = "") {
 }
 
 function renderProfiles(profiles) {
-  return profiles
+  return Object.entries(profiles)
     .map(
-      (profile) => `
-        <a class="foundation-button" href="${escapeHtml(profile.url)}" target="_blank" rel="noopener noreferrer">
-          ${escapeHtml(profile.label)}
+      ([label, url]) => `
+        <a class="foundation-button" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+          Open ${escapeHtml(label.charAt(0).toUpperCase() + label.slice(1))}
         </a>
+      `
+    )
+    .join("");
+}
+
+function renderDocuments(documents) {
+  return Object.entries(documents)
+    .map(
+      ([key, path]) => `
+        <li class="foundation-list-item">
+          <strong>${escapeHtml(key)}</strong>: ${escapeHtml(path)}
+        </li>
       `
     )
     .join("");
@@ -73,33 +49,22 @@ function createFoundationMarkup(data) {
   return `
     <section class="foundation-wrapper">
       <div class="foundation-card">
-        <p class="foundation-eyebrow">${escapeHtml(data.project)}</p>
-        <h1 class="foundation-title">${escapeHtml(data.title)}</h1>
-        <p class="foundation-name">${escapeHtml(data.name)}</p>
-        <p class="foundation-branch">${escapeHtml(data.branch)}</p>
+        <p class="foundation-eyebrow">${escapeHtml(data.project_name)}</p>
+        <h1 class="foundation-title">Foundations About Me</h1>
+        <p class="foundation-name">${escapeHtml(data.display_name)}</p>
+        <p class="foundation-branch">${escapeHtml(data.branch_name)}</p>
       </div>
 
       <div class="foundation-card">
         <h2>Professional Identity</h2>
-        <ul class="foundation-list">
-          ${renderList(data.roles, "foundation-list-item")}
-        </ul>
-      </div>
-
-      <div class="foundation-card">
-        <h2>Summary</h2>
+        <p><strong>${escapeHtml(data.role)}</strong></p>
         <p>${escapeHtml(data.summary)}</p>
       </div>
 
       <div class="foundation-card">
-        <h2>Purpose</h2>
-        <p>${escapeHtml(data.purpose)}</p>
-      </div>
-
-      <div class="foundation-card">
-        <h2>Core Interests</h2>
+        <h2>Focus Areas</h2>
         <ul class="foundation-list">
-          ${renderList(data.interests, "foundation-list-item")}
+          ${renderList(data.focus_areas, "foundation-list-item")}
         </ul>
       </div>
 
@@ -107,13 +72,16 @@ function createFoundationMarkup(data) {
         <h2>Public Profiles</h2>
         <div class="foundation-button-row">
           ${renderProfiles(data.profiles)}
+          <a class="foundation-button" href="${escapeHtml(data.repository)}" target="_blank" rel="noopener noreferrer">
+            Open Repository
+          </a>
         </div>
       </div>
 
       <div class="foundation-card">
         <h2>Foundation Records</h2>
         <ul class="foundation-list">
-          ${renderList(data.records, "foundation-list-item")}
+          ${renderDocuments(data.documents)}
         </ul>
       </div>
     </section>
@@ -210,11 +178,16 @@ function applyFoundationStyles() {
   document.head.appendChild(style);
 }
 
-function initFoundationsApp() {
+async function initFoundationsApp() {
   applyFoundationStyles();
-
   const root = document.getElementById("foundations-app") || document.body;
-  root.innerHTML = createFoundationMarkup(foundationData);
+
+  try {
+    const foundationData = await loadFoundationData();
+    root.innerHTML = createFoundationMarkup(foundationData);
+  } catch (error) {
+    root.innerHTML = `<div style="padding:20px;color:#ffb3b3;">Error: ${escapeHtml(error.message)}</div>`;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", initFoundationsApp);
