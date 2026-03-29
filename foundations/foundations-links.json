@@ -1,0 +1,39 @@
+{
+  "project_name": "The Archive of Merit Project",
+  "branch_name": "foundation/archive-of-merit-project",
+  "folder_name": "foundations",
+  "full_name": "Justin-Ames Gamache",
+  "credentials": "M.Ed., M.S.",
+  "display_name": "Justin-Ames Gamache, M.Ed., M.S.",
+  "role": "Scholar-Practitioner",
+  "repository": "https://github.com/ArchiveOfMerit/verified-academic-record",
+  "profiles": {
+    "linkedin": "https://www.linkedin.com/in/thescholarlypsychologistdoctoraleducationaltechnology/",
+    "researchgate": "https://www.researchgate.net/profile/Justin-Ames-Gamache-3"
+  },
+  "documents": {
+    "foundation_index": "foundations/foundation-index.html",
+    "about_markdown": "foundations/foundations-about-me.md",
+    "sql_record": "foundations/foundations-record.sql",
+    "go_service": "foundations/foundations.go",
+    "javascript_file": "foundations/foundations.js",
+    "php_file": "foundations/foundations.php",
+    "profile_record_html": "foundations/researchgate-linkedin-profile-record.html",
+    "linkedin_pdf": "foundations/Justin-Ames Gamache®, M.Ed., M.S. _ LinkedIn.pdf",
+    "researchgate_pdf": "foundations/Justin-Ames GAMACHE _ Student _ Master of Education, Master of Science in Psychology and Doctor of Education (in progress) _ University of Phoenix, Phoenix _ College of Education _ Research profile.pdf"
+  },
+  "focus_areas": [
+    "Educational Technology",
+    "Psychology",
+    "Leadership",
+    "Higher Education",
+    "Mindfulness",
+    "Student Well-Being",
+    "Identity",
+    "Equity",
+    "Data Security",
+    "Privacy-Conscious Technology",
+    "Human-Centered Learning"
+  ],
+  "summary": "Justin-Ames Gamache, M.Ed., M.S., is a scholar-practitioner whose work sits at the intersection of educational technology, psychology, leadership, and higher education. With an interdisciplinary foundation in education and psychology, he explores mindfulness, student well-being, identity, equity, and the role of leadership and technology in shaping meaningful, human-centered learning environments. His work integrates research and practice to advance teaching, learning, and student success, with particular attention to data security, privacy-conscious technology use, reflective, inclusive, equity-minded leadership, and The Archive of Merit Project as a public-facing commitment to preserving verified merit and achievement."
+}
