@@ -5,44 +5,35 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 )
 
-type Profile struct {
-	Name        string   `json:"name"`
-	Credentials string   `json:"credentials"`
-	Role        string   `json:"role"`
-	Summary     string   `json:"summary"`
-	FocusAreas  []string `json:"focus_areas"`
-	ProjectName string   `json:"project_name"`
-	BranchName  string   `json:"branch_name"`
-	Repository  string   `json:"repository"`
-	LinkedIn    string   `json:"linkedin"`
-	ResearchGate string  `json:"researchgate"`
+type FoundationData struct {
+	ProjectName string            `json:"project_name"`
+	BranchName  string            `json:"branch_name"`
+	FolderName  string            `json:"folder_name"`
+	FullName    string            `json:"full_name"`
+	Credentials string            `json:"credentials"`
+	DisplayName string            `json:"display_name"`
+	Role        string            `json:"role"`
+	Repository  string            `json:"repository"`
+	Profiles    map[string]string `json:"profiles"`
+	Documents   map[string]string `json:"documents"`
+	FocusAreas  []string          `json:"focus_areas"`
+	Summary     string            `json:"summary"`
 }
 
-var foundationProfile = Profile{
-	Name:        "Justin-Ames Gamache",
-	Credentials: "M.Ed., M.S.",
-	Role:        "Scholar-Practitioner",
-	Summary:     "Justin-Ames Gamache, M.Ed., M.S., is a scholar-practitioner whose work sits at the intersection of educational technology, psychology, leadership, and higher education. With an interdisciplinary foundation in education and psychology, he explores mindfulness, student well-being, identity, equity, and the role of leadership and technology in shaping meaningful, human-centered learning environments. His work integrates research and practice to advance teaching, learning, and student success, with particular attention to data security, privacy-conscious technology use, reflective, inclusive, equity-minded leadership, and The Archive of Merit Project as a public-facing commitment to preserving verified merit and achievement.",
-	FocusAreas: []string{
-		"Educational Technology",
-		"Psychology",
-		"Leadership",
-		"Higher Education",
-		"Mindfulness",
-		"Student Well-Being",
-		"Identity",
-		"Equity",
-		"Data Security",
-		"Privacy-Conscious Technology",
-		"Human-Centered Learning",
-	},
-	ProjectName:  "The Archive of Merit Project",
-	BranchName:   "foundation/archive-of-merit-project",
-	Repository:   "https://github.com/ArchiveOfMerit/verified-academic-record",
-	LinkedIn:     "https://www.linkedin.com/in/thescholarlypsychologistdoctoraleducationaltechnology/",
-	ResearchGate: "https://www.researchgate.net/profile/Justin-Ames-Gamache-3",
+var foundationData FoundationData
+
+func loadFoundationData() error {
+	file, err := os.Open("foundations-links.json")
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	decoder := json.NewDecoder(file)
+	return decoder.Decode(&foundationData)
 }
 
 const pageTemplate = `
@@ -120,14 +111,13 @@ const pageTemplate = `
 	<div class="container">
 		<div class="card">
 			<div class="eyebrow">{{.ProjectName}}</div>
-			<h1>{{.Name}}, {{.Credentials}}</h1>
+			<h1>{{.DisplayName}}</h1>
 			<p><strong>{{.Role}}</strong></p>
 			<p>{{.Summary}}</p>
 		</div>
 
 		<div class="card">
 			<h2>Foundation Branch</h2>
-			<p>This record is tied to the repository and branch structure below.</p>
 			<p><strong>Repository:</strong> <a href="{{.Repository}}" target="_blank" rel="noopener noreferrer">{{.Repository}}</a></p>
 			<p><strong>Branch:</strong> <code>{{.BranchName}}</code></p>
 		</div>
@@ -144,11 +134,21 @@ const pageTemplate = `
 		<div class="card">
 			<h2>Public Profiles</h2>
 			<div class="button-row">
-				<a class="button" href="{{.LinkedIn}}" target="_blank" rel="noopener noreferrer">Open LinkedIn</a>
-				<a class="button" href="{{.ResearchGate}}" target="_blank" rel="noopener noreferrer">Open ResearchGate</a>
+				{{range $label, $url := .Profiles}}
+				<a class="button" href="{{$url}}" target="_blank" rel="noopener noreferrer">Open {{$label}}</a>
+				{{end}}
 				<a class="button" href="{{.Repository}}" target="_blank" rel="noopener noreferrer">Open Repository</a>
 				<a class="button" href="/api/foundation" target="_blank" rel="noopener noreferrer">View JSON API</a>
 			</div>
+		</div>
+
+		<div class="card">
+			<h2>Foundation Records</h2>
+			<ul>
+				{{range $key, $path := .Documents}}
+				<li><strong>{{$key}}</strong>: {{$path}}</li>
+				{{end}}
+			</ul>
 		</div>
 	</div>
 </body>
@@ -162,7 +162,7 @@ func foundationPageHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := tmpl.Execute(w, foundationProfile); err != nil {
+	if err := tmpl.Execute(w, foundationData); err != nil {
 		http.Error(w, "render error", http.StatusInternalServerError)
 		return
 	}
@@ -174,13 +174,17 @@ func foundationAPIHandler(w http.ResponseWriter, r *http.Request) {
 	encoder := json.NewEncoder(w)
 	encoder.SetIndent("", "  ")
 
-	if err := encoder.Encode(foundationProfile); err != nil {
+	if err := encoder.Encode(foundationData); err != nil {
 		http.Error(w, "json error", http.StatusInternalServerError)
 		return
 	}
 }
 
 func main() {
+	if err := loadFoundationData(); err != nil {
+		log.Fatal("failed to load foundations-links.json: ", err)
+	}
+
 	http.HandleFunc("/", foundationPageHandler)
 	http.HandleFunc("/api/foundation", foundationAPIHandler)
 
