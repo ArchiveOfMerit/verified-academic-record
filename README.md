@@ -1,6 +1,6 @@
-<div align="center">
+<<div align="center">
 
-# ✹🎓 The Archive of Merit 🎓✹  
+# ✹🎓 The Archive of Merit 🎓✹
 **LinkedIn • ResearchGate • YouTube**
 
 </div>
@@ -80,6 +80,20 @@ For academic and scholarly interpretation, this repository should be treated as 
 - `manifest.webmanifest` — web application metadata supporting machine-readable deployment context
 - `.nojekyll` — deployment-control file preventing unintended Jekyll processing on GitHub Pages
 - `humans.txt` — human-readable project note
+
+### Foundations Layer
+
+- `foundations/` — structured foundation directory for profile continuity, public identity framing, and cross-format technical records
+- `foundations/foundation-index.html` — foundation landing page for structured public identity presentation
+- `foundations/foundations-about-me.md` — narrative identity and scholarly framing statement
+- `foundations/foundations-links.json` — canonical machine-readable identity, profile, repository, and document map
+- `foundations/foundations-record.sql` — structured SQL record for foundation-layer data storage and query support
+- `foundations/foundations.js` — JavaScript foundation renderer for browser-based presentation
+- `foundations/foundations.php` — PHP-rendered foundation layer for server-side compatibility
+- `foundations/foundations.go` — Go-based foundation service and API-oriented presentation layer
+- `foundations/researchgate-linkedin-profile-record.html` — structured profile-access page linking public academic and professional records
+- `foundations/Justin-Ames Gamache®, M.Ed., M.S. _ LinkedIn.pdf` — preserved LinkedIn profile record
+- `foundations/Justin-Ames GAMACHE _ Student _ Master of Education, Master of Science in Psychology and Doctor of Education (in progress) _ University of Phoenix, Phoenix _ College of Education _ Research profile.pdf` — preserved ResearchGate profile record
 
 ### Evidence and Contextual Public-Source Materials
 
