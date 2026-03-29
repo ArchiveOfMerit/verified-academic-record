@@ -1,31 +1,19 @@
 <?php
-$foundationProfile = [
-    "name" => "Justin-Ames Gamache",
-    "credentials" => "M.Ed., M.S.",
-    "role" => "Scholar-Practitioner",
-    "summary" => "Justin-Ames Gamache, M.Ed., M.S., is a scholar-practitioner whose work sits at the intersection of educational technology, psychology, leadership, and higher education. With an interdisciplinary foundation in education and psychology, he explores mindfulness, student well-being, identity, equity, and the role of leadership and technology in shaping meaningful, human-centered learning environments. His work integrates research and practice to advance teaching, learning, and student success, with particular attention to data security, privacy-conscious technology use, reflective, inclusive, equity-minded leadership, and The Archive of Merit Project as a public-facing commitment to preserving verified merit and achievement.",
-    "project_name" => "The Archive of Merit Project",
-    "branch_name" => "foundation/archive-of-merit-project",
-    "repository" => "https://github.com/ArchiveOfMerit/verified-academic-record",
-    "linkedin" => "https://www.linkedin.com/in/thescholarlypsychologistdoctoraleducationaltechnology/",
-    "researchgate" => "https://www.researchgate.net/profile/Justin-Ames-Gamache-3",
-    "focus_areas" => [
-        "Educational Technology",
-        "Psychology",
-        "Leadership",
-        "Higher Education",
-        "Mindfulness",
-        "Student Well-Being",
-        "Identity",
-        "Equity",
-        "Data Security",
-        "Privacy-Conscious Technology",
-        "Human-Centered Learning"
-    ]
-];
+$jsonPath = __DIR__ . '/foundations-links.json';
+$jsonContent = file_get_contents($jsonPath);
+
+if ($jsonContent === false) {
+    die('Unable to read foundations-links.json');
+}
+
+$foundationProfile = json_decode($jsonContent, true);
+
+if ($foundationProfile === null) {
+    die('Invalid JSON in foundations-links.json');
+}
 
 function escape($value) {
-    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+    return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
 }
 ?>
 <!DOCTYPE html>
@@ -116,10 +104,7 @@ function escape($value) {
     <main class="container">
         <section class="card">
             <p class="eyebrow"><?php echo escape($foundationProfile["project_name"]); ?></p>
-            <h1>
-                <?php echo escape($foundationProfile["name"]); ?>,
-                <?php echo escape($foundationProfile["credentials"]); ?>
-            </h1>
+            <h1><?php echo escape($foundationProfile["display_name"]); ?></h1>
             <p><strong><?php echo escape($foundationProfile["role"]); ?></strong></p>
             <p><?php echo escape($foundationProfile["summary"]); ?></p>
         </section>
@@ -147,16 +132,24 @@ function escape($value) {
         <section class="card">
             <h2>Public Profiles</h2>
             <div class="button-row">
-                <a class="button" href="<?php echo escape($foundationProfile["linkedin"]); ?>" target="_blank" rel="noopener noreferrer">
-                    Open LinkedIn
-                </a>
-                <a class="button" href="<?php echo escape($foundationProfile["researchgate"]); ?>" target="_blank" rel="noopener noreferrer">
-                    Open ResearchGate
-                </a>
+                <?php foreach ($foundationProfile["profiles"] as $label => $url): ?>
+                    <a class="button" href="<?php echo escape($url); ?>" target="_blank" rel="noopener noreferrer">
+                        Open <?php echo escape(ucfirst($label)); ?>
+                    </a>
+                <?php endforeach; ?>
                 <a class="button" href="<?php echo escape($foundationProfile["repository"]); ?>" target="_blank" rel="noopener noreferrer">
                     Open Repository
                 </a>
             </div>
+        </section>
+
+        <section class="card">
+            <h2>Foundation Records</h2>
+            <ul>
+                <?php foreach ($foundationProfile["documents"] as $key => $path): ?>
+                    <li><strong><?php echo escape($key); ?></strong>: <?php echo escape($path); ?></li>
+                <?php endforeach; ?>
+            </ul>
         </section>
     </main>
 </body>
