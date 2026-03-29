@@ -1,0 +1,9 @@
+# About Me
+
+Justin-Ames Gamache, M.Ed., M.S., is a scholar-practitioner whose work reflects a sustained commitment to education, psychology, leadership, and human-centered learning. His academic background includes graduate study in education and psychology, with doctoral work in educational technology leadership that further extends his interdisciplinary foundation. Across these areas, his profile reflects a focus on thoughtful inquiry, academic integrity, and the preservation of verified scholarly and professional achievements.
+
+This record is part of a broader effort to preserve and present a coherent public-facing account of academic and professional development. It brings together visible evidence of scholarship, graduate achievement, research engagement, and ongoing doctoral progress in a structured archival format. The purpose is to ensure that publicly available materials remain accessible, organized, and connected to a clear and credible record.
+
+His public scholarly presence includes academic and professional platforms that document research interests, educational background, and contributions to higher education discourse. These profiles reflect interests at the intersection of educational technology, psychology, student well-being, leadership, mindfulness, identity, and equity in learning environments. Taken together, they represent an evolving record of scholarship grounded in both academic preparation and lived professional engagement.
+
+The Archive of Merit Project serves as a foundation for preserving that record with continuity, clarity, and purpose. Rather than allowing achievements to remain fragmented across platforms, this branch helps organize profile-based evidence into a durable and readable form. In that respect, this file functions as both an introduction and a framing statement for the materials preserved in this repository branch.
