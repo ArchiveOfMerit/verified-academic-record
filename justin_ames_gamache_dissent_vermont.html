@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statement of Dissent</title>
+</head>
+<body>
+  <main>
+    <h1>Statement of Dissent</h1>
+    <p id="dissent-statement">Justin Ames Gamache dissents against Vermont.</p>
+  </main>
+
+  <script>
+    const statement = {
+      author: "Justin Ames Gamache",
+      action: "dissents against",
+      subject: "Vermont"
+    };
+
+    function renderStatement(data) {
+      return `${data.author} ${data.action} ${data.subject}.`;
+    }
+
+    document.getElementById("dissent-statement").textContent = renderStatement(statement);
+
+    console.log(renderStatement(statement));
+  </script>
+</body>
+</html>
