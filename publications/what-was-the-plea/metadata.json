@@ -1,13 +1,8 @@
 {
-  "id": "what-was-the-plea",
-  "type": "scholarly-publication",
   "title": "WHAT WAS THE PLEA? A QUALITATIVE NARRATIVE INQUIRY INTO A VERMONT RESTORATIVE JUSTICE DISPOSITION",
-  "author": {
-    "name": "Justin-Ames Gamache"
-  },
+  "author": "Justin-Ames Gamache",
   "doi": "10.13140/RG.2.2.21616.42248",
-  "repository_path": "/verified-academic-record/publications/what-was-the-plea/",
-  "external_url": "https://www.researchgate.net/publication/403606739_WHAT_WAS_THE_PLEA_A_QUALITATIVE_NARRATIVE_INQUIRY_INTO_A_VERMONT_RESTORATIVE_JUSTICE_DISPOSITION",
-  "source_type": "ResearchGate",
-  "canonical_label": "Archive of Merit publication pointer"
+  "repository_branch": "THE-ARCHIVE-OF-MERIT-PROJECT",
+  "repository_path": "/publications/what-was-the-plea/",
+  "authority": "Archive of Merit canonical publication"
 }
