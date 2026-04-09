@@ -124,7 +124,8 @@ Where public advocacy files are preserved within this repository, they should be
 The following public letter is preserved as part of the repository’s digital-freedom governance record.
 
 ---
-<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/5a95e185-38ec-4115-a46a-55131bf385d1" />
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/b384a68a-6805-4b8a-bdb0-3ca51dceb29b" />
+
 
 # Digital Freedom Letter to Congress
 
