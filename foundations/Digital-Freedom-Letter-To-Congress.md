@@ -1,3 +1,7 @@
+
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/3cb6a758-5361-457c-94c9-f6528351c4ad" />
+
+
 # Digital Freedom Letter to Congress
 
 ## An Open Letter to the United States House of Representatives and the United States Senate
