@@ -1,0 +1,78 @@
+{
+  "title": "Constitutional Liberty and Digital Sovereignty",
+  "folder": "foundations",
+  "version": "1.0.0",
+  "status": "working-foundation",
+  "theme": "digital-sovereignty-for-all",
+  "core_quote": "Without digital sovereignty, traditional liberties become unstable.",
+  "summary": "A constitutional framework reimagining key amendments for 2026 so that liberty remains enforceable in physical and digital life.",
+  "core_thesis": {
+    "statement": "Core liberties should include digital sovereignty for all.",
+    "definition": "Digital sovereignty means that a person retains meaningful authority over personal data, digital identity, devices, communications, online presence, and access to essential digital systems.",
+    "constitutional_premise": "The people retain sovereignty over their persons, homes, papers, effects, identities, and data, and no government or institution may override that sovereignty without due process, necessity, and lawful justification."
+  },
+  "amendments": [
+    {
+      "number": 3,
+      "name": "Third Amendment",
+      "theme": "sanctity of the home",
+      "reimagined_for_2026": "No arm of the government, nor any agent acting under color of law, shall in time of peace occupy, monitor, surveil, or technologically intrude upon the home, its digital systems, or the private data generated within it, without the free consent of the people concerned or lawful authority narrowly prescribed by law. In time of declared war or public emergency, no such intrusion shall occur except in a manner specifically authorized by law, limited in scope, and subject to strict constitutional review. The home shall remain a protected sphere of personal privacy, domestic peace, and individual security against physical or digital occupation by the state.",
+      "modern_principle": "The home remains a constitutionally protected sphere against both physical and digital occupation."
+    },
+    {
+      "number": 4,
+      "name": "Fourth Amendment",
+      "theme": "security against unreasonable intrusion",
+      "reimagined_for_2026": "The right of the people to be secure in their persons, houses, digital devices, online activities, papers, and effects, both physical and virtual, against unreasonable searches, seizures, or surveillance, shall not be violated. No warrant to search, seize, or monitor shall issue except upon probable cause, supported by oath or affirmation, and specifically describing the persons, data or devices, places, or communications to be targeted. Digital and electronic information shall be protected with the same sanctity as physical property, and no general or indiscriminate surveillance of the people’s private lives shall be lawful.",
+      "modern_principle": "Security of the person now includes security of devices, communications, and digital records."
+    },
+    {
+      "number": 5,
+      "name": "Fifth Amendment",
+      "theme": "due process and protection against coercion",
+      "reimagined_for_2026": "No government shall force a person to condemn oneself, strip a person of liberty or property without lawful process, or seize what belongs to the people, physical or digital, without constitutional justification and just compensation.",
+      "modern_principle": "The state may not compel self-condemnation, deprive liberty or property without due process, or seize physical or digital holdings without lawful justification."
+    },
+    {
+      "number": 6,
+      "name": "Sixth Amendment",
+      "theme": "fair criminal process",
+      "reimagined_for_2026": "In all criminal prosecutions, digital security cases, or equivalent proceedings where personal, digital, or public rights are at stake, the accused shall enjoy the right to a prompt and public trial by an impartial jury of their peers in the relevant jurisdiction. The accused shall have the right to be represented by qualified counsel with full access to evidence, and to be informed of the nature and cause of the accusation; to confront and cross-examine witnesses; to obtain evidence in their defense; and to have access to all information, digital or otherwise, that is material to their case. The proceedings shall be fair, lawful, timely, and transparent, protecting the individual rights of the accused.",
+      "modern_principle": "Procedural justice must remain intact where evidence, accusation, and defense increasingly move through digital systems."
+    },
+    {
+      "number": 7,
+      "name": "Seventh Amendment",
+      "theme": "civil jury rights",
+      "reimagined_for_2026": "In civil cases where significant property, digital assets, or rights of value are in dispute, the right of trial by jury shall be preserved. All parties shall have the right to have their case heard by an impartial jury of their peers. Facts decided by a jury shall not be re-examined by any court of the United States except according to the rules of law. The civil judgment shall be reached through fair, public, and impartial proceedings, and all evidence, whether physical, documentary, or digital, shall be available to the parties in pursuit of justice.",
+      "modern_principle": "Civil legitimacy extends to disputes involving digital assets, records, and evidence."
+    },
+    {
+      "number": 14,
+      "name": "Fourteenth Amendment",
+      "theme": "citizenship, due process, and equal protection",
+      "reimagined_for_2026": "All persons born in the United States, or lawfully recognized under its Constitution and laws, are citizens of the United States and of the State wherein they reside. No State shall make or enforce any law, policy, digital system, or administrative practice that abridges the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, property, identity, data, or meaningful access to civil society without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws, whether the discrimination be physical, legal, technological, algorithmic, or systemic.",
+      "modern_principle": "States do not get to create second-class persons through law, administration, or algorithmic systems."
+    }
+  ],
+  "foundational_observations": [
+    "The Third Amendment’s logic extends beyond quartering to the sanctity of the home against physical and digital occupation.",
+    "The Fourth Amendment must now be read against surveillance systems, device access, and indiscriminate data capture.",
+    "The Fifth Amendment remains a barrier against state coercion, unlawful deprivation, and uncompensated seizure, including in digital form.",
+    "The Sixth and Seventh Amendments preserve procedural legitimacy in criminal and civil cases where digital evidence and digital assets are increasingly central.",
+    "The Fourteenth Amendment remains the principal barrier against second-class status, whether imposed by law, administration, or automated systems.",
+    "Traditional liberties must remain enforceable in digital life, not merely symbolic in physical law."
+  ],
+  "keywords": [
+    "digital sovereignty",
+    "constitutional liberty",
+    "privacy",
+    "due process",
+    "equal protection",
+    "digital identity",
+    "algorithmic discrimination",
+    "search and seizure",
+    "civil rights",
+    "home privacy"
+  ]
+}
