@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Foundations | Constitutional Liberty and Digital Sovereignty</title>
+  <meta
+    name="description"
+    content="Foundational constitutional reflections on the Third, Fourth, Fifth, Sixth, Seventh, and Fourteenth Amendments, reimagined for 2026 through the principle of digital sovereignty."
+  />
+  <style>
+    :root {
+      --bg: #f7f3ea;
+      --ink: #1f1a17;
+      --muted: #5b514a;
+      --line: #d6c8b8;
+      --accent: #6f4e37;
+      --panel: #fffdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    header {
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin: 0 0 14px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 0;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .quote {
+      margin: 28px 0;
+      padding: 20px 24px;
+      border-left: 5px solid var(--accent);
+      background: #f1e7db;
+      font-size: 1.2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .label {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .text-block {
+      white-space: pre-line;
+      color: var(--ink);
+    }
+
+    section {
+      margin-top: 44px;
+    }
+
+    .principles {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 2px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    code.inline {
+      background: #efe6dc;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Foundations Folder</div>
+      <h1>Constitutional Liberty and Digital Sovereignty</h1>
+      <p class="lead">
+        This page preserves a modern constitutional framework built from the
+        Third, Fourth, Fifth, Sixth, Seventh, and Fourteenth Amendments,
+        reimagined for 2026 through the principle that liberty must remain
+        enforceable where power now operates: in data, devices, systems,
+        surveillance, and digital identity.
+      </p>
+      <div class="quote">
+        <strong>Without digital sovereignty, traditional liberties become unstable.</strong>
+      </div>
+    </header>
+
+    <section>
+      <h2>Core Thesis</h2>
+      <div class="principles">
+        <p>
+          The older constitutional order protected the body, the home, papers,
+          effects, liberty, and property. The present era requires those same
+          protections to remain meaningful in digital form, because modern power
+          often acts through databases, algorithmic systems, platform control,
+          identity verification, device monitoring, and persistent data trails.
+        </p>
+        <p>
+          Digital sovereignty means that a person retains meaningful authority
+          over personal data, digital identity, communications, devices, online
+          presence, and access to essential systems of civil life. It is not a
+          secondary policy preference. It is part of liberty itself.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reimagined Amendments for 2026</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="label">Third Amendment</div>
+          <h3>Sanctity of the Home</h3>
+          <p class="text-block">
+No arm of the government, nor any agent acting under color of law, shall in time of peace occupy, monitor, surveil, or technologically intrude upon the home, its digital systems, or the private data generated within it, without the free consent of the people concerned or lawful authority narrowly prescribed by law. In time of declared war or public emergency, no such intrusion shall occur except in a manner specifically authorized by law, limited in scope, and subject to strict constitutional review. The home shall remain a protected sphere of personal privacy, domestic peace, and individual security against physical or digital occupation by the state.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">Fourth Amendment</div>
+          <h3>Security Against Unreasonable Intrusion</h3>
+          <p class="text-block">
+The right of the people to be secure in their persons, houses, digital devices, online activities, papers, and effects, both physical and virtual, against unreasonable searches, seizures, or surveillance, shall not be violated.
+
+No warrant to search, seize, or monitor shall issue except upon probable cause, supported by oath or affirmation, and specifically describing the persons, data or devices, places, or communications to be targeted.
+
+Digital and electronic information shall be protected with the same sanctity as physical property, and no general or indiscriminate surveillance of the people’s private lives shall be lawful.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">Fifth Amendment</div>
+          <h3>Due Process, Self-Incrimination, and Takings</h3>
+          <p class="text-block">
+No government shall force a person to condemn oneself, strip a person of liberty or property without lawful process, or seize what belongs to the people, physical or digital, without constitutional justification and just compensation.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">Sixth Amendment</div>
+          <h3>Fair Criminal Process</h3>
+          <p class="text-block">
+In all criminal prosecutions, digital security cases, or equivalent proceedings where personal, digital, or public rights are at stake, the accused shall enjoy the right to a prompt and public trial by an impartial jury of their peers in the relevant jurisdiction.
+
+The accused shall have the right to be represented by qualified counsel with full access to evidence, and to be informed of the nature and cause of the accusation; to confront and cross-examine witnesses; to obtain evidence in their defense; and to have access to all information, digital or otherwise, that is material to their case.
+
+The proceedings shall be fair, lawful, timely, and transparent, protecting the individual rights of the accused.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">Seventh Amendment</div>
+          <h3>Civil Jury Rights</h3>
+          <p class="text-block">
+In civil cases where significant property, digital assets, or rights of value are in dispute, the right of trial by jury shall be preserved.
+
+All parties shall have the right to have their case heard by an impartial jury of their peers.
+
+Facts decided by a jury shall not be re-examined by any court of the United States except according to the rules of law.
+
+The civil judgment shall be reached through fair, public, and impartial proceedings, and all evidence, whether physical, documentary, or digital, shall be available to the parties in pursuit of justice.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">Fourteenth Amendment</div>
+          <h3>Citizenship, Due Process, and Equal Protection</h3>
+          <p class="text-block">
+All persons born in the United States, or lawfully recognized under its Constitution and laws, are citizens of the United States and of the State wherein they reside.
+
+No State shall make or enforce any law, policy, digital system, or administrative practice that abridges the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, property, identity, data, or meaningful access to civil society without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws, whether the discrimination be physical, legal, technological, algorithmic, or systemic.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Digital Sovereignty for All</h2>
+      <div class="principles">
+        <p>
+          Core liberties should include digital sovereignty for all. A person
+          should retain meaningful authority over personal data, digital
+          identity, devices, communications, online presence, and the terms
+          under which others collect, copy, monetize, or weaponize personal
+          information.
+        </p>
+        <p>
+          A modern constitutional principle can therefore be stated as follows:
+        </p>
+        <p class="quote">
+          The people retain sovereignty over their persons, homes, papers,
+          effects, identities, and data, and no government or institution may
+          override that sovereignty without due process, necessity, and lawful
+          justification.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Foundational Observations</h2>
+      <div class="principles">
+        <ul>
+          <li>The Third Amendment’s logic extends beyond quartering to the sanctity of the home against physical and digital occupation.</li>
+          <li>The Fourth Amendment must now be read against surveillance systems, device access, and indiscriminate data capture.</li>
+          <li>The Fifth Amendment remains a barrier against state coercion, unlawful deprivation, and uncompensated seizure, including in digital form.</li>
+          <li>The Sixth and Seventh Amendments preserve procedural legitimacy in criminal and civil cases where digital evidence and digital assets are increasingly central.</li>
+          <li>The Fourteenth Amendment remains the principal barrier against second-class status, whether imposed by law, administration, or automated systems.</li>
+          <li>Traditional liberties must remain enforceable in digital life, not merely symbolic in physical law.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Suggested companion file:
+        <code class="inline">foundations-constitutional-liberty-digital-sovereignty.json</code>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
