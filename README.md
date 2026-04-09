@@ -161,6 +161,8 @@ Respectfully,
 **Justin-Ames Gamache, M.Ed., M.S.**  
 Citizen, scholar, and advocate for digital freedom
 
+Gamache, J.-A. (2026, April). An open letter to the United States House of Representatives and the United States Senate [Letter]. ResearchGate. https://doi.org/10.13140/RG.2.2.15768.97283
+
 ---
 
 ## Historical vs. Canonical Work
