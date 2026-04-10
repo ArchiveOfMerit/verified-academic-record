@@ -1,39 +1,27 @@
 #!/usr/bin/env python3
 """
-Justin-Ames Gamache mention moderation bot
+Negative content quarantine bot
 
 Purpose:
 - Scan text content from files, feeds, exports, or pasted input
-- Detect references to Justin-Ames Gamache (and configured name variants)
-- Score whether the content is negative / hostile / potentially defamatory
+- Detect references to Justin-Ames Gamache and configured variants
+- Detect hostile / negative / reputationally risky content
+- Hard-block specific URLs, domains, and prefixes
 - Quarantine matching items for manual review instead of deleting anything
 
-Design notes:
-- Conservative by default: routes uncertain cases to review
-- Works locally
-- No external API required
-- Can be extended to email, RSS, webhooks, or platform exports
+Supported inputs:
+- JSONL: one JSON object per line
+- TXT: paragraph blocks
+- stdin
+- direct --text
 
-Usage examples:
-    python justin_negative_content_quarantine_bot.py --input sample.jsonl --output review_queue.jsonl
-    python justin_negative_content_quarantine_bot.py --stdin
-    python justin_negative_content_quarantine_bot.py --text "Justin-Ames Gamache is incompetent"
-
-Input formats supported:
-- JSONL: one JSON object per line with at least a text/content/body field
-- TXT: plain text, one item per paragraph block
-- stdin: pasted text
-
-Optional JSON object fields recognized:
+Recognized JSON fields:
 - id
 - source
 - url
 - title
 - text | content | body
 - created_at
-
-Output:
-- JSONL review queue with classification details
 """
 
 from __future__ import annotations
@@ -46,7 +34,7 @@ import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
-from urllib.parse import urlsplit, urlunsplit
+from urllib.parse import urlparse, urlsplit, urlunsplit
 
 
 NAME_PATTERNS = [
@@ -111,6 +99,14 @@ SOURCE_AND_CASE_PATTERNS = {
     r"\bnew\s+england\s+newspaper\s+inc\b": 2,
     r"\bberkshire\s+eagle\b": 2,
     r"\bchange\.org\b": 1,
+    r"\bcasemine\b": 3,
+    r"\bjudgment\b": 2,
+    r"\bcourt\s+summary\b": 2,
+    r"\bai\s+summary\b": 2,
+    r"\bjudgment\s*,\s*law\s*,\s*casemine\.com\b": 3,
+    r"\bgamache\s+v\.?\s+ronan\b": 4,
+    r"\bgamache\s+v\.?\s+mozzer\b": 4,
+    r"\bgamache\s+v\.?\s+burke\b": 4,
     r"\bjustin\s+a\s+gamache\s+v\.?\s+lauren\s+a\s+ronan\b": 4,
     r"\blauren\s+ronan\s+v\.?\s+justin\s+a\s+gamache\b": 4,
     r"\bjustin\s+ames\s+gamache\s+v\.?\s+thomas\s+mozzer\b": 4,
@@ -139,6 +135,16 @@ CHANGE_ORG_PREFIX = (
     "https://www.change.org/p/"
     "facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache"
 )
+
+CASEMINE_PREFIXES = [
+    "https://www.casemine.com/judgement/us/",
+    "https://casemine.com/judgement/us/",
+]
+
+BLOCKED_DOMAINS = {
+    "www.casemine.com",
+    "casemine.com",
+}
 
 URL_BLOCKLIST = {
     "https://www.vermontjudiciary.org/sites/default/files/documents/eo22-067.pdf": {
@@ -196,6 +202,28 @@ URL_BLOCKLIST = {
         "action": "review",
         "reason": "prefix-blocklist:change-org-petition",
     },
+
+    # Exact CaseMine URLs
+    "https://www.casemine.com/judgement/us/62d63849b50db9e568bc76ec": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:casemine-gamache-v-mozzer",
+    },
+    "https://www.casemine.com/judgement/us/69d7b4c35120517b0cca74f2": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:casemine-gamache-v-ronan",
+    },
+    "https://www.casemine.com/judgement/us/628e2278714d583e41330050": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:casemine-negative-summary-1",
+    },
+    "https://www.casemine.com/judgement/us/62ff12848ecb824567aebf2e": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:casemine-negative-summary-2",
+    },
 }
 
 
@@ -239,15 +267,50 @@ class MentionModerationBot:
         return re.findall(r"\b[\w'-]+\b", text.lower())
 
     def normalize_url(self, url: str) -> str:
-        """
-        Normalize a URL so hash fragments and query strings do not break
-        exact blocklist matches. Keeps scheme, host, and path.
-        """
         if not url:
             return ""
-
         parts = urlsplit(url.strip())
-        return urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
+        return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path, "", ""))
+
+    def domain_from_url(self, url: str) -> str:
+        if not url:
+            return ""
+        return urlparse(url).netloc.lower().strip()
+
+    def combined_text(self, item: Dict[str, Any]) -> str:
+        pieces: List[str] = []
+        for key in ("title", "text", "content", "body", "url", "source"):
+            value = item.get(key)
+            if isinstance(value, str) and value.strip():
+                pieces.append(value.strip())
+        return "\n".join(pieces)
+
+    def is_domain_blocked(self, normalized_url: str) -> Optional[Dict[str, str]]:
+        domain = self.domain_from_url(normalized_url)
+        if domain in BLOCKED_DOMAINS:
+            return {
+                "risk_level": "high",
+                "action": "quarantine",
+                "reason": "domain-blocklist:casemine",
+            }
+        return None
+
+    def is_prefix_blocked(self, normalized_url: str) -> Optional[Dict[str, str]]:
+        if normalized_url.startswith(CHANGE_ORG_PREFIX):
+            return {
+                "risk_level": "medium",
+                "action": "review",
+                "reason": "prefix-blocklist:change-org-petition",
+            }
+
+        for prefix in CASEMINE_PREFIXES:
+            if normalized_url.startswith(prefix):
+                return {
+                    "risk_level": "high",
+                    "action": "quarantine",
+                    "reason": "prefix-blocklist:casemine-judgment-page",
+                }
+        return None
 
     def score_negativity(self, text: str) -> Tuple[int, List[str]]:
         score = 0
@@ -274,6 +337,14 @@ class MentionModerationBot:
                 score += weight
                 reasons.append(f"escalation-pattern:{rx.pattern}(+{weight})")
 
+        if "casemine" in lowered:
+            score += 4
+            reasons.append("case-source:casemine(+4)")
+
+        if "judgment" in lowered and "gamache" in lowered:
+            score += 2
+            reasons.append("case-context:judgment-with-name(+2)")
+
         if re.search(r"[!]{2,}", text):
             score += 1
             reasons.append("amplification:multiple-exclamation(+1)")
@@ -284,67 +355,104 @@ class MentionModerationBot:
 
         return score, reasons
 
-    def _build_blocklist_review_item(
+    def _build_review_item(
         self,
         item: Dict[str, Any],
-        normalized_url: str,
         risk_level: str,
         action: str,
-        reason: str,
-        score: Optional[int] = None,
+        reasons: List[str],
+        score: int,
+        raw_text: str,
     ) -> ReviewItem:
-        text = self._extract_text(item)
-        final_score = HIGH_RISK_THRESHOLD if score is None and risk_level == "high" else (score or self.threshold)
-
         return ReviewItem(
-            item_id=str(item.get("id") or self._stable_id(normalized_url)),
-            source=str(item.get("source") or "manual-blocklist"),
+            item_id=str(item.get("id") or self._stable_id(raw_text)),
+            source=str(item.get("source") or "unknown"),
             url=item.get("url"),
             title=item.get("title"),
             created_at=item.get("created_at"),
             matched_name=True,
-            negativity_score=final_score,
+            negativity_score=score,
+            risk_level=risk_level,
+            action=action,
+            reasons=reasons,
+            excerpt=self._excerpt(raw_text),
+            raw_text=raw_text,
+        )
+
+    def _build_blocklist_review_item(
+        self,
+        item: Dict[str, Any],
+        risk_level: str,
+        action: str,
+        reason: str,
+        raw_text: str,
+        score: Optional[int] = None,
+    ) -> ReviewItem:
+        final_score = HIGH_RISK_THRESHOLD if score is None and risk_level == "high" else (score or self.threshold)
+        return self._build_review_item(
+            item=item,
             risk_level=risk_level,
             action=action,
             reasons=[reason],
-            excerpt=self._excerpt(text or normalized_url),
-            raw_text=text or normalized_url,
+            score=final_score,
+            raw_text=raw_text,
         )
 
     def classify(self, item: Dict[str, Any]) -> Optional[ReviewItem]:
         text = self._extract_text(item)
         raw_url = str(item.get("url") or "").strip()
         normalized_url = self.normalize_url(raw_url)
+        combined = self.combined_text(item)
 
-        if normalized_url.startswith(CHANGE_ORG_PREFIX):
-            return self._build_blocklist_review_item(
-                item=item,
-                normalized_url=normalized_url,
-                risk_level="medium",
-                action="review",
-                reason="prefix-blocklist:change-org-petition",
-                score=5,
-            )
+        if normalized_url:
+            if normalized_url in URL_BLOCKLIST:
+                block = URL_BLOCKLIST[normalized_url]
+                return self._build_blocklist_review_item(
+                    item=item,
+                    risk_level=str(block["risk_level"]),
+                    action=str(block["action"]),
+                    reason=str(block["reason"]),
+                    raw_text=combined or normalized_url,
+                )
 
-        if normalized_url in URL_BLOCKLIST:
-            block = URL_BLOCKLIST[normalized_url]
-            return self._build_blocklist_review_item(
-                item=item,
-                normalized_url=normalized_url,
-                risk_level=str(block["risk_level"]),
-                action=str(block["action"]),
-                reason=str(block["reason"]),
-            )
+            domain_block = self.is_domain_blocked(normalized_url)
+            if domain_block:
+                return self._build_blocklist_review_item(
+                    item=item,
+                    risk_level=domain_block["risk_level"],
+                    action=domain_block["action"],
+                    reason=domain_block["reason"],
+                    raw_text=combined or normalized_url,
+                )
 
-        if not text.strip():
+            prefix_block = self.is_prefix_blocked(normalized_url)
+            if prefix_block:
+                return self._build_blocklist_review_item(
+                    item=item,
+                    risk_level=prefix_block["risk_level"],
+                    action=prefix_block["action"],
+                    reason=prefix_block["reason"],
+                    raw_text=combined or normalized_url,
+                    score=5 if prefix_block["risk_level"] == "medium" else HIGH_RISK_THRESHOLD,
+                )
+
+        if not combined.strip():
             return None
 
-        matched_name, matched_variants = self.contains_target_name(text)
-        if not matched_name:
+        matched_name, matched_variants = self.contains_target_name(combined)
+        name_present_by_case_caption = bool(
+            re.search(r"\bgamache\s+v\.?\s+(ronan|mozzer|burke)\b", combined, re.IGNORECASE)
+        )
+
+        if not matched_name and not name_present_by_case_caption:
             return None
 
-        score, reasons = self.score_negativity(text)
-        reasons = [f"matched-name:{match}" for match in matched_variants[:3]] + reasons
+        score, reasons = self.score_negativity(combined)
+
+        if matched_variants:
+            reasons = [f"matched-name:{match}" for match in matched_variants[:3]] + reasons
+        elif name_present_by_case_caption:
+            reasons = ["matched-case-caption:gamache-v-case"] + reasons
 
         if score >= HIGH_RISK_THRESHOLD:
             risk_level = "high"
@@ -356,19 +464,13 @@ class MentionModerationBot:
             risk_level = "low"
             action = "allow"
 
-        return ReviewItem(
-            item_id=str(item.get("id") or self._stable_id(text)),
-            source=str(item.get("source") or "unknown"),
-            url=item.get("url"),
-            title=item.get("title"),
-            created_at=item.get("created_at"),
-            matched_name=True,
-            negativity_score=score,
+        return self._build_review_item(
+            item=item,
             risk_level=risk_level,
             action=action,
             reasons=reasons,
-            excerpt=self._excerpt(text),
-            raw_text=text,
+            score=score,
+            raw_text=combined,
         )
 
     def _extract_text(self, item: Dict[str, Any]) -> str:
@@ -464,7 +566,7 @@ def print_summary(results: List[ReviewItem]) -> None:
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Quarantine negative mentions of Justin-Ames Gamache for review."
+        description="Quarantine negative mentions and blocked sources for review."
     )
     parser.add_argument("--input", help="Path to .jsonl or .txt input")
     parser.add_argument("--output", default="review_queue.jsonl", help="Output JSONL path")
