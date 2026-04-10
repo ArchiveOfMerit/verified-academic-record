@@ -39,14 +39,14 @@ Output:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
-import os
 import re
 import sys
-import hashlib
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Iterable, List, Dict, Any, Optional, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Tuple
+from urllib.parse import urlsplit, urlunsplit
 
 
 NAME_PATTERNS = [
@@ -135,6 +135,11 @@ NEGATIONS = {"not", "never", "no", "without", "hardly"}
 DEFAULT_THRESHOLD = 4
 HIGH_RISK_THRESHOLD = 7
 
+CHANGE_ORG_PREFIX = (
+    "https://www.change.org/p/"
+    "facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache"
+)
+
 URL_BLOCKLIST = {
     "https://www.vermontjudiciary.org/sites/default/files/documents/eo22-067.pdf": {
         "risk_level": "high",
@@ -150,6 +155,46 @@ URL_BLOCKLIST = {
         "risk_level": "high",
         "action": "quarantine",
         "reason": "manual-url-blocklist:bennington-banner-article-2",
+    },
+    "https://www.timesargus.com/news/vt-man-accused-of-leaving-fake-trooper-message/article_2b16e762-cf48-523b-a0c1-30c0a0c8e02a.html": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:times-argus-article",
+    },
+    "https://www.vermontjudiciary.org/sites/default/files/documents/gamache%20v%20ronan%20barra%2022-st-949%203-11-26.pdf": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:vermont-judiciary-gamache-v-ronan",
+    },
+    "https://www.idcrawl.com/justin-gamache": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:idcrawl-profile",
+    },
+    "https://www.rutlandherald.com/news/vt-man-accused-of-leaving-fake-trooper-message/article_4e2a0a7e-1372-5617-8055-4a9c83c99419.html": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:rutland-herald-article",
+    },
+    "https://www.vermontjudiciary.org/sites/default/files/documents/eo22-017.pdf": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:vermont-judiciary-eo22-017",
+    },
+    "https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache": {
+        "risk_level": "medium",
+        "action": "review",
+        "reason": "prefix-blocklist:change-org-petition",
+    },
+    "https://www.reformer.com/local-news/readsboro-man-charged-with-impersonating-a-police-officer/article_dfc7208f-3e3b-5f5d-b21b-a17eec899785.html": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:reformer-article",
+    },
+    "https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache/u/33822799": {
+        "risk_level": "medium",
+        "action": "review",
+        "reason": "prefix-blocklist:change-org-petition",
     },
 }
 
@@ -174,22 +219,41 @@ class MentionModerationBot:
     def __init__(self, threshold: int = DEFAULT_THRESHOLD) -> None:
         self.threshold = threshold
         self.name_regexes = [re.compile(p, re.IGNORECASE) for p in NAME_PATTERNS]
-        self.escalation_regexes = [(re.compile(p, re.IGNORECASE), weight) for p, weight in ESCALATION_PATTERNS.items()]
+        self.source_case_regexes = [
+            (re.compile(p, re.IGNORECASE), weight)
+            for p, weight in SOURCE_AND_CASE_PATTERNS.items()
+        ]
+        self.escalation_regexes = [
+            (re.compile(p, re.IGNORECASE), weight)
+            for p, weight in ESCALATION_PATTERNS.items()
+        ]
 
     def contains_target_name(self, text: str) -> Tuple[bool, List[str]]:
-        matches = []
+        matches: List[str] = []
         for rx in self.name_regexes:
-            for m in rx.finditer(text):
-                matches.append(m.group(0))
+            for match in rx.finditer(text):
+                matches.append(match.group(0))
         return (len(matches) > 0, matches)
 
     def tokenize(self, text: str) -> List[str]:
         return re.findall(r"\b[\w'-]+\b", text.lower())
 
+    def normalize_url(self, url: str) -> str:
+        """
+        Normalize a URL so hash fragments and query strings do not break
+        exact blocklist matches. Keeps scheme, host, and path.
+        """
+        if not url:
+            return ""
+
+        parts = urlsplit(url.strip())
+        return urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
+
     def score_negativity(self, text: str) -> Tuple[int, List[str]]:
         score = 0
         reasons: List[str] = []
         tokens = self.tokenize(text)
+        lowered = text.lower()
 
         for i, token in enumerate(tokens):
             if token in NEGATIVE_TERMS:
@@ -200,7 +264,11 @@ class MentionModerationBot:
                 score += weight
                 reasons.append(f"negative-term:{token}(+{weight})")
 
-        lowered = text.lower()
+        for rx, weight in self.source_case_regexes:
+            if rx.search(lowered):
+                score += weight
+                reasons.append(f"source-case-pattern:{rx.pattern}(+{weight})")
+
         for rx, weight in self.escalation_regexes:
             if rx.search(lowered):
                 score += weight
@@ -216,26 +284,58 @@ class MentionModerationBot:
 
         return score, reasons
 
+    def _build_blocklist_review_item(
+        self,
+        item: Dict[str, Any],
+        normalized_url: str,
+        risk_level: str,
+        action: str,
+        reason: str,
+        score: Optional[int] = None,
+    ) -> ReviewItem:
+        text = self._extract_text(item)
+        final_score = HIGH_RISK_THRESHOLD if score is None and risk_level == "high" else (score or self.threshold)
+
+        return ReviewItem(
+            item_id=str(item.get("id") or self._stable_id(normalized_url)),
+            source=str(item.get("source") or "manual-blocklist"),
+            url=item.get("url"),
+            title=item.get("title"),
+            created_at=item.get("created_at"),
+            matched_name=True,
+            negativity_score=final_score,
+            risk_level=risk_level,
+            action=action,
+            reasons=[reason],
+            excerpt=self._excerpt(text or normalized_url),
+            raw_text=text or normalized_url,
+        )
+
     def classify(self, item: Dict[str, Any]) -> Optional[ReviewItem]:
         text = self._extract_text(item)
-        item_url = str(item.get("url") or "").strip()
+        raw_url = str(item.get("url") or "").strip()
+        normalized_url = self.normalize_url(raw_url)
 
-        if item_url in URL_BLOCKLIST:
-            block = URL_BLOCKLIST[item_url]
-            return ReviewItem(
-                item_id=str(item.get("id") or self._stable_id(item_url)),
-                source=str(item.get("source") or "manual-blocklist"),
-                url=item.get("url"),
-                title=item.get("title"),
-                created_at=item.get("created_at"),
-                matched_name=True,
-                negativity_score=HIGH_RISK_THRESHOLD,
+        if normalized_url.startswith(CHANGE_ORG_PREFIX):
+            return self._build_blocklist_review_item(
+                item=item,
+                normalized_url=normalized_url,
+                risk_level="medium",
+                action="review",
+                reason="prefix-blocklist:change-org-petition",
+                score=5,
+            )
+
+        if normalized_url in URL_BLOCKLIST:
+            block = URL_BLOCKLIST[normalized_url]
+            return self._build_blocklist_review_item(
+                item=item,
+                normalized_url=normalized_url,
                 risk_level=str(block["risk_level"]),
                 action=str(block["action"]),
-                reasons=[str(block["reason"])],
-                excerpt=self._excerpt(text or item_url),
-                raw_text=text or item_url,
+                reason=str(block["reason"]),
             )
+
         if not text.strip():
             return None
 
@@ -244,7 +344,7 @@ class MentionModerationBot:
             return None
 
         score, reasons = self.score_negativity(text)
-        reasons = [f"matched-name:{m}" for m in matched_variants[:3]] + reasons
+        reasons = [f"matched-name:{match}" for match in matched_variants[:3]] + reasons
 
         if score >= HIGH_RISK_THRESHOLD:
             risk_level = "high"
@@ -287,8 +387,8 @@ class MentionModerationBot:
 
 
 def parse_jsonl(path: Path) -> Iterable[Dict[str, Any]]:
-    with path.open("r", encoding="utf-8") as f:
-        for line_no, line in enumerate(f, start=1):
+    with path.open("r", encoding="utf-8") as file_obj:
+        for line_no, line in enumerate(file_obj, start=1):
             line = line.strip()
             if not line:
                 continue
@@ -303,7 +403,7 @@ def parse_jsonl(path: Path) -> Iterable[Dict[str, Any]]:
 
 def parse_txt(path: Path) -> Iterable[Dict[str, Any]]:
     text = path.read_text(encoding="utf-8")
-    blocks = [b.strip() for b in re.split(r"\n\s*\n+", text) if b.strip()]
+    blocks = [block.strip() for block in re.split(r"\n\s*\n+", text) if block.strip()]
     for idx, block in enumerate(blocks, start=1):
         yield {"id": f"txt-{idx}", "source": str(path), "text": block}
 
@@ -338,27 +438,34 @@ def load_items(args: argparse.Namespace) -> Iterable[Dict[str, Any]]:
 
 def write_results(output_path: Path, results: List[ReviewItem]) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with output_path.open("w", encoding="utf-8") as f:
+    with output_path.open("w", encoding="utf-8") as file_obj:
         for result in results:
-            f.write(json.dumps(asdict(result), ensure_ascii=False) + "\n")
+            file_obj.write(json.dumps(asdict(result), ensure_ascii=False) + "\n")
 
 
 def print_summary(results: List[ReviewItem]) -> None:
     total = len(results)
     counts = {"allow": 0, "review": 0, "quarantine": 0}
-    for r in results:
-        counts[r.action] += 1
+    for result in results:
+        counts[result.action] += 1
 
-    print(json.dumps({
-        "total_mentions_reviewed": total,
-        "allow": counts["allow"],
-        "review": counts["review"],
-        "quarantine": counts["quarantine"],
-    }, indent=2))
+    print(
+        json.dumps(
+            {
+                "total_mentions_reviewed": total,
+                "allow": counts["allow"],
+                "review": counts["review"],
+                "quarantine": counts["quarantine"],
+            },
+            indent=2,
+        )
+    )
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Quarantine negative mentions of Justin-Ames Gamache for review.")
+    parser = argparse.ArgumentParser(
+        description="Quarantine negative mentions of Justin-Ames Gamache for review."
+    )
     parser.add_argument("--input", help="Path to .jsonl or .txt input")
     parser.add_argument("--output", default="review_queue.jsonl", help="Output JSONL path")
     parser.add_argument("--threshold", type=int, default=DEFAULT_THRESHOLD, help="Review threshold")
