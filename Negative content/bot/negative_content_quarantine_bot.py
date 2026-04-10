@@ -135,6 +135,24 @@ NEGATIONS = {"not", "never", "no", "without", "hardly"}
 DEFAULT_THRESHOLD = 4
 HIGH_RISK_THRESHOLD = 7
 
+URL_BLOCKLIST = {
+    "https://www.vermontjudiciary.org/sites/default/files/documents/eo22-067.pdf": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:vermont-judiciary-pdf",
+    },
+    "https://www.benningtonbanner.com/archives/readsboro-man-accused-of-singing-expletives/article_fe579df2-2678-5660-85e9-ea4501279113.html": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:bennington-banner-article-1",
+    },
+    "https://www.benningtonbanner.com/archives/updated-man-accused-of-pretending-to-be-trooper/article_e117558c-d6ed-50ef-9a4b-973e65bc383c.html": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:bennington-banner-article-2",
+    },
+}
+
 
 @dataclass
 class ReviewItem:
@@ -200,6 +218,24 @@ class MentionModerationBot:
 
     def classify(self, item: Dict[str, Any]) -> Optional[ReviewItem]:
         text = self._extract_text(item)
+        item_url = str(item.get("url") or "").strip()
+
+        if item_url in URL_BLOCKLIST:
+            block = URL_BLOCKLIST[item_url]
+            return ReviewItem(
+                item_id=str(item.get("id") or self._stable_id(item_url)),
+                source=str(item.get("source") or "manual-blocklist"),
+                url=item.get("url"),
+                title=item.get("title"),
+                created_at=item.get("created_at"),
+                matched_name=True,
+                negativity_score=HIGH_RISK_THRESHOLD,
+                risk_level=str(block["risk_level"]),
+                action=str(block["action"]),
+                reasons=[str(block["reason"])],
+                excerpt=self._excerpt(text or item_url),
+                raw_text=text or item_url,
+            )
         if not text.strip():
             return None
 
