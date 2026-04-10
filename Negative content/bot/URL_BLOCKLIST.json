@@ -1,3 +1,57 @@
-{"id":"vt-1","source":"manual","url":"https://www.vermontjudiciary.org/sites/default/files/documents/eo22-067.pdf","title":"Vermont Judiciary PDF","text":""}
-{"id":"vt-2","source":"manual","url":"https://www.benningtonbanner.com/archives/readsboro-man-accused-of-singing-expletives/article_fe579df2-2678-5660-85e9-ea4501279113.html","title":"Bennington Banner article 1","text":""}
-{"id":"vt-3","source":"manual","url":"https://www.benningtonbanner.com/archives/updated-man-accused-of-pretending-to-be-trooper/article_e117558c-d6ed-50ef-9a4b-973e65bc383c.html","title":"Bennington Banner article 2","text":""}
+{
+  "exact_urls": {
+    "https://www.vermontjudiciary.org/sites/default/files/documents/eo22-067.pdf": {
+      "risk_level": "high",
+      "action": "quarantine",
+      "reason": "manual-url-blocklist:vermont-judiciary-pdf"
+    },
+    "https://www.benningtonbanner.com/archives/readsboro-man-accused-of-singing-expletives/article_fe579df2-2678-5660-85e9-ea4501279113.html": {
+      "risk_level": "high",
+      "action": "quarantine",
+      "reason": "manual-url-blocklist:bennington-banner-article-1"
+    },
+    "https://www.benningtonbanner.com/archives/updated-man-accused-of-pretending-to-be-trooper/article_e117558c-d6ed-50ef-9a4b-973e65bc383c.html": {
+      "risk_level": "high",
+      "action": "quarantine",
+      "reason": "manual-url-blocklist:bennington-banner-article-2"
+    },
+    "https://www.timesargus.com/news/vt-man-accused-of-leaving-fake-trooper-message/article_2b16e762-cf48-523b-a0c1-30c0a0c8e02a.html": {
+      "risk_level": "high",
+      "action": "quarantine",
+      "reason": "manual-url-blocklist:times-argus-article"
+    },
+    "https://www.vermontjudiciary.org/sites/default/files/documents/gamache%20v%20ronan%20barra%2022-st-949%203-11-26.pdf": {
+      "risk_level": "high",
+      "action": "quarantine",
+      "reason": "manual-url-blocklist:vermont-judiciary-gamache-v-ronan"
+    },
+    "https://www.idcrawl.com/justin-gamache": {
+      "risk_level": "high",
+      "action": "quarantine",
+      "reason": "manual-url-blocklist:idcrawl-profile"
+    },
+    "https://www.rutlandherald.com/news/vt-man-accused-of-leaving-fake-trooper-message/article_4e2a0a7e-1372-5617-8055-4a9c83c99419.html": {
+      "risk_level": "high",
+      "action": "quarantine",
+      "reason": "manual-url-blocklist:rutland-herald-article"
+    },
+    "https://www.vermontjudiciary.org/sites/default/files/documents/eo22-017.pdf": {
+      "risk_level": "high",
+      "action": "quarantine",
+      "reason": "manual-url-blocklist:vermont-judiciary-eo22-017"
+    },
+    "https://www.reformer.com/local-news/readsboro-man-charged-with-impersonating-a-police-officer/article_dfc7208f-3e3b-5f5d-b21b-a17eec899785.html": {
+      "risk_level": "high",
+      "action": "quarantine",
+      "reason": "manual-url-blocklist:reformer-article"
+    }
+  },
+  "prefix_urls": {
+    "https://www.change.org/p/facts-of-law-state-of-vermont-s-misclassification-leads-to-failed-prosecution-of-gamache": {
+      "risk_level": "medium",
+      "action": "review",
+      "reason": "prefix-blocklist:change-org-petition",
+      "score": 5
+    }
+  }
+}
