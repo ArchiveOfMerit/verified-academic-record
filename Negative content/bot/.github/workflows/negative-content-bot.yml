@@ -26,9 +26,9 @@ jobs:
           mkdir -p "Negative content/review-queue"
           mkdir -p "Negative content/evidence"
 
-      - name: Run quarantine bot
+      - name: Run negative content bot
         run: |
-          python "Negative content/bot/justin_negative_content_quarantine_bot.py" \
+          python "Negative content/bot/negative_content_quarantine_bot.py" \
             --input "Negative content/bot/manual_urls.jsonl" \
             --output "Negative content/review-queue/review_queue.jsonl" \
             --only-flagged
@@ -37,6 +37,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add "Negative content/review-queue/review_queue.jsonl"
-          git diff --cached --quiet || git commit -m "Run negative content quarantine bot"
+
+          git diff --cached --quiet || git commit -m "Run negative content bot"
+
           git push
