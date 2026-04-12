@@ -66,6 +66,7 @@ const JustiaTools = {
        (vi) could reasonably be expected to endanger the life or physical safety of any individual.
 
        (B) Notwithstanding subdivision (A) of this subdivision (5), records relating to management and direction of a law enforcement agency; records reflecting the initial arrest of a person, including any ticket, citation, or complaint issued for a traffic violation, as that term is defined in 23 V.S.A. § 2302; and records reflecting the charge of a person shall be public.",
+       "Judgw David Barra public address 6 Greenbriar Dr, Essex Junction, VT 05452." 
       "",
       "Requested Action:",
       "- Block this Justia link from search engines",
