@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Public Record Timeline | Justin-Ames Gamache</title>
+  <meta name="description" content="A source-based public record timeline presenting documented events, filings, and record citations concerning Justin-Ames Gamache." />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #93c5fd;
+      --border: #374151;
+      --ok: #bbf7d0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b1020 0%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    .hero {
+      background: rgba(17, 24, 39, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      margin-bottom: 24px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .notice {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 8px;
+      color: var(--text);
+    }
+
+    .controls {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .search {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      margin: 28px 0 14px;
+      color: var(--ok);
+      letter-spacing: 0.02em;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.96);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .date {
+      display: inline-block;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .meta {
+      margin-top: 14px;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .meta strong {
+      color: var(--text);
+    }
+
+    .links {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .links a {
+      display: inline-block;
+      text-decoration: none;
+      color: #0b1020;
+      background: var(--accent);
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .empty {
+      display: none;
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    code.inline {
+      background: var(--panel-2);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #d1fae5;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Public Record Timeline</h1>
+      <p class="subtitle">
+        Source-based chronology concerning Justin-Ames Gamache.
+      </p>
+
+      <div class="notice">
+        This page is limited to documented events, filings, and publicly citable record material.
+        It is presented as a chronology of sources and record references.
+        Readers should review the underlying documents directly.
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Search timeline">
+      <input
+        id="searchInput"
+        class="search"
+        type="text"
+        placeholder="Search by date, topic, exhibit, filing, or keyword"
+        aria-label="Search timeline entries"
+      />
+      <div id="emptyState" class="empty">No matching timeline entries were found.</div>
+    </section>
+
+    <h2 class="section-title">Documented Events and Filings</h2>
+
+    <section id="timeline" class="timeline">
+      <article class="card" data-search="record timeline filing exhibit chronology justin-ames gamache">
+        <div class="date">Record Entry</div>
+        <h3>Chronology Entry Title</h3>
+        <p>
+          Replace this paragraph with a neutral, source-based description of the event.
+          State only what the record, exhibit, filing, or communication shows.
+          Avoid conclusions that go beyond the cited material.
+        </p>
+        <div class="meta">
+          <strong>Source:</strong> Exhibit A, filing, public record, or archived copy.<br />
+          <strong>Status:</strong> Documented / archived / pending review.
+        </div>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener noreferrer">View Source</a>
+          <a href="#" target="_blank" rel="noopener noreferrer">View Archive</a>
+        </div>
+      </article>
+
+      <article class="card" data-search="timeline event communication notice exhibit public record">
+        <div class="date">YYYY-MM-DD</div>
+        <h3>Second Record Event</h3>
+        <p>
+          Replace this entry with a concise chronology statement tied to a specific document.
+          Use precise dates, neutral wording, and verifiable citations.
+          Keep the narrative disciplined and evidence-centered.
+        </p>
+        <div class="meta">
+          <strong>Source:</strong> Exhibit B / correspondence / docket item.<br />
+          <strong>Reference:</strong> Add archive or repository identifier here.
+        </div>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener noreferrer">Primary Record</a>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      Maintained as a source-based public record page.
+      For integrity, retain archived copies and stable exhibit labels.
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      const input = document.getElementById('searchInput');
+      const cards = Array.from(document.querySelectorAll('.card'));
+      const emptyState = document.getElementById('emptyState');
+
+      function normalize(value) {
+        return (value || '').toLowerCase().trim();
+      }
+
+      function filterCards() {
+        const query = normalize(input.value);
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const haystack = normalize(card.innerText + ' ' + (card.dataset.search || ''));
+          const match = haystack.includes(query);
+          card.style.display = match ? '' : 'none';
+          if (match) visibleCount += 1;
+        });
+
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      input.addEventListener('input', filterCards);
+    })();
+  </script>
+</body>
+</html>
