@@ -21,7 +21,7 @@
     connect-src 'none';
     object-src 'none';
     base-uri 'self';
-    form-action 'none';
+    form-action 'self';
     frame-ancestors 'none';
     upgrade-insecure-requests
   ">
@@ -108,6 +108,8 @@
       --border: #d9d9d9;
       --panel: #fafafa;
       --accent: #233e63;
+      --search-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+      --search-shadow-hover: 0 1px 8px rgba(32, 33, 36, 0.35);
     }
 
     html, body {
@@ -213,8 +215,150 @@
       margin-bottom: 0;
     }
 
+    .search-monitor {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--panel);
+      padding: 1rem 1.1rem;
+    }
+
+    .search-shell {
+      margin-top: 0.75rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .google-style-search {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-height: 46px;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: var(--search-shadow);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .google-style-search:hover,
+    .google-style-search:focus-within {
+      box-shadow: var(--search-shadow-hover);
+      border-color: #d0d7de;
+    }
+
+    .search-icon {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      color: #9aa0a6;
+    }
+
+    .google-style-search input {
+      flex: 1 1 auto;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--fg);
+      font-size: 1rem;
+      line-height: 1.4;
+      font-family: Arial, sans-serif;
+    }
+
+    .google-style-search button {
+      flex: 0 0 auto;
+      border: 0;
+      background: transparent;
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.35rem 0.5rem;
+      border-radius: 8px;
+    }
+
+    .google-style-search button:hover,
+    .google-style-search button:focus {
+      background: rgba(35, 62, 99, 0.08);
+      text-decoration: none;
+    }
+
+    .preset-queries {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .preset-query {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--fg);
+      border-radius: 999px;
+      padding: 0.45rem 0.8rem;
+      cursor: pointer;
+      font-size: 0.92rem;
+    }
+
+    .preset-query:hover,
+    .preset-query:focus {
+      border-color: var(--accent);
+    }
+
+    .engine-groups {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .engine-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      padding: 0.9rem 1rem;
+    }
+
+    .engine-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .engine-card ul {
+      margin: 0;
+      padding-left: 1rem;
+    }
+
+    .engine-card li {
+      margin: 0.4rem 0;
+    }
+
+    .current-query {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .current-query strong {
+      color: var(--fg);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     @media (max-width: 760px) {
       .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .engine-groups {
         grid-template-columns: 1fr;
       }
     }
@@ -227,6 +371,60 @@
         <h1>Justin-Ames Gamache, M.Ed., M.S.</h1>
         <p class="subhead"><strong>Doctoral Candidate | Scholar-Practitioner</strong></p>
       </header>
+
+      <section class="search-monitor" id="search-monitor">
+        <h2>Search Visibility Monitor</h2>
+        <p>
+          This search panel supports direct monitoring of search-facing visibility across general web,
+          news, and research surfaces.
+        </p>
+
+        <div class="search-shell">
+          <form id="googleStyleSearch" class="google-style-search" role="search">
+            <label for="searchInput" class="sr-only">Search query</label>
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16a6.47 6.47 0 0 0 4.23-1.57l.27.28v.79L20 21.5 21.5 20l-6-6zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
+            </svg>
+            <input
+              id="searchInput"
+              name="q"
+              type="text"
+              value="Justin-Ames Gamache"
+              maxlength="2048"
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Search query">
+            <button type="submit">Search</button>
+          </form>
+
+          <div class="preset-queries">
+            <button class="preset-query" type="button" data-query="Justin-Ames Gamache">Justin-Ames Gamache</button>
+            <button class="preset-query" type="button" data-query="Gamache v Ronan">Gamache v Ronan</button>
+            <button class="preset-query" type="button" data-query="Justin Gamache Vermont">Justin Gamache Vermont</button>
+            <button class="preset-query" type="button" data-query="Justin A Gamache Vermont">Justin A Gamache Vermont</button>
+            <button class="preset-query" type="button" data-query="Justin Ames Gamache Vermont">Justin Ames Gamache Vermont</button>
+          </div>
+
+          <p class="current-query">Current query: <strong id="currentQuery">Justin-Ames Gamache</strong></p>
+
+          <div class="engine-groups">
+            <div class="engine-card">
+              <h3>Web</h3>
+              <ul id="webLinks"></ul>
+            </div>
+
+            <div class="engine-card">
+              <h3>News</h3>
+              <ul id="newsLinks"></ul>
+            </div>
+
+            <div class="engine-card">
+              <h3>Research</h3>
+              <ul id="researchLinks"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div class="hero">
         <figure>
@@ -288,5 +486,63 @@
       </section>
     </article>
   </main>
+
+  <script>
+    const searchForm = document.getElementById("googleStyleSearch");
+    const searchInput = document.getElementById("searchInput");
+    const currentQuery = document.getElementById("currentQuery");
+    const webLinks = document.getElementById("webLinks");
+    const newsLinks = document.getElementById("newsLinks");
+    const researchLinks = document.getElementById("researchLinks");
+    const presetQueries = Array.from(document.querySelectorAll(".preset-query"));
+
+    function encodeQuery(query) {
+      return encodeURIComponent(query.trim());
+    }
+
+    function makeLink(label, url) {
+      return `<li><a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a></li>`;
+    }
+
+    function renderLinks(query) {
+      const normalized = query.replace(/\s+/g, " ").trim();
+      const encoded = encodeQuery(normalized);
+
+      currentQuery.textContent = normalized || "";
+
+      webLinks.innerHTML = [
+        makeLink("Google Web", `https://www.google.com/search?q=${encoded}`),
+        makeLink("Bing Web", `https://www.bing.com/search?q=${encoded}`),
+        makeLink("DuckDuckGo", `https://duckduckgo.com/?q=${encoded}`)
+      ].join("");
+
+      newsLinks.innerHTML = [
+        makeLink("Google News", `https://news.google.com/search?q=${encoded}`),
+        makeLink("Google News Results", `https://www.google.com/search?tbm=nws&q=${encoded}`),
+        makeLink("Yahoo News", `https://news.search.yahoo.com/search?p=${encoded}`)
+      ].join("");
+
+      researchLinks.innerHTML = [
+        makeLink("Google Scholar", `https://scholar.google.com/scholar?q=${encoded}`),
+        makeLink("Google Books", `https://www.google.com/search?tbm=bks&q=${encoded}`),
+        makeLink("Justia Search", `https://law.justia.com/search?query=${encoded}`)
+      ].join("");
+    }
+
+    searchForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      renderLinks(searchInput.value);
+    });
+
+    presetQueries.forEach((button) => {
+      button.addEventListener("click", function () {
+        const query = button.dataset.query || "";
+        searchInput.value = query;
+        renderLinks(query);
+      });
+    });
+
+    renderLinks(searchInput.value);
+  </script>
 </body>
 </html>
