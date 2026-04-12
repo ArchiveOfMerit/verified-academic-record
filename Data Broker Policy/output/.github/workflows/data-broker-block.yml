@@ -1,0 +1,40 @@
+name: Data Broker Block Bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run enforcement bot
+        run: |
+          python "Data Broker Policy/broker_block_bot.py"
+
+      - name: Copy robots.txt to Pages root if needed
+        run: |
+          if [ -d docs ]; then
+            cp "Data Broker Policy/output/robots.txt" "docs/robots.txt"
+          fi
+
+      - name: Commit generated policy artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Data Broker Policy/output" "docs/robots.txt" || true
+          git diff --cached --quiet || git commit -m "Update data broker enforcement artifacts"
+          git push
