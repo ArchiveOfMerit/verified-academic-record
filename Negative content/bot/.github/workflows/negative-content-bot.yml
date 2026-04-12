@@ -12,6 +12,10 @@ jobs:
   scan:
     runs-on: ubuntu-latest
 
+    env:
+      MODBOT_HMAC_SECRET: ${{ secrets.MODBOT_HMAC_SECRET }}
+      MODBOT_EXPECTED_HMAC: ${{ secrets.MODBOT_EXPECTED_HMAC }}
+
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -26,12 +30,24 @@ jobs:
           mkdir -p "Negative content/review-queue"
           mkdir -p "Negative content/evidence"
 
+      - name: Verify bot file exists
+        run: |
+          test -f "Negative content/bot/negative_content_quarantine_bot.py"
+
+      - name: Verify manual URLs input exists
+        run: |
+          test -f "Negative content/bot/manual_urls.jsonl"
+
       - name: Run negative content bot
         run: |
           python "Negative content/bot/negative_content_quarantine_bot.py" \
             --input "Negative content/bot/manual_urls.jsonl" \
             --output "Negative content/review-queue/review_queue.jsonl" \
             --only-flagged
+
+      - name: Verify output file exists
+        run: |
+          test -f "Negative content/review-queue/review_queue.jsonl"
 
       - name: Commit results
         run: |
