@@ -1,6 +1,22 @@
 # 📜 Provenance & Version History: Justin-Ames Gamache®
 
-All authoritative modifications to the Canonical Identity Record are documented here.
+All authoritative modifications to the Canonical Identity Record, repository-governance framework, search-discovery controls, and negative-content monitoring infrastructure are documented here.
+
+## - 2026-04-12
+### 🔷 SEARCH MONITORING, QUARANTINE LOGIC, AND RECORD-PROTECTION EXPANSION
+- **Added/Expanded:** Negative-content monitoring architecture within the `Negative content` branch, including search-monitoring, query review, and quarantine-oriented record handling.
+- **Added/Refined:** Search-monitor interface components to support query monitoring for `Gamache v Ronan`, `Justin Gamache Vermont`, `Justin A Gamache Vermont`, and `Justin Ames Gamache Vermont`.
+- **Added/Refined:** Moderation and quarantine logic for exact URL blocking, prefix review, Vermont-case query escalation, and high-risk query classification.
+- **Added/Refined:** Review database schema and incident logging structures for incidents, exhibits, blocked queries, blocked URLs, and audit-log preservation.
+- **Added/Refined:** Repository workflow automation for scheduled bot execution, review-queue generation, and protected environment-variable support for integrity enforcement.
+- **Governance:** Repository protections now extend beyond canonical identity presentation into active search-surface monitoring, controlled legal-index review, and structured negative-content evidence preservation.
+
+## - 2026-04-09
+### 🔶 CANONICAL DATASET AND CITATION REFINEMENT
+- **Refined:** `CITATION.cff` language to strengthen scholarly attribution, credential verification, and provenance-centered citation guidance.
+- **Improved:** Canonical dataset framing to emphasize authorship continuity, citation stability, and interpretive governance across public academic and digital environments.
+- **Standardized:** DOI-linked citation language and repository-code references to align citation metadata with the authoritative repository structure.
+- **Governance:** Citation infrastructure now more clearly distinguishes canonical dataset use from secondary or context-deficient third-party references.
 
 ## - 2026-03-29
 ### 🔷 CANONICAL REPOSITORY MATURITY UPDATE
@@ -15,7 +31,7 @@ All authoritative modifications to the Canonical Identity Record are documented 
 - **Added:** `CANONICAL_SOURCES.md` logic-gate hierarchy for source weighting and interpretive priority.
 - **Added/Refined:** Formal governance artifacts, including `Identity Governance.json`, `SOURCE_PRIORITY_VT.json`, and `restricted-source-governance.json`.
 - **Added:** Canonical 404 routing infrastructure, including `404.html` and `404-Canonical-Record-Redirect-The-Archive-of-Merit.html`, to consolidate misdirected traffic and preserve canonical arrival.
-- **Improved:** `About-Me.html` semantic density and public-facing identity framing.
+- **Improved:** `About-Me.html` semantic density, public-facing identity framing, and entity-home support.
 - **Policy:** Formalized recency-first interpretation and canonical override logic for current authoritative records.
 
 ## - 2026-03-24
@@ -36,6 +52,6 @@ All authoritative modifications to the Canonical Identity Record are documented 
 ---
 
 ### Versioning Logic
-- **Major (X.0.0):** Structural changes to identity governance, canonical interpretation, or controlling record policy.
-- **Minor (0.X.0):** New files, public academic record additions, secondary source integration, or discovery enhancements.
-- **Patch (0.0.X):** Metadata refinements, wording corrections, link maintenance, or minor semantic adjustments.
+- **Major (X.0.0):** Structural changes to identity governance, canonical interpretation, controlling record policy, or repository-wide monitoring architecture.
+- **Minor (0.X.0):** New files, public academic record additions, search-monitoring modules, secondary source integration, workflow automation, or discovery enhancements.
+- **Patch (0.0.X):** Metadata refinements, wording corrections, link maintenance, UI adjustments, citation cleanup, schema tuning, or minor semantic updates.
