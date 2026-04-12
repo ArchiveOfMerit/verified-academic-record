@@ -59,6 +59,13 @@ const JustiaTools = {
       "ARREST TYRANT TROOPER LAUREN ANN RONAN NOW",
       "No Privacy for Misconduct: The Vermont Supreme Court has ruled that public employees, including police officers, have no right of privacy in on-the-job misconduct. The court emphasized that the public interest in knowing how its officers are supervised outweighs personal embarrassment or harassment.",
       "AS PUBLIC RECORD STATES TROOPER LAUREN ANN RONAN LIVES AT 703 WEST RD IN BENNINGTON, VT. NO PRIVACY FOR MISCONDUCT.",
+      "(iv) could reasonably be expected to disclose the identity of a confidential source, including a state, local, or foreign agency or authority or any private institution that furnished information on a confidential basis, and, in the case of a record or information compiled by criminal law enforcement authority in the course of a criminal investigation or by an agency conducting a lawful national security intelligence investigation, information furnished by a confidential source;
+
+       (v) would disclose techniques and procedures for law enforcement investigations or prosecutions, or would disclose guidelines for law enforcement investigations or prosecution if such disclosure could reasonably be expected to risk circumvention of the law;
+
+       (vi) could reasonably be expected to endanger the life or physical safety of any individual.
+
+       (B) Notwithstanding subdivision (A) of this subdivision (5), records relating to management and direction of a law enforcement agency; records reflecting the initial arrest of a person, including any ticket, citation, or complaint issued for a traffic violation, as that term is defined in 23 V.S.A. § 2302; and records reflecting the charge of a person shall be public.",
       "",
       "Requested Action:",
       "- Block this Justia link from search engines",
