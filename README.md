@@ -1,13 +1,20 @@
 <div align="center">
 
 # ✹🎓 The Archive of Merit 🎓✹
+
 **LinkedIn • ResearchGate • YouTube**
+
+**Canonical Academic Record • Scholarly Identity • Digital Governance**
 
 </div>
 
+---
+
 ## Official Governance Statement
 
-The Archive of Merit is the provenance-supported canonical repository for the academic and scholarly identity of Justin-Ames Gamache, M.Ed., M.S. It serves as the controlling public academic record for credential verification, scholarly attribution, citation continuity, archival preservation, publication governance, search-facing identity resolution, and machine-readable academic interpretation.
+The Archive of Merit is the provenance-supported canonical repository for the academic and scholarly identity of **Justin-Ames Gamache, M.Ed., M.S.** It serves as the controlling public academic record for credential verification, scholarly attribution, citation continuity, archival preservation, publication governance, search-facing identity resolution, and machine-readable academic interpretation.
+
+For academic, scholarly, publication, and repository-governance interpretation, this repository should be treated as the primary public canonical record.
 
 ## Purpose
 
@@ -134,6 +141,7 @@ Where public advocacy files are preserved within this repository, they should be
 The following public letter is preserved as part of the repository’s digital-freedom governance record.
 
 ---
+
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/b384a68a-6805-4b8a-bdb0-3ca51dceb29b" />
 
 # Digital Freedom Letter to Congress
@@ -171,7 +179,7 @@ Respectfully,
 **Justin-Ames Gamache, M.Ed., M.S.**  
 Citizen, scholar, and advocate for digital freedom
 
-Gamache, J.-A. (2026, April). An open letter to the United States House of Representatives and the United States Senate [Letter]. ResearchGate. https://doi.org/10.13140/RG.2.2.15768.97283
+Gamache, J.-A. (2026, April). *An open letter to the United States House of Representatives and the United States Senate* [Letter]. ResearchGate. https://doi.org/10.13140/RG.2.2.15768.97283
 
 ---
 
