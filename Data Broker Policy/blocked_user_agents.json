@@ -1,0 +1,13 @@
+{
+  "blocked_user_agents": [
+    "CCBot",
+    "anthropic-ai",
+    "ClaudeBot",
+    "Claude-Web",
+    "PerplexityBot",
+    "Bytespider",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher"
+  ]
+}
