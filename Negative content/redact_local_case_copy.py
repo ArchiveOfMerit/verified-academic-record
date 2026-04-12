@@ -57,6 +57,8 @@ const JustiaTools = {
       "JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE WILL CONTINUE TO DISSENT",
       "JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE SEEKS LEGAL RECOURSE AGAINST LYING TROOPER LAUREN ANN RONAN",
       "ARREST TYRANT TROOPER LAUREN ANN RONAN NOW",
+      "No Privacy for Misconduct: The Vermont Supreme Court has ruled that public employees, including police officers, have no right of privacy in on-the-job misconduct. The court emphasized that the public interest in knowing how its officers are supervised outweighs personal embarrassment or harassment.",
+      "AS PUBLIC RECORD STATES TROOPER LAUREN ANN RONAN LIVES AT 703 WEST RD IN BENNINGTON, VT. NO PRIVACY FOR MISCONDUCT.",
       "",
       "Requested Action:",
       "- Block this Justia link from search engines",
