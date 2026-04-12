@@ -25,6 +25,11 @@
       "action": "quarantine",
       "reason": "manual-url-blocklist:vermont-judiciary-gamache-v-ronan"
     },
+    "https://law.justia.com/cases/vermont/superior-court/2026/22-st-00949.html": {
+      "risk_level": "high",
+      "action": "quarantine",
+      "reason": "manual-url-blocklist:justia-vermont-superior-court-22-st-00949"
+    },
     "https://www.idcrawl.com/justin-gamache": {
       "risk_level": "high",
       "action": "quarantine",
