@@ -107,9 +107,14 @@
       --muted: #4c4c4c;
       --border: #d9d9d9;
       --panel: #fafafa;
+      --panel-strong: #ffffff;
       --accent: #233e63;
-      --search-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-      --search-shadow-hover: 0 1px 8px rgba(32, 33, 36, 0.35);
+      --accent-soft: rgba(35, 62, 99, 0.08);
+      --search-shadow: 0 1px 6px rgba(32, 33, 36, 0.22);
+      --search-shadow-hover: 0 2px 10px rgba(32, 33, 36, 0.28);
+      --risk-high: #7f1d1d;
+      --risk-high-bg: #fef2f2;
+      --risk-high-border: #fecaca;
     }
 
     html, body {
@@ -217,13 +222,13 @@
 
     .search-monitor {
       border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--panel);
-      padding: 1rem 1.1rem;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #fbfbfb 0%, #f6f8fa 100%);
+      padding: 1.1rem 1.15rem;
     }
 
     .search-shell {
-      margin-top: 0.75rem;
+      margin-top: 0.9rem;
       display: grid;
       gap: 1rem;
     }
@@ -232,10 +237,10 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      min-height: 46px;
-      padding: 0.4rem 0.9rem;
+      min-height: 48px;
+      padding: 0.45rem 0.95rem;
       border: 1px solid #dfe1e5;
-      border-radius: 24px;
+      border-radius: 999px;
       background: #fff;
       box-shadow: var(--search-shadow);
       transition: box-shadow 0.2s ease, border-color 0.2s ease;
@@ -274,13 +279,13 @@
       font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
-      padding: 0.35rem 0.5rem;
+      padding: 0.35rem 0.6rem;
       border-radius: 8px;
     }
 
     .google-style-search button:hover,
     .google-style-search button:focus {
-      background: rgba(35, 62, 99, 0.08);
+      background: var(--accent-soft);
       text-decoration: none;
     }
 
@@ -298,11 +303,42 @@
       padding: 0.45rem 0.8rem;
       cursor: pointer;
       font-size: 0.92rem;
+      transition: border-color 0.2s ease, background 0.2s ease;
     }
 
     .preset-query:hover,
     .preset-query:focus {
       border-color: var(--accent);
+      background: #f8fafc;
+    }
+
+    .query-meta {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .current-query {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .current-query strong {
+      color: var(--fg);
+    }
+
+    .risk-banner {
+      display: none;
+      border: 1px solid var(--risk-high-border);
+      background: var(--risk-high-bg);
+      color: var(--risk-high);
+      border-radius: 12px;
+      padding: 0.8rem 0.9rem;
+      font-size: 0.94rem;
+    }
+
+    .risk-banner.active {
+      display: block;
     }
 
     .engine-groups {
@@ -314,7 +350,7 @@
     .engine-card {
       border: 1px solid var(--border);
       border-radius: 12px;
-      background: #fff;
+      background: var(--panel-strong);
       padding: 0.9rem 1rem;
     }
 
@@ -332,13 +368,8 @@
       margin: 0.4rem 0;
     }
 
-    .current-query {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .current-query strong {
-      color: var(--fg);
+    .engine-card a {
+      word-break: break-word;
     }
 
     .sr-only {
@@ -405,7 +436,12 @@
             <button class="preset-query" type="button" data-query="Justin Ames Gamache Vermont">Justin Ames Gamache Vermont</button>
           </div>
 
-          <p class="current-query">Current query: <strong id="currentQuery">Justin-Ames Gamache</strong></p>
+          <div class="query-meta">
+            <p class="current-query">Current query: <strong id="currentQuery">Justin-Ames Gamache</strong></p>
+            <div class="risk-banner" id="riskBanner">
+              High-sensitivity query detected. Use heightened provenance review and compare external search surfaces against canonical repository-controlled records before relying on summaries.
+            </div>
+          </div>
 
           <div class="engine-groups">
             <div class="engine-card">
@@ -491,24 +527,49 @@
     const searchForm = document.getElementById("googleStyleSearch");
     const searchInput = document.getElementById("searchInput");
     const currentQuery = document.getElementById("currentQuery");
+    const riskBanner = document.getElementById("riskBanner");
     const webLinks = document.getElementById("webLinks");
     const newsLinks = document.getElementById("newsLinks");
     const researchLinks = document.getElementById("researchLinks");
     const presetQueries = Array.from(document.querySelectorAll(".preset-query"));
 
+    const HIGH_RISK_PATTERNS = [
+      /\bgamache\s+v\.?\s+ronan\b/i,
+      /\bjustin\s+gamache\s+vermont\b/i,
+      /\bjustin\s+a\s+gamache\s+vermont\b/i,
+      /\bjustin\s+ames\s+gamache\s+vermont\b/i
+    ];
+
+    function normalizeQuery(query) {
+      return (query || "").replace(/\s+/g, " ").trim();
+    }
+
     function encodeQuery(query) {
-      return encodeURIComponent(query.trim());
+      return encodeURIComponent(normalizeQuery(query));
     }
 
     function makeLink(label, url) {
       return `<li><a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a></li>`;
     }
 
+    function isHighRiskQuery(query) {
+      return HIGH_RISK_PATTERNS.some((pattern) => pattern.test(query));
+    }
+
+    function updateRiskBanner(query) {
+      if (isHighRiskQuery(query)) {
+        riskBanner.classList.add("active");
+      } else {
+        riskBanner.classList.remove("active");
+      }
+    }
+
     function renderLinks(query) {
-      const normalized = query.replace(/\s+/g, " ").trim();
+      const normalized = normalizeQuery(query);
       const encoded = encodeQuery(normalized);
 
       currentQuery.textContent = normalized || "";
+      updateRiskBanner(normalized);
 
       webLinks.innerHTML = [
         makeLink("Google Web", `https://www.google.com/search?q=${encoded}`),
