@@ -8,10 +8,13 @@ OUTPUT_PATH = Path("content_patched.js")
 report = {"status": "success", "action": "patch_js_file"}
 
 try:
+    # 1. Read the existing JS file
+    if not INPUT_PATH.exists():
+        raise FileNotFoundError(f"The file {INPUT_PATH} was not found in this directory.")
+        
     js = INPUT_PATH.read_text(encoding="utf-8", errors="ignore")
 
-    # Fixed JS: Changed periods to commas in the array 
-    # and ensured every string is separated by a comma.
+    # The JavaScript block to inject
     injection = r'''
 const JustiaTools = {
   buildBlockingRequest(currentUrl) {
@@ -84,9 +87,9 @@ const JustiaTools = {
 
   async handleJustiaBlockRequest(blockButton) {
     try {
-      if (typeof InputTools === "undefined" || InputTools.isLoading) return;
+      if (typeof InputTools !== "undefined" && InputTools.isLoading) return;
 
-      InputTools.isLoading = true;
+      if (typeof InputTools !== "undefined") InputTools.isLoading = true;
       blockButton.classList.add("loading");
 
       const currentUrl = "https://law.justia.com/cases/vermont/superior-court/2026/22-st-00949.html";
@@ -130,16 +133,19 @@ function addJustiaBlockButton() {
 
     anchor = "slButtonLogic();\n  slRegisterListener();"
 
+    # 2. Validation and Patching
     if anchor not in js:
-        print("Error: Could not find the bottom call block. Patch manually.")
+        print("Error: Could not find the bottom call block 'slButtonLogic(); slRegisterListener();'. Patch manually.")
     elif "const JustiaTools =" in js:
-        print("Notice: JustiaTools block already exists. Skipping.")
+        print("Notice: JustiaTools block already exists. Skipping patch to avoid duplicates.")
     else:
+        # Construct the new file content
         patched = js.replace(
             anchor,
             injection + "\n\n  slButtonLogic();\n  slRegisterListener();\n  addJustiaBlockButton();",
             1
         )
+        # Write out the result
         OUTPUT_PATH.write_text(patched, encoding="utf-8")
         print(f"Patched file written to: {OUTPUT_PATH}")
         print(json.dumps(report, indent=2))
