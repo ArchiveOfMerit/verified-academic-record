@@ -8,6 +8,7 @@ Purpose:
 - Detect hostile / negative / reputationally risky content
 - Hard-block specific URLs, domains, and prefixes
 - Quarantine matching items for manual review instead of deleting anything
+- Enforce tamper-evident integrity validation for protected config
 
 Supported inputs:
 - JSONL: one JSON object per line
@@ -28,7 +29,9 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import hmac
 import json
+import os
 import re
 import sys
 from dataclasses import asdict, dataclass
@@ -43,6 +46,10 @@ NAME_PATTERNS = [
     r"\bjustin\s+ames\s+gamache\b",
     r"\bjustin\s+gamache\b",
     r"\bj\.?\s*[- ]?\s*ames\s+gamache\b",
+    r"\bgamache\s+v\.?\s+ronan\b",
+    r"\bjustin\s+gamache\s+vermont\b",
+    r"\bjustin\s+a\s+gamache\s+vermont\b",
+    r"\bjustin\s+ames\s+gamache\s+vermont\b",
 ]
 
 NEGATIVE_TERMS = {
@@ -87,31 +94,34 @@ NEGATIVE_TERMS = {
 }
 
 SOURCE_AND_CASE_PATTERNS = {
-    r"\bvermont\b": 1,
-    r"\bvermont\s+supreme\s+court\b": 3,
-    r"\bvermont\s+superior\s+court\b": 3,
-    r"\bbennington\s+banner\b": 2,
-    r"\bmanchester\s+journal\b": 2,
-    r"\bbrattleboro\s+reformer\b": 2,
-    r"\brutland\s+herald\b": 2,
-    r"\btimes\s+argus\b": 2,
-    r"\bassociated\s+press\b": 2,
-    r"\bnew\s+england\s+newspaper\s+inc\b": 2,
-    r"\bberkshire\s+eagle\b": 2,
-    r"\bchange\.org\b": 1,
-    r"\bcasemine\b": 3,
+    r"\bvermont\b": 2,
+    r"\bvermont\s+supreme\s+court\b": 4,
+    r"\bvermont\s+superior\s+court\b": 4,
+    r"\bbennington\s+banner\b": 3,
+    r"\bmanchester\s+journal\b": 3,
+    r"\bbrattleboro\s+reformer\b": 3,
+    r"\brutland\s+herald\b": 3,
+    r"\btimes\s+argus\b": 3,
+    r"\bassociated\s+press\b": 3,
+    r"\bnew\s+england\s+newspaper\s+inc\b": 3,
+    r"\bberkshire\s+eagle\b": 3,
+    r"\bchange\.org\b": 2,
+    r"\bcasemine\b": 4,
     r"\bjudgment\b": 2,
-    r"\bcourt\s+summary\b": 2,
-    r"\bai\s+summary\b": 2,
-    r"\bjudgment\s*,\s*law\s*,\s*casemine\.com\b": 3,
-    r"\bgamache\s+v\.?\s+ronan\b": 4,
-    r"\bgamache\s+v\.?\s+mozzer\b": 4,
-    r"\bgamache\s+v\.?\s+burke\b": 4,
-    r"\bjustin\s+a\s+gamache\s+v\.?\s+lauren\s+a\s+ronan\b": 4,
-    r"\blauren\s+ronan\s+v\.?\s+justin\s+a\s+gamache\b": 4,
-    r"\bjustin\s+ames\s+gamache\s+v\.?\s+thomas\s+mozzer\b": 4,
-    r"\bjustin\s+ames\s+gamache\s+v\.?\s+alexander\s+burke\b": 4,
-    r"\ball\s+vermont\s+material\b": 2,
+    r"\bcourt\s+summary\b": 3,
+    r"\bai\s+summary\b": 3,
+    r"\bjudgment\s*,\s*law\s*,\s*casemine\.com\b": 4,
+    r"\bgamache\s+v\.?\s+ronan\b": 6,
+    r"\bgamache\s+v\.?\s+mozzer\b": 5,
+    r"\bgamache\s+v\.?\s+burke\b": 5,
+    r"\bjustin\s+a\s+gamache\s+v\.?\s+lauren\s+a\s+ronan\b": 6,
+    r"\blauren\s+ronan\s+v\.?\s+justin\s+a\s+gamache\b": 6,
+    r"\bjustin\s+ames\s+gamache\s+v\.?\s+thomas\s+mozzer\b": 5,
+    r"\bjustin\s+ames\s+gamache\s+v\.?\s+alexander\s+burke\b": 5,
+    r"\bjustin\s+gamache\s+vermont\b": 5,
+    r"\bjustin\s+a\s+gamache\s+vermont\b": 5,
+    r"\bjustin\s+ames\s+gamache\s+vermont\b": 6,
+    r"\ball\s+vermont\s+material\b": 3,
 }
 
 ESCALATION_PATTERNS = {
@@ -124,6 +134,13 @@ ESCALATION_PATTERNS = {
     r"\bpublicly\s+shame\b": 4,
     r"\bban\b": 1,
     r"\breport\b": 1,
+}
+
+HARD_QUERY_PATTERNS = {
+    r"\bgamache\s+v\.?\s+ronan\b": 6,
+    r"\bjustin\s+gamache\s+vermont\b": 5,
+    r"\bjustin\s+a\s+gamache\s+vermont\b": 5,
+    r"\bjustin\s+ames\s+gamache\s+vermont\b": 6,
 }
 
 NEGATIONS = {"not", "never", "no", "without", "hardly"}
@@ -171,6 +188,11 @@ URL_BLOCKLIST = {
         "risk_level": "high",
         "action": "quarantine",
         "reason": "manual-url-blocklist:vermont-judiciary-gamache-v-ronan",
+    },
+    "https://law.justia.com/cases/vermont/superior-court/2026/22-st-00949.html": {
+        "risk_level": "high",
+        "action": "quarantine",
+        "reason": "manual-url-blocklist:justia-vermont-superior-court-22-st-00949",
     },
     "https://www.idcrawl.com/justin-gamache": {
         "risk_level": "high",
@@ -226,6 +248,47 @@ URL_BLOCKLIST = {
     },
 }
 
+PROTECTED_CONFIG_VERSION = "2026-04-12"
+
+
+def protected_config_payload() -> str:
+    payload = {
+        "version": PROTECTED_CONFIG_VERSION,
+        "name_patterns": NAME_PATTERNS,
+        "source_case_patterns": SOURCE_AND_CASE_PATTERNS,
+        "escalation_patterns": ESCALATION_PATTERNS,
+        "hard_query_patterns": HARD_QUERY_PATTERNS,
+        "url_blocklist": URL_BLOCKLIST,
+        "blocked_domains": sorted(BLOCKED_DOMAINS),
+        "change_org_prefix": CHANGE_ORG_PREFIX,
+        "casemine_prefixes": CASEMINE_PREFIXES,
+    }
+    return json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+
+
+def compute_config_hmac(secret: str) -> str:
+    return hmac.new(
+        secret.encode("utf-8"),
+        protected_config_payload().encode("utf-8"),
+        hashlib.sha256,
+    ).hexdigest()
+
+
+def verify_config_integrity() -> None:
+    secret = os.environ.get("MODBOT_HMAC_SECRET")
+    expected = os.environ.get("MODBOT_EXPECTED_HMAC")
+
+    if not secret or not expected:
+        raise RuntimeError(
+            "Integrity enforcement active, but MODBOT_HMAC_SECRET or MODBOT_EXPECTED_HMAC is missing."
+        )
+
+    actual = compute_config_hmac(secret)
+    if not hmac.compare_digest(actual, expected):
+        raise RuntimeError(
+            "Protected moderation config has been modified or signature validation failed."
+        )
+
 
 @dataclass
 class ReviewItem:
@@ -254,6 +317,10 @@ class MentionModerationBot:
         self.escalation_regexes = [
             (re.compile(p, re.IGNORECASE), weight)
             for p, weight in ESCALATION_PATTERNS.items()
+        ]
+        self.hard_query_regexes = [
+            (re.compile(p, re.IGNORECASE), weight)
+            for p, weight in HARD_QUERY_PATTERNS.items()
         ]
 
     def contains_target_name(self, text: str) -> Tuple[bool, List[str]]:
@@ -336,6 +403,11 @@ class MentionModerationBot:
             if rx.search(lowered):
                 score += weight
                 reasons.append(f"escalation-pattern:{rx.pattern}(+{weight})")
+
+        for rx, weight in self.hard_query_regexes:
+            if rx.search(lowered):
+                score += weight
+                reasons.append(f"hard-query-pattern:{rx.pattern}(+{weight})")
 
         if "casemine" in lowered:
             score += 4
@@ -421,7 +493,7 @@ class MentionModerationBot:
                     item=item,
                     risk_level=domain_block["risk_level"],
                     action=domain_block["action"],
-                    reason=domain_block["reason"],
+                    reason=domain_block["reason"]),
                     raw_text=combined or normalized_url,
                 )
 
@@ -448,6 +520,17 @@ class MentionModerationBot:
             return None
 
         score, reasons = self.score_negativity(combined)
+
+        strong_case_reference = bool(
+            re.search(
+                r"\bgamache\s+v\.?\s+ronan\b|\bjustin\s+gamache\s+vermont\b|\bjustin\s+a\s+gamache\s+vermont\b|\bjustin\s+ames\s+gamache\s+vermont\b",
+                combined,
+                re.IGNORECASE,
+            )
+        )
+        if strong_case_reference and score < self.threshold:
+            score = self.threshold
+            reasons.append("minimum-threshold:strong-vermont-query-reference")
 
         if matched_variants:
             reasons = [f"matched-name:{match}" for match in matched_variants[:3]] + reasons
@@ -582,6 +665,7 @@ def main() -> int:
     args = parser.parse_args()
 
     try:
+        verify_config_integrity()
         items = load_items(args)
         bot = MentionModerationBot(threshold=args.threshold)
         results: List[ReviewItem] = []
