@@ -1,0 +1,26 @@
+[
+  {
+    "query": "justin-ames gamache",
+    "title": "Justin-Ames Gamache - GitHub",
+    "url": "https://github.com/ArchiveOfMerit/verified-academic-record",
+    "snippet": "Canonical scholarly identity repository and verified academic record.",
+    "source": "google",
+    "position": 1
+  },
+  {
+    "query": "justin-ames gamache",
+    "title": "Verified Academic History and Thesis Metadata - Internet Archive",
+    "url": "https://archive.org/details/example",
+    "snippet": "Preserved academic history, metadata, and provenance records.",
+    "source": "google",
+    "position": 2
+  },
+  {
+    "query": "justin-ames gamache",
+    "title": "Example weak page",
+    "url": "https://example.org/old-page",
+    "snippet": "Outdated summary with poor attribution.",
+    "source": "google",
+    "position": 7
+  }
+]
