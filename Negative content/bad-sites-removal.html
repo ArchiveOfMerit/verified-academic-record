@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Negative Content Search Monitor</title>
+  <link rel="stylesheet" href="assets/css/search-monitor.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <h1>Negative Content Search Monitor</h1>
+      <p class="subtitle">
+        Query monitoring for case-caption, Vermont name searches, and external search surfaces.
+      </p>
+    </header>
+
+    <section class="search-panel">
+      <form id="searchForm" class="search-form" role="search">
+        <label for="searchInput" class="sr-only">Search query</label>
+        <input
+          id="searchInput"
+          name="q"
+          type="text"
+          maxlength="2048"
+          autocomplete="off"
+          placeholder="Enter query"
+          value="Gamache v Ronan"
+        />
+        <button type="submit" id="searchButton">Search</button>
+      </form>
+
+      <div class="preset-panel">
+        <button class="preset" data-query="Gamache v Ronan">Gamache v Ronan</button>
+        <button class="preset" data-query="Justin Gamache Vermont">Justin Gamache Vermont</button>
+        <button class="preset" data-query="Justin A Gamache Vermont">Justin A Gamache Vermont</button>
+        <button class="preset" data-query="Justin Ames Gamache Vermont">Justin Ames Gamache Vermont</button>
+      </div>
+    </section>
+
+    <section class="results-panel">
+      <article class="engine-card">
+        <h2>Web</h2>
+        <ul id="webLinks"></ul>
+      </article>
+
+      <article class="engine-card">
+        <h2>News</h2>
+        <ul id="newsLinks"></ul>
+      </article>
+
+      <article class="engine-card">
+        <h2>Academic / Legal Research</h2>
+        <ul id="researchLinks"></ul>
+      </article>
+    </section>
+
+    <section class="query-log-panel">
+      <h2>Tracked Query</h2>
+      <div id="queryPreview" class="query-preview">Gamache v Ronan</div>
+    </section>
+  </main>
+
+  <script src="assets/js/search-monitor.js"></script>
+</body>
+</html>
