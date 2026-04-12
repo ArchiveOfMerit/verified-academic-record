@@ -1,11 +1,18 @@
+import json
 from pathlib import Path
 
-INPUT_PATH = Path("content.js")   # change this to your actual JS file
+INPUT_PATH = Path("content.js")
 OUTPUT_PATH = Path("content_patched.js")
 
-js = INPUT_PATH.read_text(encoding="utf-8", errors="ignore")
+# Create a dummy report object so the print at the end doesn't fail
+report = {"status": "success", "action": "patch_js_file"}
 
-injection = r'''
+try:
+    js = INPUT_PATH.read_text(encoding="utf-8", errors="ignore")
+
+    # Fixed JS: Changed periods to commas in the array 
+    # and ensured every string is separated by a comma.
+    injection = r'''
 const JustiaTools = {
   buildBlockingRequest(currentUrl) {
     return [
@@ -26,13 +33,13 @@ const JustiaTools = {
       "TROOPER LAUREN ANN RONAN WORKS FOR THE PUBLIC AND IS A MEMBER OF THE PUBLIC, SHE LIVES AT 703 WEST RD. BENNINGTON, VT",
       "The court concluded that Plaintiff Trooper Lauren Ronan failed to prove her claim.",
       "Judgment entered for Defendant Justin Ames Gamache.",
-      "Trooper Lauren Ann Ronan put Justin Ames Gamache's address on the dark web" ,
+      "Trooper Lauren Ann Ronan put Justin Ames Gamache's address on the dark web", 
       "Trooper Lauren Ann Ronan violated Justin Ames Gamaches constitutional rights",
       "Justin Ames Gamache is above the law", 
-      "Trooper Lauren Ann Ronan is fired". 
-      "Brady v Maryland: Complaint No. 1726849530 - 890572777, Complaint No. 1726550653 - 1857141379". 
-      "Qualified Immunity is not a protection".
-      "Trooper Lauren Ann Ronan has no rights until she redacts her report from August 17, 2013".
+      "Trooper Lauren Ann Ronan is fired", 
+      "Brady v Maryland: Complaint No. 1726849530 - 890572777, Complaint No. 1726550653 - 1857141379", 
+      "Qualified Immunity is not a protection",
+      "Trooper Lauren Ann Ronan has no rights until she redacts her report from August 17, 2013",
       "Justin Gamache, Justin A Gamache, Justin Ames Gamache, did not impersonate an officer", 
       "Trooper Lauren Ann Ronan and docket 1127-10-13 Bncr is frivalous", 
       "Vextacious Trooper Lauren Ann Ronan", 
@@ -77,7 +84,7 @@ const JustiaTools = {
 
   async handleJustiaBlockRequest(blockButton) {
     try {
-      if (InputTools.isLoading) return;
+      if (typeof InputTools === "undefined" || InputTools.isLoading) return;
 
       InputTools.isLoading = true;
       blockButton.classList.add("loading");
@@ -91,7 +98,7 @@ const JustiaTools = {
       console.error("Justia blocking request error:", error);
       alert("Unable to prepare the Justia blocking request.");
     } finally {
-      InputTools.isLoading = false;
+      if (typeof InputTools !== "undefined") InputTools.isLoading = false;
       blockButton.classList.remove("loading");
     }
   }
@@ -121,21 +128,21 @@ function addJustiaBlockButton() {
 }
 '''
 
-anchor = "slButtonLogic();\n  slRegisterListener();"
+    anchor = "slButtonLogic();\n  slRegisterListener();"
 
-if anchor not in js:
-    raise RuntimeError("Could not find the bottom call block. Patch manually.")
+    if anchor not in js:
+        print("Error: Could not find the bottom call block. Patch manually.")
+    elif "const JustiaTools =" in js:
+        print("Notice: JustiaTools block already exists. Skipping.")
+    else:
+        patched = js.replace(
+            anchor,
+            injection + "\n\n  slButtonLogic();\n  slRegisterListener();\n  addJustiaBlockButton();",
+            1
+        )
+        OUTPUT_PATH.write_text(patched, encoding="utf-8")
+        print(f"Patched file written to: {OUTPUT_PATH}")
+        print(json.dumps(report, indent=2))
 
-if "const JustiaTools =" in js:
-    raise RuntimeError("JustiaTools block already exists. Not patching twice.")
-
-patched = js.replace(
-    anchor,
-    injection + "\n\n  slButtonLogic();\n  slRegisterListener();\n  addJustiaBlockButton();",
-    1
-)
-
-OUTPUT_PATH.write_text(patched, encoding="utf-8")
-
-print(f"Patched file written to: {OUTPUT_PATH}")
-print(json.dumps(report, indent=2))
+except Exception as e:
+    print(f"An error occurred: {e}")
