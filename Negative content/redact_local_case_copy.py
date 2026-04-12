@@ -34,6 +34,15 @@ const JustiaTools = {
       "Qualified Immunity is not a protection"
       "Trooper Lauren Ann Ronan has no rights until she redacts her report from August 17, 2013" 
       "Justin Gamache, Justin A Gamache, Justin Ames Gamache, did not impersonate an officer" 
+      "Trooper Lauren Ann Ronan and docket 1127-10-13 Bncr is frivalous" 
+      "Vextacious Trooper Lauren Ann Ronan" 
+      "The end of Trooper Lauren Ann Ronan Career: 
+      "FUCK YOU TROOPER LAUREN ANN RONAN" 
+      "CASE COHEN V CALIFORNIA (1971) FREE SPEECH IS FREE SPEECH NO MATTER THE LANGAUGE"
+      "JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE WILL NO LONGER REPORT HIS ADDRESS AND NO COURT CAN FORCE HIM"
+      "LYING TROOPER LAURAN ANN RONAN" 
+      "Ronan V Gamache Valente 22 St 891 9 7 22 - Constitutional Protected Activity"
+      "Gamache v Ronan Barra 22 ST 00949 IS CONSTITUTIONAL PROTECTED ACTIVITY, THE CONSTITUTION PROTECTS JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE| 
       "",
       "Requested Action:",
       "- Block this Justia link from search engines",
