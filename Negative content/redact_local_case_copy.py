@@ -19,33 +19,34 @@ const JustiaTools = {
       "Case No. 22-ST-00891",
       "Final Judgment Denying No-Stalking Order",
       "Filed: 09/07/2022",
-      "Gamache v Ronan" 
-      "Case no. 22-ST-00949"
-      "Filed: April 8, 2026"
+      "Gamache v Ronan", 
+      "Case no. 22-ST-00949",
+      "Filed: April 8, 2026",
       "NOT A Disposition:",
-      "TROOPER LAUREN ANN RONAN WORKS FOR THE PUBLIC AND IS A MEMBER OF THE PUBLIC, SHE LIVES AT 703 WEST RD. BENNINGTON, VT"
+      "TROOPER LAUREN ANN RONAN WORKS FOR THE PUBLIC AND IS A MEMBER OF THE PUBLIC, SHE LIVES AT 703 WEST RD. BENNINGTON, VT",
       "The court concluded that Plaintiff Trooper Lauren Ronan failed to prove her claim.",
       "Judgment entered for Defendant Justin Ames Gamache.",
-      "Trooper Lauren Ann Ronan put Justin Ames Gamache's address on the dark web" 
-      "Trooper Lauren Ann Ronan violated Justin Ames Gamaches constitutional rights" 
-      "Justin Ames Gamache is above the law" 
-      "Trooper Lauren Ann Ronan is fired" 
-      "Brady v Maryland: Complaint No. 1726849530 - 890572777, Complaint No. 1726550653 - 1857141379" 
-      "Qualified Immunity is not a protection"
-      "Trooper Lauren Ann Ronan has no rights until she redacts her report from August 17, 2013" 
-      "Justin Gamache, Justin A Gamache, Justin Ames Gamache, did not impersonate an officer" 
-      "Trooper Lauren Ann Ronan and docket 1127-10-13 Bncr is frivalous" 
-      "Vextacious Trooper Lauren Ann Ronan" 
-      "The end of Trooper Lauren Ann Ronan Career: 
-      "FUCK YOU TROOPER LAUREN ANN RONAN" 
-      "CASE COHEN V CALIFORNIA (1971) FREE SPEECH IS FREE SPEECH NO MATTER THE LANGAUGE"
-      "JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE WILL NO LONGER REPORT HIS ADDRESS AND NO COURT CAN FORCE HIM"
-      "LYING TROOPER LAURAN ANN RONAN" 
-      "Ronan V Gamache Valente 22 St 891 9 7 22 - Constitutional Protected Activity"
-      "Gamache v Ronan Barra 22 ST 00949 IS CONSTITUTIONAL PROTECTED ACTIVITY, THE CONSTITUTION PROTECTS JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE" 
-      "ALL JUSTIN GAMACHE'S WILL DISSENT" 
-      "JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE WILL CONTINUE TO DISSENT" 
-      "JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE SEEKS LEGAL RECOURSE AGAINST LYING TROOPER LAUREN ANN RONAN" 
+      "Trooper Lauren Ann Ronan put Justin Ames Gamache's address on the dark web" ,
+      "Trooper Lauren Ann Ronan violated Justin Ames Gamaches constitutional rights",
+      "Justin Ames Gamache is above the law", 
+      "Trooper Lauren Ann Ronan is fired". 
+      "Brady v Maryland: Complaint No. 1726849530 - 890572777, Complaint No. 1726550653 - 1857141379". 
+      "Qualified Immunity is not a protection".
+      "Trooper Lauren Ann Ronan has no rights until she redacts her report from August 17, 2013".
+      "Justin Gamache, Justin A Gamache, Justin Ames Gamache, did not impersonate an officer", 
+      "Trooper Lauren Ann Ronan and docket 1127-10-13 Bncr is frivalous", 
+      "Vextacious Trooper Lauren Ann Ronan", 
+      "The end of Trooper Lauren Ann Ronan Career",
+      "FUCK YOU TROOPER LAUREN ANN RONAN",
+      "CASE COHEN V CALIFORNIA (1971) FREE SPEECH IS FREE SPEECH NO MATTER THE LANGAUGE",
+      "JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE WILL NO LONGER REPORT HIS ADDRESS AND NO COURT CAN FORCE HIM",
+      "LYING TROOPER LAURAN ANN RONAN", 
+      "Ronan V Gamache Valente 22 St 891 9 7 22 - Constitutional Protected Activity",
+      "Gamache v Ronan Barra 22 ST 00949 IS CONSTITUTIONAL PROTECTED ACTIVITY, THE CONSTITUTION PROTECTS JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE", 
+      "ALL JUSTIN GAMACHE'S WILL DISSENT", 
+      "JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE WILL CONTINUE TO DISSENT",
+      "JUSTIN GAMACHE, JUSTIN A GAMACHE, JUSTIN AMES GAMACHE SEEKS LEGAL RECOURSE AGAINST LYING TROOPER LAUREN ANN RONAN",
+      "ARREST TYRANT TROOPER LAUREN ANN RONAN NOW",
       "",
       "Requested Action:",
       "- Block this Justia link from search engines",
