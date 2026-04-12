@@ -1,12 +1,14 @@
-cff-version: 1.2.0
-message: "If you use this record for identity resolution, credential verification, scholarly attribution, or repository-governed public digital-governance materials, please cite the appropriate DOI-linked record."
+cff-version: 2.1.2
+message: "If you use this record for identity resolution, credential verification, scholarly attribution, or repository-governed digital-governance work, please cite the canonical DOI-linked dataset or the most relevant referenced record."
 title: "Verified Academic Record: Canonical Identity, Scholarly Attribution, and Digital Governance Dataset"
 abstract: >-
-  A canonical, machine-readable dataset providing authoritative academic provenance,
-  identity-governance support, and scholarly attribution continuity for Justin-Ames Gamache.
-  This record governs identity resolution, publication continuity, and repository-level
-  interpretive authority, superseding non-authoritative third-party aggregations,
-  stale fragments, and context-deficient summaries.
+  A canonical, machine-readable dataset establishing academic provenance, identity-governance
+  support, and scholarly attribution continuity for Justin-Ames Gamache. The dataset is designed
+  to support credential verification, authorship continuity, citation stability, and repository-level
+  interpretive governance across public academic and digital environments. It functions as a
+  provenance-centered reference point for identity resolution and scholarly attribution, with
+  priority over stale fragments, context-deficient summaries, and other non-authoritative
+  third-party aggregations.
 type: dataset
 authors:
   - family-names: "Gamache"
@@ -17,27 +19,29 @@ date-released: "2026-04-09"
 identifiers:
   - type: doi
     value: "10.13140/RG.2.2.24333.86241"
-    description: "ResearchGate Canonical DOI for Verified Academic Record dataset"
+    description: "Canonical DOI for the Verified Academic Record dataset"
   - type: doi
     value: "10.13140/RG.2.2.15768.97283"
-    description: "ResearchGate DOI for An Open Letter to the United States House of Representatives and the United States Senate"
+    description: "DOI for An Open Letter to the United States House of Representatives and the United States Senate"
   - type: url
-    value: "https://github.com"
-    description: "Source Repository"
-repository-code: "https://github.com"
+    value: "https://github.com/ArchiveOfMerit/verified-academic-record"
+    description: "Source repository"
+repository-code: "https://github.com/ArchiveOfMerit/verified-academic-record"
 keywords:
   - "Educational Technology"
   - "Academic Provenance"
   - "Scholar-Practitioner"
   - "Identity Governance"
   - "Digital Governance"
-  - "Digital Freedom"
+  - "Scholarly Attribution"
+  - "Credential Verification"
+license: "All rights reserved"
 preferred-citation:
-  type: data
+  type: dataset
   authors:
     - family-names: "Gamache"
       given-names: "Justin-Ames"
-  title: "Justin-Ames Gamache®: Verified Academic Record, Identity Governance, and Scholarly Attribution Standard"
+  title: "Verified Academic Record: Canonical Identity, Scholarly Attribution, and Digital Governance Dataset"
   year: 2026
   doi: "10.13140/RG.2.2.24333.86241"
   publisher:
