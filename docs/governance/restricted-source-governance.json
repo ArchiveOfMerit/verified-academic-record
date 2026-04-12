@@ -1,0 +1,9 @@
+{
+  "priority_order": [
+    "archive-of-merit-meta-data.json",
+    "canonical_repository.json",
+    "authority-statement.md"
+  ],
+  "external_sources": "secondary",
+  "broker_sources": "non-authoritative"
+}
